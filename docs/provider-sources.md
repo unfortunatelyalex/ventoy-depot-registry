@@ -1,0 +1,31 @@
+# Provider source notes
+
+Last manually reviewed: 2026-09-02. Only official project pages, infrastructure and
+APIs are admitted. Current version numbers and checksums are intentionally not frozen
+in manifests; drivers resolve them at runtime and verify the selected artifact.
+
+| Provider | Discovery source | Verification | Important policy |
+| --- | --- | --- | --- |
+| Arch Linux | `archlinux.org/download` and the official pkgbuild mirror | SHA-256 + pinned Arch ISO signing key | x86_64 stable only |
+| Ubuntu | `releases.ubuntu.com` | official SHA256SUMS | Desktop/server and LTS/interim remain distinct |
+| Debian | `cdimage.debian.org` | official SHA512SUMS | netinst, DVD and live variants remain distinct |
+| Fedora | Fedora releases metadata and download infrastructure | official SHA-256 CHECKSUM | edition, image type and architecture remain distinct |
+| Linux Mint | `linuxmint.com/download.php` | official SHA-256 list | Cinnamon, MATE and Xfce remain distinct |
+| EndeavourOS | `endeavouros.com` | official SHA-512 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
+| CachyOS | official wiki and mirror index | SHA-256 + pinned full fingerprint | Desktop and handheld remain distinct |
+| Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
+| Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
+| Pop!_OS | `system76.com/download-pop` | SHA-256 embedded in the official page | generic/NVIDIA and amd64/arm64 remain distinct |
+| Nobara | `nobaraproject.org/download.html` | official SHA-256 sidecar | Official/GNOME/KDE/Steam variants remain distinct |
+| Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
+| Zorin OS | official download and help pages | SHA-256 from official integrity table | Core/Education/Lite only; Pro is detection-only |
+
+## Key decisions
+
+- Arch ISO signer: `3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C`.
+- CachyOS signer: `882DCFE48E2051D48E2562ABF3B607488DB35A47`.
+- Fedora and Ubuntu publish signed checksum material, but release/key rotation needs a
+  dedicated key-set policy. They therefore remain at `CHECKSUM` until that policy is
+  represented without silently trusting newly downloaded keys.
+- Zorin's free downloads provide official skip/redirect paths. Newsletter submission
+  is neither required nor automated.

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1, "provider_id": "endeavouros", "display_name": "EndeavourOS", "homepage_url": "https://endeavouros.com/", "driver": "static-html",
+  "allowed_hosts": ["endeavouros.com", "mirror.alpix.eu"],
+  "capabilities": {"products": ["endeavouros"], "editions": [], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://endeavouros.com/", "artifact_regex": "^EndeavourOS_(?P<codename>[A-Za-z0-9-]+)-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})\\.iso$", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://mirror\\.alpix\\.eu/endeavouros/iso/.+/EndeavourOS_.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "suffix": ".sha512sum"}}}],
+  "detection": [{"regex": "^EndeavourOS_(?P<build>[A-Za-z0-9-]+)-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})\\.iso$", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": true}],
+  "notes": ["Official .sig sidecars exist; automatic signature verification remains disabled until the project publishes a stable full fingerprint on an official page."]
+}

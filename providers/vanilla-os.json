@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "vanilla-os", "display_name": "Vanilla OS", "homepage_url": "https://vanillaos.org/", "driver": "github-releases",
+  "allowed_hosts": ["vanillaos.org", "github.com", "api.github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {"products": ["vanilla-os"], "editions": [], "flavors": [], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://api.github.com/repos/Vanilla-OS/live-iso/releases/latest", "artifact_regex": "^Vanilla-OS-(?P<version>\\d+(?:\\.\\d+)*)-stable-(?P<architecture>amd64|arm64)\\.(?P<build>\\d{8})\\.iso$", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-asset", "suffix": ".sha256.txt"}}}],
+  "detection": [{"regex": "^Vanilla-OS-(?P<version>\\d+(?:\\.\\d+)*)-stable-(?P<architecture>amd64|arm64)\\.(?P<build>\\d{8})\\.iso$", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": true}]
+}

@@ -1,5 +1,55 @@
 {
   "schema_version": 1,
-  "providers": {}
+  "providers": {
+    "arch": {"matches": [{"filename": "archlinux-2026.09.01-x86_64.iso", "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "x86_64", "version": "2026.09.01"}}], "non_matches": ["archlinux-2026.09.01-aarch64.iso", "archlinux-bootstrap-2026.09.01-x86_64.tar.zst"]},
+    "cachyos": {"matches": [
+      {"filename": "cachyos-desktop-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
+      {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}}
+    ], "non_matches": ["cachyos-desktop-linux-latest.iso", "cachyos-desktop-linux-260809.iso.sha256"]},
+    "debian": {"matches": [
+      {"filename": "debian-13.6.0-amd64-netinst.iso", "identity": {"product_id": "debian", "edition": "netinst", "channel": "stable", "architecture": "amd64", "version": "13.6.0"}},
+      {"filename": "debian-13.6.0-arm64-DVD-1.iso", "identity": {"product_id": "debian", "edition": "DVD-1", "channel": "stable", "architecture": "arm64", "version": "13.6.0"}},
+      {"filename": "debian-live-13.6.0-amd64-kde.iso", "identity": {"product_id": "debian", "edition": "live", "flavor": "kde", "channel": "stable", "architecture": "amd64", "version": "13.6.0"}}
+    ], "non_matches": ["debian-13.6.0-i386-netinst.iso", "debian-live-13.6.0-amd64-unknown.iso"]},
+    "endeavouros": {"matches": [{"filename": "EndeavourOS_Titan-Nova-2026.08.15.iso", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "2026.08.15", "build": "Titan-Nova"}}], "non_matches": ["EndeavourOS_Titan-Nova-latest.iso", "EndeavourOS_Titan-Nova-2026.08.15.iso.sig"]},
+    "fedora": {"matches": [
+      {"filename": "Fedora-Workstation-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Workstation", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
+      {"filename": "Fedora-Server-dvd-aarch64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Server", "flavor": "dvd", "channel": "stable", "architecture": "aarch64", "version": "44", "build": "1.4"}},
+      {"filename": "Fedora-Silverblue-ostree-x86_64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Silverblue", "flavor": "ostree", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.4"}}
+    ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso"]},
+    "linux-mint": {"matches": [
+      {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
+      {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}}
+    ], "non_matches": ["linuxmint-22.3-cinnamon-32bit.iso", "linuxmint-22.3-lmde-64bit.iso"]},
+    "manjaro": {"matches": [
+      {"filename": "manjaro-kde-26.1.1-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "kde", "flavor": "full", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},
+      {"filename": "manjaro-xfce-26.1.1-minimal-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "xfce", "flavor": "minimal", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},
+      {"filename": "manjaro-gnome-26.1.0-rc3-minimal-260723-linux618.iso", "identity": {"product_id": "manjaro", "edition": "gnome", "flavor": "minimal", "channel": "review", "architecture": "x86_64", "version": "26.1.0-rc3", "build": "260723"}}
+    ], "non_matches": ["manjaro-i3-26.1.1-260825-linux71.iso", "manjaro-kde-26.1.1-260825.iso"]},
+    "nobara": {"matches": [
+      {"filename": "Nobara-44-Official-2026-08-28.iso", "identity": {"product_id": "nobara", "edition": "Official", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "2026-08-28"}},
+      {"filename": "Nobara-44-Steam-Handheld-2026-08-28.iso", "identity": {"product_id": "nobara", "edition": "Steam-Handheld", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "2026-08-28"}}
+    ], "non_matches": ["Nobara-44-NVIDIA-2026-08-28.iso", "Nobara-44-Official-2026-08-28.iso.sha256sum"]},
+    "omarchy": {"matches": [
+      {"filename": "omarchy-4.0.2.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}},
+      {"filename": "omarchy-4.0.2-x86_64.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}}
+    ], "non_matches": ["omarchy-latest.iso", "omarchy-4.0.2-aarch64.iso"]},
+    "pop-os": {"matches": [
+      {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
+      {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
+    ], "non_matches": ["pop-os_24.04_amd64_intel_27.iso", "pop-os_24.04_x86_64_generic_27.iso"]},
+    "ubuntu": {"matches": [
+      {"filename": "ubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "ubuntu-25.10-live-server-arm64.iso", "identity": {"product_id": "ubuntu", "edition": "live-server", "channel": "interim", "architecture": "arm64", "version": "25.10"}}
+    ], "non_matches": ["ubuntu-26.04.1-desktop-i386.iso", "ubuntu-26.04.1-netboot-amd64.iso"]},
+    "vanilla-os": {"matches": [
+      {"filename": "Vanilla-OS-3-stable-amd64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "3", "build": "20260828"}},
+      {"filename": "Vanilla-OS-3-stable-arm64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "arm64", "version": "3", "build": "20260828"}}
+    ], "non_matches": ["Vanilla-OS-3-testing-amd64.20260828.iso", "Vanilla-OS-3-stable-amd64.iso"]},
+    "zorin-os": {"matches": [
+      {"filename": "Zorin-OS-18.1-Core-64-bit.iso", "identity": {"product_id": "zorin-os", "edition": "Core", "channel": "stable", "architecture": "x86_64", "version": "18.1", "build": null}},
+      {"filename": "Zorin-OS-17.3-Education-64-bit-r2.iso", "identity": {"product_id": "zorin-os", "edition": "Education", "channel": "stable", "architecture": "x86_64", "version": "17.3", "build": "2"}},
+      {"filename": "Zorin-OS-18.1-Pro-64-bit.iso", "identity": {"product_id": "zorin-os", "edition": "Pro", "channel": "stable", "architecture": "x86_64", "version": "18.1", "build": null}}
+    ], "non_matches": ["Zorin-OS-18.1-Ultimate-64-bit.iso", "Zorin-OS-18.1-Core-32-bit.iso"]}
+  }
 }
-

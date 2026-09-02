@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "nobara", "display_name": "Nobara Linux", "homepage_url": "https://nobaraproject.org/", "driver": "static-html",
+  "allowed_hosts": ["nobaraproject.org", "nobara-images.nobaraproject.org"],
+  "capabilities": {"products": ["nobara"], "editions": ["Official", "GNOME", "KDE", "Steam-HTPC", "Steam-Handheld"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://nobaraproject.org/download.html", "artifact_regex": "^Nobara-(?P<version>\\d+)-(?P<edition>Official|GNOME|KDE|Steam-HTPC|Steam-Handheld)-(?P<build>\\d{4}-\\d{2}-\\d{2})\\.iso$", "identity": {"product_id": "nobara", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://nobara-images.nobaraproject.org/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256sum"}}}],
+  "detection": [{"regex": "^Nobara-(?P<version>\\d+)-(?P<edition>Official|GNOME|KDE|Steam-HTPC|Steam-Handheld)-(?P<build>\\d{4}-\\d{2}-\\d{2})\\.iso$", "identity": {"product_id": "nobara", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": true}]
+}

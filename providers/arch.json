@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "provider_id": "arch",
+  "display_name": "Arch Linux",
+  "homepage_url": "https://archlinux.org/",
+  "driver": "directory-index",
+  "allowed_hosts": ["archlinux.org", "geo.mirror.pkgbuild.com"],
+  "capabilities": {"products": ["archlinux"], "editions": [], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{
+    "source_id": "stable", "metadata_url": "https://geo.mirror.pkgbuild.com/iso/latest/",
+    "artifact_regex": "^archlinux-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-(?P<architecture>x86_64)\\.iso$",
+    "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://geo.mirror.pkgbuild.com/iso/latest/{filename}"},
+    "verification": {"level": "SIGNED", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://geo.mirror.pkgbuild.com/iso/latest/sha256sums.txt"}, "signature": {"strategy": "sidecar", "suffix": ".sig", "signer_fingerprints": ["3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C"]}}
+  }],
+  "detection": [{"regex": "^archlinux-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-(?P<architecture>x86_64)\\.iso$", "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}]
+}

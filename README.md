@@ -20,5 +20,34 @@ Run `python scripts/validate_registry.py` before submitting a provider. Fixtures
 contain both matching and non-matching filenames. Downloads must be free, public,
 official, HTTPS-only, checksum verified and bound to explicit variants.
 
-Ventoy Depot is not affiliated with, endorsed by, or supported by the Ventoy project.
+## Curated providers
 
+The initial registry contains Arch Linux, Ubuntu, Debian, Fedora, Linux Mint,
+EndeavourOS, CachyOS, Omarchy, Manjaro, Pop!_OS, Nobara, Vanilla OS and Zorin OS.
+Every provider declares its products, variants, architectures and channels. Detection
+rules map captured filename fields into a stable identity and are exercised by shared
+positive and negative fixtures.
+
+`automatic_download: false` and `downloadable: false` are security boundaries, not UI
+hints. In particular, Zorin OS Pro media is recognized but never acquired. Manjaro
+preview images require an explicit persisted mapping because their filenames do not
+reliably encode the channel.
+
+Verification is deliberately conservative: a source is marked `SIGNED` only when a
+full, stable publisher fingerprint is available from an official source. The presence
+of a `.sig` file alone is insufficient. See [provider source notes](docs/provider-sources.md).
+
+## Manifest contract
+
+- `allowed_hosts` applies to metadata, downloads, checksums, signatures and every
+  redirect hop.
+- `release_sources` describe how a generic driver discovers and verifies artifacts.
+- `detection` is filename-only and contains no executable code. `$group:name` copies a
+  named regular-expression group into an identity field.
+- SHA-256 is the minimum accepted checksum. `SIGNED` additionally requires a full
+  pinned OpenPGP fingerprint.
+- The validator rejects non-HTTPS URLs, non-allow-listed URL hosts, local/private IP
+  literals, path traversal, weak checksums, short fingerprints, ambiguous fixtures and
+  cross-provider fixture collisions.
+
+Ventoy Depot is not affiliated with, endorsed by, or supported by the Ventoy project.
