@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "pop-os", "display_name": "Pop!_OS", "homepage_url": "https://system76.com/pop/", "driver": "static-html",
+  "allowed_hosts": ["system76.com", "iso.pop-os.org"],
+  "capabilities": {"products": ["pop-os"], "editions": ["generic", "nvidia"], "flavors": [], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://system76.com/download-pop/", "artifact_regex": "^pop-os_(?P<version>\\d{2}\\.\\d{2})_(?P<architecture>amd64|arm64)_(?P<edition>generic|nvidia)_(?P<build>\\d+)\\.iso$", "identity": {"product_id": "pop-os", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "page-link", "link_regex": "^https://iso\\.pop-os\\.org/.+/pop-os_.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table", "entry_regex": "(?P<checksum>[A-Fa-f0-9]{64})"}}}],
+  "detection": [{"regex": "^pop-os_(?P<version>\\d{2}\\.\\d{2})_(?P<architecture>amd64|arm64)_(?P<edition>generic|nvidia)_(?P<build>\\d+)\\.iso$", "identity": {"product_id": "pop-os", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": true}]
+}

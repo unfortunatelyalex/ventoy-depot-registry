@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "linux-mint", "display_name": "Linux Mint", "homepage_url": "https://linuxmint.com/", "driver": "static-html",
+  "allowed_hosts": ["linuxmint.com", "pub.linuxmint.io", "mirrors.kernel.org"],
+  "capabilities": {"products": ["linux-mint"], "editions": ["cinnamon", "mate", "xfce"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://linuxmint.com/download.php", "artifact_regex": "^linuxmint-(?P<version>\\d+(?:\\.\\d+){1,2})-(?P<edition>cinnamon|mate|xfce)-64bit\\.iso$", "identity": {"product_id": "linux-mint", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://pub.linuxmint.io/stable/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://mirrors.kernel.org/linuxmint/stable/{version}/sha256sum.txt"}}}],
+  "detection": [{"regex": "^linuxmint-(?P<version>\\d+(?:\\.\\d+){1,2})-(?P<edition>cinnamon|mate|xfce)-(?:64bit|amd64)\\.iso$", "identity": {"product_id": "linux-mint", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}]
+}

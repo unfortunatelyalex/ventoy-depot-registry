@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "cachyos", "display_name": "CachyOS", "homepage_url": "https://cachyos.org/", "driver": "directory-index",
+  "allowed_hosts": ["cachyos.org", "wiki.cachyos.org", "mirror.cachyos.org"],
+  "capabilities": {"products": ["cachyos"], "editions": ["desktop", "handheld"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://mirror.cachyos.org/ISO/", "artifact_regex": "^cachyos-(?P<edition>desktop|handheld)-linux-(?P<version>\\d{6})\\.iso$", "identity": {"product_id": "cachyos", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://mirror\\.cachyos\\.org/ISO/.+/cachyos-.+\\.iso$"}, "verification": {"level": "SIGNED", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}, "signature": {"strategy": "sidecar", "suffix": ".sig", "signer_fingerprints": ["882DCFE48E2051D48E2562ABF3B607488DB35A47"]}}}],
+  "detection": [{"regex": "^cachyos-(?P<edition>desktop|handheld)-linux-(?P<version>\\d{6})\\.iso$", "identity": {"product_id": "cachyos", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}]
+}

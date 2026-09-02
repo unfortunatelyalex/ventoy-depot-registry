@@ -1,0 +1,8 @@
+{
+  "schema_version": 1, "provider_id": "omarchy", "display_name": "Omarchy", "homepage_url": "https://omarchy.org/", "driver": "static-html",
+  "allowed_hosts": ["omarchy.org", "iso.omarchy.org", "github.com"],
+  "capabilities": {"products": ["omarchy"], "editions": [], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://omarchy.org/", "artifact_regex": "^omarchy-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://iso\\.omarchy\\.org/omarchy-.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}}],
+  "detection": [{"regex": "^omarchy-(?P<version>\\d+(?:\\.\\d+)+)(?:-(?P<architecture>x86_64))?\\.iso$", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["The official ISO repository documents .sig sidecars; the provider remains at CHECKSUM level until a full stable signer fingerprint is published by the project."]
+}

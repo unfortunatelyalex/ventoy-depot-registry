@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "provider_id": "debian",
+  "display_name": "Debian",
+  "homepage_url": "https://www.debian.org/CD/http-ftp/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.debian.org", "cdimage.debian.org"],
+  "capabilities": {"products": ["debian"], "editions": ["netinst", "dvd", "live"], "flavors": ["cinnamon", "gnome", "kde", "lxde", "lxqt", "mate", "standard", "xfce"], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "installer", "metadata_url": "https://cdimage.debian.org/debian-cd/current/", "artifact_regex": "^debian-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64)-(?P<edition>netinst|DVD-[1-9]\\d*)\\.iso$", "identity": {"product_id": "debian", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://cdimage.debian.org/debian-cd/current/{architecture}/{directory}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://cdimage.debian.org/debian-cd/current/{architecture}/{directory}/SHA512SUMS"}}},
+    {"source_id": "live", "metadata_url": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/", "artifact_regex": "^debian-live-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)-(?P<flavor>cinnamon|gnome|kde|lxde|lxqt|mate|standard|xfce)\\.iso$", "identity": {"product_id": "debian", "edition": "live", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "url-template", "url_template": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/SHA512SUMS"}}}
+  ],
+  "detection": [
+    {"regex": "^debian-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64)-(?P<edition>netinst|DVD-[1-9]\\d*)\\.iso$", "identity": {"product_id": "debian", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^debian-live-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)-(?P<flavor>cinnamon|gnome|kde|lxde|lxqt|mate|standard|xfce)\\.iso$", "identity": {"product_id": "debian", "edition": "live", "flavor": "$group:flavor", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ]
+}

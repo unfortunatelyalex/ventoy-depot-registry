@@ -1,5 +1,1 @@
-{
-  "schema_version": 1,
-  "providers": []
-}
-
+{"schema_version":1,"providers":["arch","cachyos","debian","endeavouros","fedora","linux-mint","manjaro","nobara","omarchy","pop-os","ubuntu","vanilla-os","zorin-os"]}
