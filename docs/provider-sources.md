@@ -11,7 +11,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Arch Linux | `archlinux.org/download` and the official pkgbuild mirror | SHA-256 + pinned Arch ISO signing key | x86_64 stable only |
 | Ubuntu | `releases.ubuntu.com` | official SHA256SUMS | Desktop/server and LTS/interim remain distinct |
 | Debian | `cdimage.debian.org` | official SHA512SUMS | netinst, DVD and live variants remain distinct |
-| Fedora | Fedora releases metadata and download infrastructure | official SHA-256 CHECKSUM | edition, image type and architecture remain distinct |
+| Fedora | Fedora releases metadata and download infrastructure | official SHA-256 CHECKSUM | Workstation, Server, KDE, Silverblue and official desktop Spins remain distinct |
 | FreeBSD | official `releases/ISO-IMAGES` index | official SHA-256 list | disc1/DVD/boot-only and architecture remain distinct |
 | Gentoo Linux | official autobuild directories on `distfiles.gentoo.org` | official SHA-256 sidecar | minimal/livegui and architecture remain distinct |
 | Grml | `grml.org/download` and `ftp-master.grml.org` | signed SHA-256 list | detection-only while official links redirect to rotating mirrors |
