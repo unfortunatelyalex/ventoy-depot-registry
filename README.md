@@ -22,7 +22,8 @@ official, HTTPS-only, checksum verified and bound to explicit variants.
 
 ## Curated providers
 
-The initial registry contains Arch Linux, Ubuntu, Debian, Fedora, Linux Mint,
+The initial registry contains Alpine Linux, Arch Linux, Ubuntu, Debian, Fedora, FreeBSD,
+openSUSE Tumbleweed, Linux Mint,
 EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, Memtest86+, NixOS,
 Omarchy, Manjaro, Pop!_OS, Proxmox installers, Rescuezilla, Nobara, SystemRescue,
 Tails, Vanilla OS, Windows 11 and Zorin OS.

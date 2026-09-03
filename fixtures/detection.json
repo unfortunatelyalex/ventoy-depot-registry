@@ -1,6 +1,12 @@
 {
   "schema_version": 1,
   "providers": {
+    "alpine": {"matches": [
+      {"filename": "alpine-standard-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}},
+      {"filename": "alpine-extended-3.24.1-x86.iso", "identity": {"product_id": "alpine-linux", "edition": "extended", "channel": "stable", "architecture": "x86", "version": "3.24.1"}},
+      {"filename": "alpine-virtual-3.24.1-aarch64.iso", "identity": {"product_id": "alpine-linux", "edition": "virtual", "channel": "stable", "architecture": "aarch64", "version": "3.24.1"}},
+      {"filename": "alpine-xen-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "xen", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}}
+    ], "non_matches": ["alpine-standard-3.24.1-x86_64.iso.sha256", "alpine-netboot-3.24.1-x86_64.tar.gz"]},
     "arch": {"matches": [{"filename": "archlinux-2026.09.01-x86_64.iso", "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "x86_64", "version": "2026.09.01"}}], "non_matches": ["archlinux-2026.09.01-aarch64.iso", "archlinux-bootstrap-2026.09.01-x86_64.tar.zst"]},
     "cachyos": {"matches": [
       {"filename": "cachyos-desktop-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
@@ -22,6 +28,11 @@
       {"filename": "Fedora-Server-dvd-aarch64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Server", "flavor": "dvd", "channel": "stable", "architecture": "aarch64", "version": "44", "build": "1.4"}},
       {"filename": "Fedora-Silverblue-ostree-x86_64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Silverblue", "flavor": "ostree", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.4"}}
     ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso"]},
+    "freebsd": {"matches": [
+      {"filename": "FreeBSD-15.0-RELEASE-amd64-dvd1.iso", "identity": {"product_id": "freebsd", "edition": "dvd1", "channel": "release", "architecture": "amd64", "version": "15.0"}},
+      {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
+      {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
+    ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
     "gparted-live": {"matches": [{"filename": "gparted-live-1.7.0-1-amd64.iso", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "1.7.0-1"}}], "non_matches": ["gparted-live-1.8.1-6-i686.iso", "gparted-live-testing-amd64.iso"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
@@ -53,6 +64,11 @@
       {"filename": "omarchy-4.0.2.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}},
       {"filename": "omarchy-4.0.2-x86_64.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}}
     ], "non_matches": ["omarchy-latest.iso", "omarchy-4.0.2-aarch64.iso"]},
+    "opensuse-tumbleweed": {"matches": [
+      {"filename": "openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "DVD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}},
+      {"filename": "openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "KDE-Live", "channel": "rolling", "architecture": "aarch64", "version": "Current"}},
+      {"filename": "openSUSE-Tumbleweed-Rescue-CD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "Rescue-CD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}}
+    ], "non_matches": ["openSUSE-Leap-16.0-DVD-x86_64.iso", "openSUSE-Tumbleweed-DVD-x86_64.iso"]},
     "pop-os": {"matches": [
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
