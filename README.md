@@ -20,6 +20,19 @@ Run `python scripts/validate_registry.py` before submitting a provider. Fixtures
 contain both matching and non-matching filenames. Downloads must be free, public,
 official, HTTPS-only, checksum verified and bound to explicit variants.
 
+The repository owner initializes signing once from a trusted machine. The key directory
+must be outside this checkout and backed up offline:
+
+```console
+python -m pip install -r requirements-signing.txt
+python scripts/tuf_repository.py init /secure/offline/ventoy-depot-keys
+```
+
+Review and commit the generated `public/` tree, then copy the exact generated
+`public/metadata/root.json` into the application's bundled registry directory. Later
+registry releases use `publish` with the same external key directory; metadata versions
+are incremented and all roles receive their documented expiration periods.
+
 ## Curated providers
 
 The initial registry contains Alpine Linux, Arch Linux, Ubuntu, Debian, Fedora, FreeBSD,
