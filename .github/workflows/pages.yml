@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Require complete TUF metadata
         run: test -s public/metadata/root.json && test -s public/metadata/targets.json && test -s public/metadata/snapshot.json && test -s public/metadata/timestamp.json
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
