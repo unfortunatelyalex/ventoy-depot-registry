@@ -1,6 +1,10 @@
 {
   "schema_version": 1,
   "providers": {
+    "almalinux": {"matches": [
+      {"filename": "AlmaLinux-10.2-aarch64-dvd.iso", "identity": {"product_id": "almalinux", "edition": "dvd", "channel": "10", "architecture": "aarch64", "version": "10.2"}},
+      {"filename": "AlmaLinux-9-latest-x86_64-minimal.iso", "identity": {"product_id": "almalinux", "edition": "minimal", "flavor": "latest-alias", "channel": "9", "architecture": "x86_64", "version": "latest"}}
+    ], "non_matches": ["AlmaLinux-10.2-x86_64-cloud.iso", "AlmaLinux-10-Kitten-x86_64-dvd.iso"]},
     "alpine": {"matches": [
       {"filename": "alpine-standard-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}},
       {"filename": "alpine-extended-3.24.1-x86.iso", "identity": {"product_id": "alpine-linux", "edition": "extended", "channel": "stable", "architecture": "x86", "version": "3.24.1"}},
@@ -34,6 +38,10 @@
       {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
     ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
     "gparted-live": {"matches": [{"filename": "gparted-live-1.7.0-1-amd64.iso", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "1.7.0-1"}}], "non_matches": ["gparted-live-1.8.1-6-i686.iso", "gparted-live-testing-amd64.iso"]},
+    "grml": {"matches": [
+      {"filename": "grml-full-2026.04-amd64.iso", "identity": {"product_id": "grml", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "2026.04"}},
+      {"filename": "grml-small-2026.04-arm64.iso", "identity": {"product_id": "grml", "edition": "small", "channel": "stable", "architecture": "arm64", "version": "2026.04"}}
+    ], "non_matches": ["grml32-full_2024.02.iso", "grml-full-amd64-testing.iso"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
@@ -79,10 +87,17 @@
       {"filename": "proxmox-backup-server_4.2-1.iso", "identity": {"product_id": "proxmox-backup-server", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "4.2-1"}},
       {"filename": "proxmox-mailgateway_7.3-1.iso", "identity": {"product_id": "proxmox-mail-gateway", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "7.3-1"}}
     ], "non_matches": ["proxmox-ve_9.2-1-aarch64.iso", "proxmox-backup-server_4.2-1-arm64.iso"]},
+    "qubes-os": {"matches": [
+      {"filename": "Qubes-R4.3.1-x86_64.iso", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "4.3.1"}}
+    ], "non_matches": ["Qubes-R4.3.1-aarch64.iso", "Qubes-R4.3.1-x86_64.iso.asc"]},
     "rescuezilla": {"matches": [
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
       {"filename": "rescuezilla-2.6.2-64bit.noble.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "noble", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}}
     ], "non_matches": ["rescuezilla-2.6.2-32bit.resolute.iso", "rescuezilla-2.6.2-64bit.unknown.iso"]},
+    "rocky-linux": {"matches": [
+      {"filename": "Rocky-9.8-x86_64-minimal.iso", "identity": {"product_id": "rocky-linux", "edition": "minimal", "channel": "9", "architecture": "x86_64", "version": "9.8"}},
+      {"filename": "Rocky-10-latest-aarch64-boot.iso", "identity": {"product_id": "rocky-linux", "edition": "boot", "flavor": "latest-alias", "channel": "10", "architecture": "aarch64", "version": "latest"}}
+    ], "non_matches": ["Rocky-9.8-x86_64-live.iso", "Rocky-Linux-9.8-x86_64-minimal.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
     "ubuntu": {"matches": [
