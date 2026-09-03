@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "provider_id": "freebsd",
+  "display_name": "FreeBSD",
+  "homepage_url": "https://www.freebsd.org/where/",
+  "driver": "checksum-list",
+  "allowed_hosts": ["www.freebsd.org", "download.freebsd.org"],
+  "capabilities": {
+    "products": ["freebsd"],
+    "editions": ["disc1", "dvd1", "bootonly"],
+    "flavors": [],
+    "architectures": ["amd64", "arm64"],
+    "languages": [],
+    "channels": ["release"]
+  },
+  "release_sources": [
+    {
+      "source_id": "release-index",
+      "metadata_url": "https://download.freebsd.org/ftp/releases/ISO-IMAGES/",
+      "artifact_regex": "^FreeBSD-(?P<version>\\d+(?:\\.\\d+)+)-RELEASE-(?P<architecture>amd64|arm64)-(?P<edition>disc1|dvd1|bootonly)\\.iso$",
+      "identity": {"product_id": "freebsd", "edition": "$group:edition", "channel": "release", "architecture": "$group:architecture"},
+      "download": {"strategy": "user-supplied"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}},
+      "automatic_download": false
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^FreeBSD-(?P<version>\\d+(?:\\.\\d+)+)-RELEASE-(?P<architecture>amd64|arm64)-(?P<edition>disc1|dvd1|bootonly)\\.iso$",
+      "identity": {"product_id": "freebsd", "edition": "$group:edition", "channel": "release", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["Ventoy Depot uses its audited integrated resolver to select the newest release directory and matching CHECKSUM.SHA256 file."]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "provider_id": "opensuse-tumbleweed",
+  "display_name": "openSUSE Tumbleweed",
+  "homepage_url": "https://get.opensuse.org/tumbleweed/",
+  "driver": "directory-index",
+  "allowed_hosts": ["get.opensuse.org", "download.opensuse.org"],
+  "capabilities": {
+    "products": ["opensuse-tumbleweed"],
+    "editions": ["DVD", "NET", "Rescue-CD", "GNOME-Live", "KDE-Live", "XFCE-Live"],
+    "flavors": [],
+    "architectures": ["x86_64", "aarch64"],
+    "languages": [],
+    "channels": ["rolling"]
+  },
+  "release_sources": [
+    {
+      "source_id": "x86-64-snapshots",
+      "metadata_url": "https://download.opensuse.org/download/tumbleweed/iso/",
+      "artifact_regex": "^openSUSE-Tumbleweed-(?P<edition>DVD|NET|Rescue-CD|GNOME-Live|KDE-Live|XFCE-Live)-x86_64-Snapshot(?P<version>\\d{8})-Media\\.iso$",
+      "identity": {"product_id": "opensuse-tumbleweed", "edition": "$group:edition", "channel": "rolling", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://download.opensuse.org/download/tumbleweed/iso/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}
+    },
+    {
+      "source_id": "aarch64-snapshots",
+      "metadata_url": "https://download.opensuse.org/download/ports/aarch64/tumbleweed/iso/",
+      "artifact_regex": "^openSUSE-Tumbleweed-(?P<edition>DVD|NET|Rescue-CD|GNOME-Live|KDE-Live|XFCE-Live)-aarch64-Snapshot(?P<version>\\d{8})-Media\\.iso$",
+      "identity": {"product_id": "opensuse-tumbleweed", "edition": "$group:edition", "channel": "rolling", "architecture": "aarch64"},
+      "download": {"strategy": "url-template", "url_template": "https://download.opensuse.org/download/ports/aarch64/tumbleweed/iso/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^openSUSE-Tumbleweed-(?P<edition>DVD|NET|Rescue-CD|GNOME-Live|KDE-Live|XFCE-Live)-(?P<architecture>x86_64|aarch64)-Snapshot(?P<version>\\d{8})-Media\\.iso$",
+      "identity": {"product_id": "opensuse-tumbleweed", "edition": "$group:edition", "channel": "rolling", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^openSUSE-Tumbleweed-(?P<edition>DVD|NET|Rescue-CD|GNOME-Live|KDE-Live|XFCE-Live)-(?P<architecture>x86_64|aarch64)-Current\\.iso$",
+      "identity": {"product_id": "opensuse-tumbleweed", "edition": "$group:edition", "channel": "rolling", "architecture": "$group:architecture", "version": "Current"},
+      "downloadable": true
+    }
+  ]
+}

@@ -6,10 +6,12 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 
 | Provider | Discovery source | Verification | Important policy |
 | --- | --- | --- | --- |
+| Alpine Linux | `alpinelinux.org/downloads` and official CDN | official SHA-256 sidecar | standard/extended/virtual/Xen and architecture remain distinct |
 | Arch Linux | `archlinux.org/download` and the official pkgbuild mirror | SHA-256 + pinned Arch ISO signing key | x86_64 stable only |
 | Ubuntu | `releases.ubuntu.com` | official SHA256SUMS | Desktop/server and LTS/interim remain distinct |
 | Debian | `cdimage.debian.org` | official SHA512SUMS | netinst, DVD and live variants remain distinct |
 | Fedora | Fedora releases metadata and download infrastructure | official SHA-256 CHECKSUM | edition, image type and architecture remain distinct |
+| FreeBSD | official `releases/ISO-IMAGES` index | official SHA-256 list | disc1/DVD/boot-only and architecture remain distinct |
 | Linux Mint | `linuxmint.com/download.php` | official SHA-256 list | Cinnamon, MATE and Xfce remain distinct |
 | EndeavourOS | `endeavouros.com` | official SHA-512 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | CachyOS | official wiki and mirror index | SHA-256 + pinned full fingerprint | Desktop and handheld remain distinct |
@@ -18,6 +20,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Kali Linux | `archive.kali.org/kali-images/current` | signed SHA-256 list with pinned Kali archive fingerprint | quarterly installer/live variants remain distinct |
 | NixOS | `nixos.org/download` and `channels.nixos.org` | official SHA-256 sidecar | graphical/minimal and architecture remain distinct |
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
+| openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
 | Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
 | Pop!_OS | `system76.com/download-pop` | SHA-256 embedded in the official page | generic/NVIDIA and amd64/arm64 remain distinct |
