@@ -49,7 +49,10 @@ def validate_url(url: str, hosts: set[str], path: Path) -> None:
 
 
 def validate_regex(expression: str, path: Path) -> re.Pattern[str]:
-    nested_wildcard = re.search(r"\((?:\?:)?(?:\.\*|\.\+|\\w[+*]|\\d[+*])\)[+*{]", expression)
+    nested_wildcard = re.search(
+        r"\((?:\?:|\?P<[^>]+>)?(?:\.\*|\.\+|\\[wdsDWS][+*]|\[[^]]+\][+*])\)[+*{]",
+        expression,
+    )
     if not expression or len(expression) > 512 or nested_wildcard:
         raise ValueError(f"{path}: unsafe detection regex")
     return re.compile(expression, re.IGNORECASE)

@@ -23,7 +23,8 @@ official, HTTPS-only, checksum verified and bound to explicit variants.
 ## Curated providers
 
 The initial registry contains Arch Linux, Ubuntu, Debian, Fedora, Linux Mint,
-EndeavourOS, CachyOS, Omarchy, Manjaro, Pop!_OS, Nobara, Vanilla OS and Zorin OS.
+EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, NixOS, Omarchy,
+Manjaro, Pop!_OS, Nobara, SystemRescue, Vanilla OS, Windows 11 and Zorin OS.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared
 positive and negative fixtures.

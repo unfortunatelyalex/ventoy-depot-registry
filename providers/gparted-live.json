@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "gparted-live", "display_name": "GParted Live", "homepage_url": "https://gparted.org/livecd.php", "driver": "checksum-list",
+  "allowed_hosts": ["gparted.org", "downloads.sourceforge.net", "sourceforge.net", "netcologne.dl.sourceforge.net"],
+  "capabilities": {"products": ["gparted-live"], "editions": ["live"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://gparted.org/gparted-live/stable/CHECKSUMS.TXT", "artifact_regex": "^gparted-live-(?P<version>\\d+\\.\\d+\\.\\d+-\\d+)-amd64\\.iso$", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://downloads\\.sourceforge\\.net/project/gparted/gparted-live-stable/.+/gparted-live-.+\\.iso(?:\\?.*)?$"}, "verification": {"level": "SIGNED", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}, "signature": {"strategy": "signed-checksum-list", "url_template": "https://gparted.org/gparted-live/stable/CHECKSUMS.TXT.sig", "signer_fingerprints": ["EB1DD5BF6F88820BBCF5356C8E94C9CD163E3FB0"]}}}],
+  "detection": [{"regex": "^gparted-live-(?P<version>\\d+\\.\\d+\\.\\d+-\\d+)-amd64\\.iso$", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}]
+}

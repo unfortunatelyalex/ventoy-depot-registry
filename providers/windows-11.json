@@ -1,0 +1,11 @@
+{
+  "schema_version": 1, "provider_id": "windows-11", "display_name": "Windows 11", "homepage_url": "https://www.microsoft.com/software-download/windows11", "driver": "static-html",
+  "allowed_hosts": ["www.microsoft.com", "software.download.prss.microsoft.com"],
+  "capabilities": {"products": ["windows-11"], "editions": ["multi-edition"], "flavors": ["consumer"], "architectures": ["x86_64"], "languages": ["de-de", "en-us", "en-gb"], "channels": ["stable"]},
+  "release_sources": [{"source_id": "public-iso", "metadata_url": "https://www.microsoft.com/software-download/windows11", "artifact_regex": "^Win11_(?P<version>\\d{2}H\\d)_(?P<language>German|English|EnglishInternational)_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}, "automatic_download": false}],
+  "detection": [
+    {"regex": "^Win11_(?P<version>\\d{2}H\\d)_German_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^Win11_(?P<version>\\d{2}H\\d)_English_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-us", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^Win11_(?P<version>\\d{2}H\\d)_EnglishInternational_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-gb", "version": "$group:version"}, "downloadable": false}
+  ]
+}
