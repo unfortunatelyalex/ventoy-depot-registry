@@ -11,6 +11,16 @@ jobs:
         with:
           python-version: "3.14"
       - run: python scripts/validate_registry.py
+      - name: Smoke-test TUF repository generation
+        run: |
+          python -m pip install -r requirements-signing.txt
+          key_dir="$(mktemp -d)"
+          output_dir="$(mktemp -d)"
+          python scripts/tuf_repository.py init "$key_dir" --output-root "$output_dir"
+          python scripts/tuf_repository.py publish "$key_dir" --output-root "$output_dir"
+          test -s "$output_dir/metadata/root.json"
+          test -s "$output_dir/metadata/targets.json"
+          test -s "$output_dir/metadata/snapshot.json"
+          test -s "$output_dir/metadata/timestamp.json"
       - name: Reject private key material
         run: '! find . -type f \( -name "*.key" -o -name "*.pem" -o -name "*.sec" -o -name "*.kbx" \) -print -quit | grep .'
-
