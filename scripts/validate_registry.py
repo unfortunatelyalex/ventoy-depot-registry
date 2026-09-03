@@ -105,6 +105,18 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
     for source in value["release_sources"]:
         validate_identity(source.get("identity"), path)
         verification = source.get("verification", {})
+        checksum = verification.get("checksum", {})
+        if checksum.get("algorithm") not in {"sha256", "sha512"}:
+            raise ValueError(f"{path}: weak or missing checksum algorithm")
+        if checksum.get("strategy") not in {
+            "checksum-list",
+            "sidecar",
+            "release-asset",
+            "release-digest",
+            "embedded-json",
+            "html-table",
+        }:
+            raise ValueError(f"{path}: unsupported checksum strategy")
         if verification.get("level") == "SIGNED" and "signature" not in verification:
             raise ValueError(f"{path}: SIGNED source lacks signature policy")
     return provider_id, value

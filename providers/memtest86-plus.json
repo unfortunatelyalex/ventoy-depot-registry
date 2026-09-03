@@ -1,0 +1,13 @@
+{
+  "schema_version": 1, "provider_id": "memtest86-plus", "display_name": "Memtest86+", "homepage_url": "https://www.memtest.org/", "driver": "static-html",
+  "allowed_hosts": ["www.memtest.org"],
+  "capabilities": {"products": ["memtest86-plus"], "editions": ["grub", "bare"], "flavors": [], "architectures": ["i586", "x86_64", "loongarch64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "archives", "metadata_url": "https://www.memtest.org/", "artifact_regex": "^mt86plus_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>i586|x86_64|LA64)(?P<grub>\\.grub)?\\.iso\\.zip$", "identity": {"product_id": "memtest86-plus", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://www.memtest.org/download/v{version}/sha256sum.txt"}}, "automatic_download": false}],
+  "detection": [
+    {"regex": "^mt86plus_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>i586|x86_64)\\.grub\\.iso$", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^mt86plus_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>i586|x86_64)\\.iso$", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^mt86plus_(?P<version>\\d+(?:\\.\\d+)+)_LA64\\.grub\\.iso$", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "loongarch64", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^mt86plus_(?P<version>\\d+(?:\\.\\d+)+)_LA64\\.iso$", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "loongarch64", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["Official ISO images are distributed inside ZIP archives; automatic extraction is intentionally not enabled."]
+}

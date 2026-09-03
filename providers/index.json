@@ -1,1 +1,1 @@
-{"schema_version":1,"providers":["arch","cachyos","clonezilla","debian","endeavouros","fedora","gparted-live","kali-linux","linux-mint","manjaro","nixos","nobara","omarchy","pop-os","systemrescue","ubuntu","vanilla-os","windows-11","zorin-os"]}
+{"schema_version":1,"providers":["arch","cachyos","clonezilla","debian","endeavouros","fedora","gparted-live","kali-linux","linux-mint","manjaro","memtest86-plus","nixos","nobara","omarchy","pop-os","proxmox","rescuezilla","systemrescue","tails","ubuntu","vanilla-os","windows-11","zorin-os"]}

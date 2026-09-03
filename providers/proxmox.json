@@ -1,0 +1,14 @@
+{
+  "schema_version": 1, "provider_id": "proxmox", "display_name": "Proxmox Installers", "homepage_url": "https://www.proxmox.com/en/downloads", "driver": "checksum-list",
+  "allowed_hosts": ["www.proxmox.com", "enterprise.proxmox.com"],
+  "capabilities": {"products": ["proxmox-ve", "proxmox-backup-server", "proxmox-mail-gateway", "proxmox-datacenter-manager"], "editions": ["installer"], "flavors": [], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "amd64", "metadata_url": "https://enterprise.proxmox.com/iso/SHA256SUMS", "artifact_regex": "^(?P<product>proxmox-ve|proxmox-backup-server|proxmox-mail-gateway|proxmox-datacenter-manager)_(?P<version>\\d+(?:\\.\\d+)+-\\d+)\\.iso$", "identity": {"product_id": "$group:product", "edition": "installer", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "url-template", "url_template": "https://enterprise.proxmox.com/iso/{filename}"}, "verification": {"level": "SIGNED", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}, "signature": {"strategy": "signed-checksum-list", "url_template": "https://enterprise.proxmox.com/iso/SHA256SUMS.asc", "signer_fingerprints": ["24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E"]}}},
+    {"source_id": "arm64", "metadata_url": "https://enterprise.proxmox.com/iso/SHA256SUMS", "artifact_regex": "^(?P<product>proxmox-ve)_(?P<version>\\d+(?:\\.\\d+)+-\\d+)-arm64\\.iso$", "identity": {"product_id": "$group:product", "edition": "installer", "channel": "stable", "architecture": "arm64"}, "download": {"strategy": "url-template", "url_template": "https://enterprise.proxmox.com/iso/{filename}"}, "verification": {"level": "SIGNED", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}, "signature": {"strategy": "signed-checksum-list", "url_template": "https://enterprise.proxmox.com/iso/SHA256SUMS.asc", "signer_fingerprints": ["24B30F06ECC1836A4E5EFECBA7BCD1420BFE778E"]}}}
+  ],
+  "detection": [
+    {"regex": "^(?P<product>proxmox-ve|proxmox-backup-server|proxmox-mail-gateway|proxmox-datacenter-manager)_(?P<version>\\d+(?:\\.\\d+)+-\\d+)\\.iso$", "identity": {"product_id": "$group:product", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^(?P<product>proxmox-ve)_(?P<version>\\d+(?:\\.\\d+)+-\\d+)-arm64\\.iso$", "identity": {"product_id": "$group:product", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^proxmox-mailgateway_(?P<version>\\d+(?:\\.\\d+)+-\\d+)\\.iso$", "identity": {"product_id": "proxmox-mail-gateway", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}
+  ]
+}
