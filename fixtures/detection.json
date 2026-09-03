@@ -37,11 +37,18 @@
       {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
       {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
     ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
+    "gentoo": {"matches": [
+      {"filename": "install-amd64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}},
+      {"filename": "install-arm64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "arm64", "version": "20260830T151604Z"}},
+      {"filename": "install-x86-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "x86", "version": "20260830T151604Z"}},
+      {"filename": "livegui-amd64-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "livegui", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}}
+    ], "non_matches": ["install-amd64-minimal-latest.iso", "livegui-arm64-20260830T151604Z.iso"]},
     "gparted-live": {"matches": [{"filename": "gparted-live-1.7.0-1-amd64.iso", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "1.7.0-1"}}], "non_matches": ["gparted-live-1.8.1-6-i686.iso", "gparted-live-testing-amd64.iso"]},
     "grml": {"matches": [
       {"filename": "grml-full-2026.04-amd64.iso", "identity": {"product_id": "grml", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "2026.04"}},
       {"filename": "grml-small-2026.04-arm64.iso", "identity": {"product_id": "grml", "edition": "small", "channel": "stable", "architecture": "arm64", "version": "2026.04"}}
     ], "non_matches": ["grml32-full_2024.02.iso", "grml-full-amd64-testing.iso"]},
+    "hirens-bootcd-pe": {"matches": [{"filename": "HBCD_PE_x64.iso", "identity": {"product_id": "hirens-bootcd-pe", "edition": "pe", "channel": "stable", "architecture": "x86_64", "version": null}}], "non_matches": ["HBCD_PE_x86.iso", "HBCD_PE_x64.zip"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
@@ -59,6 +66,15 @@
       {"filename": "mt86plus_8.10_x86_64.grub.iso", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "x86_64", "version": "8.10"}},
       {"filename": "mt86plus_8.10_i586.iso", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "i586", "version": "8.10"}}
     ], "non_matches": ["memtest86-usb.img", "mt86plus_8.10_x86_64.iso.zip"]},
+    "netboot-xyz": {"matches": [
+      {"filename": "netboot.xyz.iso", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": null}},
+      {"filename": "netboot.xyz-legacy.iso", "identity": {"product_id": "netboot-xyz", "edition": "legacy", "channel": "stable", "architecture": "x86_64", "version": null}},
+      {"filename": "netboot.xyz-arm64.iso", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "arm64", "version": null}}
+    ], "non_matches": ["netboot.xyz.img", "netboot.xyz-rpi4.iso"]},
+    "netbsd": {"matches": [
+      {"filename": "NetBSD-11.0-amd64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "amd64", "version": "11.0"}},
+      {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}}
+    ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso"]},
     "nixos": {"matches": [
       {"filename": "nixos-plasma5-23.11.7202.e7cc61784ddf-x86_64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "flavor": "plasma5", "channel": "stable", "architecture": "x86_64", "version": "23.11.7202.e7cc61784ddf"}},
       {"filename": "nixos-graphical-26.05.8846.a3116115851d-aarch64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "channel": "stable", "architecture": "aarch64", "version": "26.05.8846.a3116115851d"}},
@@ -98,6 +114,12 @@
       {"filename": "Rocky-9.8-x86_64-minimal.iso", "identity": {"product_id": "rocky-linux", "edition": "minimal", "channel": "9", "architecture": "x86_64", "version": "9.8"}},
       {"filename": "Rocky-10-latest-aarch64-boot.iso", "identity": {"product_id": "rocky-linux", "edition": "boot", "flavor": "latest-alias", "channel": "10", "architecture": "aarch64", "version": "latest"}}
     ], "non_matches": ["Rocky-9.8-x86_64-live.iso", "Rocky-Linux-9.8-x86_64-minimal.iso"]},
+    "shredos": {"matches": [
+      {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716.iso", "identity": {"product_id": "shredos", "edition": "standard", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite.iso", "identity": {"product_id": "shredos", "edition": "lite", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "standard", "flavor": "plus-partition", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "lite", "flavor": "plus-partition", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}}
+    ], "non_matches": ["shredos-2025.11_31_x86-64_v0.42_20260716.img", "shredos-latest-x86-64.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
     "ubuntu": {"matches": [

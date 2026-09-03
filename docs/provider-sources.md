@@ -13,7 +13,9 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Debian | `cdimage.debian.org` | official SHA512SUMS | netinst, DVD and live variants remain distinct |
 | Fedora | Fedora releases metadata and download infrastructure | official SHA-256 CHECKSUM | edition, image type and architecture remain distinct |
 | FreeBSD | official `releases/ISO-IMAGES` index | official SHA-256 list | disc1/DVD/boot-only and architecture remain distinct |
+| Gentoo Linux | official autobuild directories on `distfiles.gentoo.org` | official SHA-256 sidecar | minimal/livegui and architecture remain distinct |
 | Grml | `grml.org/download` and `ftp-master.grml.org` | signed SHA-256 list | detection-only while official links redirect to rotating mirrors |
+| Hiren's BootCD PE | official download page | SHA-256 embedded in the official page | stable filename requires explicit replacement |
 | Linux Mint | `linuxmint.com/download.php` | official SHA-256 list | Cinnamon, MATE and Xfce remain distinct |
 | EndeavourOS | `endeavouros.com` | official SHA-512 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | CachyOS | official wiki and mirror index | SHA-256 + pinned full fingerprint | Desktop and handheld remain distinct |
@@ -25,11 +27,14 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
 | Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
+| netboot.xyz | official GitHub releases | GitHub-bound SHA-256 asset digest | standard/legacy and architecture remain distinct |
+| NetBSD | official release directory on `cdn.netbsd.org` | official SHA-512 list | amd64/i386 release installers remain distinct |
 | Pop!_OS | `system76.com/download-pop` | SHA-256 embedded in the official page | generic/NVIDIA and amd64/arm64 remain distinct |
 | Proxmox installers | `enterprise.proxmox.com/iso` | signed SHA-256 list with pinned release fingerprint | product and amd64/arm64 remain distinct |
 | Qubes OS | official downloads page and security pack | detached OpenPGP signature | detection-only until its signing-key chain is distributed as trusted targets |
 | Rescuezilla | official GitHub releases | GitHub-bound SHA-256 asset digest | Ubuntu base variant remains distinct |
 | Rocky Linux | official download repository | official SHA-256 CHECKSUM | major version, image type and architecture remain distinct |
+| ShredOS | official GitHub releases | GitHub-bound SHA-256 asset digest | architecture, lite/full and partition variants remain distinct |
 | Nobara | `nobaraproject.org/download.html` | official SHA-256 sidecar | Official/GNOME/KDE/Steam variants remain distinct |
 | SystemRescue | `system-rescue.org/Download` | official SHA-256 sidecar | stable amd64 image only |
 | Tails | official stable release JSON | embedded SHA-256 | detection-only pending a fixed mirror allow-list |

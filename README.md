@@ -36,10 +36,10 @@ are incremented and all roles receive their documented expiration periods.
 ## Curated providers
 
 The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, Ubuntu, Debian, Fedora,
-FreeBSD, Grml, Qubes OS, Rocky Linux, openSUSE Tumbleweed, Linux Mint,
-EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, Memtest86+, NixOS,
-Omarchy, Manjaro, Pop!_OS, Proxmox installers, Rescuezilla, Nobara, SystemRescue,
-Tails, Vanilla OS, Windows 11 and Zorin OS.
+FreeBSD, Gentoo, Grml, Hiren's BootCD PE, Qubes OS, Rocky Linux, openSUSE Tumbleweed,
+Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, Memtest86+,
+netboot.xyz, NetBSD, NixOS, Omarchy, Manjaro, Pop!_OS, Proxmox installers, Rescuezilla,
+Nobara, ShredOS, SystemRescue, Tails, Vanilla OS, Windows 11 and Zorin OS.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared
 positive and negative fixtures.
