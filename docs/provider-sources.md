@@ -19,9 +19,13 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | NixOS | `nixos.org/download` and `channels.nixos.org` | official SHA-256 sidecar | graphical/minimal and architecture remain distinct |
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
+| Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
 | Pop!_OS | `system76.com/download-pop` | SHA-256 embedded in the official page | generic/NVIDIA and amd64/arm64 remain distinct |
+| Proxmox installers | `enterprise.proxmox.com/iso` | signed SHA-256 list with pinned release fingerprint | product and amd64/arm64 remain distinct |
+| Rescuezilla | official GitHub releases | GitHub-bound SHA-256 asset digest | Ubuntu base variant remains distinct |
 | Nobara | `nobaraproject.org/download.html` | official SHA-256 sidecar | Official/GNOME/KDE/Steam variants remain distinct |
 | SystemRescue | `system-rescue.org/Download` | official SHA-256 sidecar | stable amd64 image only |
+| Tails | official stable release JSON | embedded SHA-256 | detection-only pending a fixed mirror allow-list |
 | Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
 | Windows 11 | `microsoft.com/software-download/windows11` | SHA-256 from Microsoft's language table | detection and user-supplied official links only |
 | Zorin OS | official download and help pages | SHA-256 from official integrity table | Core/Education/Lite only; Pro is detection-only |

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "rescuezilla", "display_name": "Rescuezilla", "homepage_url": "https://rescuezilla.com/download", "driver": "github-releases",
+  "allowed_hosts": ["rescuezilla.com", "api.github.com", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {"products": ["rescuezilla"], "editions": ["live"], "flavors": ["noble", "oracular", "questing", "resolute"], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://api.github.com/repos/rescuezilla/rescuezilla/releases/latest", "artifact_regex": "^rescuezilla-(?P<version>\\d+(?:\\.\\d+)+)-64bit\\.(?P<flavor>noble|oracular|questing|resolute)\\.iso$", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "$group:flavor", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}}],
+  "detection": [{"regex": "^rescuezilla-(?P<version>\\d+(?:\\.\\d+)+)-64bit\\.(?P<flavor>noble|oracular|questing|resolute)\\.iso$", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "$group:flavor", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}]
+}

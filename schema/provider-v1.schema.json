@@ -41,7 +41,7 @@
     "checksum": {
       "type": "object", "additionalProperties": false, "required": ["algorithm", "strategy"],
       "properties": {
-        "algorithm": {"enum": ["sha256", "sha512"]}, "strategy": {"enum": ["checksum-list", "sidecar", "release-asset", "html-table"]},
+        "algorithm": {"enum": ["sha256", "sha512"]}, "strategy": {"enum": ["checksum-list", "sidecar", "release-asset", "release-digest", "embedded-json", "html-table"]},
         "url_template": {"$ref": "#/$defs/httpsUrl"}, "suffix": {"type": "string", "maxLength": 32}, "entry_regex": {"type": "string", "maxLength": 512}
       }
     },
