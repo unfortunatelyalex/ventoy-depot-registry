@@ -1,0 +1,10 @@
+{
+  "schema_version": 1, "provider_id": "nixos", "display_name": "NixOS", "homepage_url": "https://nixos.org/download/", "driver": "latest-redirect",
+  "allowed_hosts": ["nixos.org", "channels.nixos.org", "releases.nixos.org"],
+  "capabilities": {"products": ["nixos"], "editions": ["graphical", "minimal"], "flavors": ["plasma5"], "architectures": ["x86_64", "aarch64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://nixos.org/download/", "artifact_regex": "^nixos-(?P<edition>graphical|minimal)-(?P<version>[0-9.]+\\.[a-f0-9]+)-(?P<architecture>x86_64|aarch64)-linux\\.iso$", "identity": {"product_id": "nixos", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "latest-redirect", "url_template": "https://channels.nixos.org/nixos-{channel}/latest-nixos-{edition}-{architecture}-linux.iso"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}}],
+  "detection": [
+    {"regex": "^nixos-(?P<flavor>plasma5)-(?P<version>[0-9.]+\\.[a-f0-9]+)-(?P<architecture>x86_64|aarch64)-linux\\.iso$", "identity": {"product_id": "nixos", "edition": "graphical", "flavor": "$group:flavor", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^nixos-(?P<edition>graphical|minimal)-(?P<version>[0-9.]+\\.[a-f0-9]+)-(?P<architecture>x86_64|aarch64)-linux\\.iso$", "identity": {"product_id": "nixos", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ]
+}

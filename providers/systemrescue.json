@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "systemrescue", "display_name": "SystemRescue", "homepage_url": "https://www.system-rescue.org/", "driver": "static-html",
+  "allowed_hosts": ["www.system-rescue.org", "fastly-cdn.system-rescue.org"],
+  "capabilities": {"products": ["systemrescue"], "editions": ["live"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://www.system-rescue.org/Download/", "artifact_regex": "^systemrescue-(?P<version>\\d+\\.\\d+)-amd64\\.iso$", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "url-template", "url_template": "https://fastly-cdn.system-rescue.org/releases/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://www.system-rescue.org/releases/{version}/{filename}.sha256"}}}],
+  "detection": [{"regex": "^systemrescue-(?P<version>\\d+\\.\\d+)-amd64\\.iso$", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}]
+}
