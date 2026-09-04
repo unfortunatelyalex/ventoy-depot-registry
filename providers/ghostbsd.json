@@ -1,0 +1,15 @@
+{
+  "schema_version": 1, "provider_id": "ghostbsd", "display_name": "GhostBSD", "homepage_url": "https://www.ghostbsd.org/download", "driver": "static-html",
+  "allowed_hosts": ["www.ghostbsd.org", "download.ghostbsd.org"],
+  "capabilities": {"products": ["ghostbsd"], "editions": ["mate", "xfce", "gershwin"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["official", "community", "preview"]},
+  "release_sources": [
+    {"source_id": "mate-official", "metadata_url": "https://www.ghostbsd.org/download", "artifact_regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "mate", "channel": "official", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://download\\.ghostbsd\\.org/releases/amd64/.+/GhostBSD-.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}},
+    {"source_id": "xfce-community", "metadata_url": "https://www.ghostbsd.org/download", "artifact_regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)-XFCE\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "xfce", "channel": "community", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://download\\.ghostbsd\\.org/releases/amd64/.+/GhostBSD-.+-XFCE\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}},
+    {"source_id": "gershwin-preview", "metadata_url": "https://www.ghostbsd.org/download", "artifact_regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)-GERSHWIN\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "gershwin", "channel": "preview", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://download\\.ghostbsd\\.org/releases/amd64/.+/GhostBSD-.+-GERSHWIN\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}}
+  ],
+  "detection": [
+    {"regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "mate", "channel": "official", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)-XFCE\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "xfce", "channel": "community", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^GhostBSD-(?P<version>\\d+(?:\\.\\d+)+-R\\d+(?:\\.\\d+)+p\\d+)-GERSHWIN\\.iso$", "identity": {"product_id": "ghostbsd", "edition": "gershwin", "channel": "preview", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}
+  ]
+}

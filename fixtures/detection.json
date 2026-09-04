@@ -39,6 +39,11 @@
       {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
       {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
     ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
+    "ghostbsd": {"matches": [
+      {"filename": "GhostBSD-26.1-R15.0p2.iso", "identity": {"product_id": "ghostbsd", "edition": "mate", "channel": "official", "architecture": "amd64", "version": "26.1-R15.0p2"}},
+      {"filename": "GhostBSD-26.1-R15.0p2-XFCE.iso", "identity": {"product_id": "ghostbsd", "edition": "xfce", "channel": "community", "architecture": "amd64", "version": "26.1-R15.0p2"}},
+      {"filename": "GhostBSD-26.1-R15.0p2-GERSHWIN.iso", "identity": {"product_id": "ghostbsd", "edition": "gershwin", "channel": "preview", "architecture": "amd64", "version": "26.1-R15.0p2"}}
+    ], "non_matches": ["GhostBSD-26.1-R15.0p2.img", "GhostBSD-26.1-R15.0p2-KDE.iso"]},
     "gentoo": {"matches": [
       {"filename": "install-amd64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}},
       {"filename": "install-arm64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "arm64", "version": "20260830T151604Z"}},
@@ -46,6 +51,10 @@
       {"filename": "livegui-amd64-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "livegui", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}}
     ], "non_matches": ["install-amd64-minimal-latest.iso", "livegui-arm64-20260830T151604Z.iso"]},
     "gparted-live": {"matches": [{"filename": "gparted-live-1.7.0-1-amd64.iso", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "1.7.0-1"}}], "non_matches": ["gparted-live-1.8.1-6-i686.iso", "gparted-live-testing-amd64.iso"]},
+    "haiku": {"matches": [
+      {"filename": "haiku-r1beta6-x86_64-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_64", "version": "r1beta6"}},
+      {"filename": "haiku-r1beta6-x86_gcc2h-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_gcc2h", "version": "r1beta6"}}
+    ], "non_matches": ["haiku-r1beta6-x86_64-anyboot.zip", "haiku-nightly-x86_64-anyboot.iso"]},
     "grml": {"matches": [
       {"filename": "grml-full-2026.04-amd64.iso", "identity": {"product_id": "grml", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "2026.04"}},
       {"filename": "grml-small-2026.04-arm64.iso", "identity": {"product_id": "grml", "edition": "small", "channel": "stable", "architecture": "arm64", "version": "2026.04"}}
@@ -99,6 +108,10 @@
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
     ], "non_matches": ["pop-os_24.04_amd64_intel_27.iso", "pop-os_24.04_x86_64_generic_27.iso"]},
+    "porteux": {"matches": [
+      {"filename": "porteux-2.8-current-xfce-4.20-x86_64.iso", "identity": {"product_id": "porteux", "edition": "xfce", "channel": "current", "architecture": "x86_64", "version": "2.8", "build": "4.20"}},
+      {"filename": "porteux-2.4-stable-kde-5.23.5-x86_64.iso", "identity": {"product_id": "porteux", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "2.4", "build": "5.23.5"}}
+    ], "non_matches": ["porteux-2.8-current-xfce-4.20-aarch64.iso", "porteux-current-xfce-x86_64.iso"]},
     "proxmox": {"matches": [
       {"filename": "proxmox-ve_9.2-1.iso", "identity": {"product_id": "proxmox-ve", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "9.2-1"}},
       {"filename": "proxmox-ve_9.2-1-arm64.iso", "identity": {"product_id": "proxmox-ve", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "9.2-1"}},
@@ -122,8 +135,16 @@
       {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "standard", "flavor": "plus-partition", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
       {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "lite", "flavor": "plus-partition", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}}
     ], "non_matches": ["shredos-2025.11_31_x86-64_v0.42_20260716.img", "shredos-latest-x86-64.iso"]},
+    "solus": {"matches": [
+      {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
+      {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}
+    ], "non_matches": ["Solus-Budgie-Testing-2026-04-18.iso", "Solus-Budgie-Release.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
+    "truenas": {"matches": [
+      {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
+      {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}
+    ], "non_matches": ["TrueNAS-SCALE-25.10.7.img", "TrueNAS-Enterprise-25.10.7.iso"]},
     "ubuntu": {"matches": [
       {"filename": "ubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntu-25.10-live-server-arm64.iso", "identity": {"product_id": "ubuntu", "edition": "live-server", "channel": "interim", "architecture": "arm64", "version": "25.10"}}

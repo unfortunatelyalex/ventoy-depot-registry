@@ -1,0 +1,11 @@
+{
+  "schema_version": 1, "provider_id": "solus", "display_name": "Solus", "homepage_url": "https://getsol.us/download/", "driver": "static-html",
+  "allowed_hosts": ["getsol.us", "downloads.getsol.us"],
+  "capabilities": {"products": ["solus"], "editions": ["budgie", "gnome", "plasma", "xfce"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "stable-desktops", "metadata_url": "https://getsol.us/download/", "artifact_regex": "^Solus-(?P<edition>Budgie|GNOME|Plasma|Xfce)-Release-(?P<version>\\d{4}-\\d{2}-\\d{2})\\.iso$", "identity": {"product_id": "solus", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://downloads\\.getsol\\.us/isos/.+/Solus-.+-Release-.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256sum"}}}
+  ],
+  "detection": [
+    {"regex": "^Solus-(?P<edition>Budgie|GNOME|Plasma|Xfce)-Release-(?P<version>\\d{4}-\\d{2}-\\d{2})\\.iso$", "identity": {"product_id": "solus", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}
+  ]
+}
