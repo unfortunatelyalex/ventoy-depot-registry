@@ -46,6 +46,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Tails | official stable release JSON and its advertised HTTPS mirrors | embedded SHA-256 | redirects are accepted only to the curated mirror host list |
 | TrueNAS Community Edition | official Community Edition page and release hosts | official SHA-256 sidecar | stable and beta channels remain distinct; enterprise media is excluded |
 | Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
+| Void Linux | official `repo-default.voidlinux.org/live/current` directory | official SHA-256 checksum list | base/Xfce, glibc/musl and architecture remain distinct; Minisign trust is not yet provisioned |
 | Windows 11 | `microsoft.com/software-download/windows11` | SHA-256 from Microsoft's language table | detection and user-supplied official links only |
 | Zorin OS | official download and help pages | SHA-256 from official integrity table | Core/Education/Lite only; Pro is detection-only |
 

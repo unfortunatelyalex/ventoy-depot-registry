@@ -165,6 +165,12 @@
       {"filename": "Vanilla-OS-3-stable-arm64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "arm64", "version": "3", "build": "20260828"}},
       {"filename": "VanillaOS-22.10-all.20231009.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "22.10", "build": "20231009"}}
     ], "non_matches": ["Vanilla-OS-3-testing-amd64.20260828.iso", "Vanilla-OS-3-stable-amd64.iso"]},
+    "void-linux": {"matches": [
+      {"filename": "void-live-x86_64-20250202-base.iso", "identity": {"product_id": "void-linux", "edition": "base", "flavor": "glibc", "channel": "stable", "architecture": "x86_64", "version": "20250202"}},
+      {"filename": "void-live-x86_64-musl-20250202-xfce.iso", "identity": {"product_id": "void-linux", "edition": "xfce", "flavor": "musl", "channel": "stable", "architecture": "x86_64", "version": "20250202"}},
+      {"filename": "void-live-aarch64-20250202-base.iso", "identity": {"product_id": "void-linux", "edition": "base", "flavor": "glibc", "channel": "stable", "architecture": "aarch64", "version": "20250202"}},
+      {"filename": "void-live-asahi-musl-20250202-xfce.iso", "identity": {"product_id": "void-linux", "edition": "xfce", "flavor": "musl", "channel": "stable", "architecture": "asahi", "version": "20250202"}}
+    ], "non_matches": ["void-live-i686-musl-20250202-base.iso", "void-x86_64-ROOTFS-20250202.tar.xz", "void-live-x86_64-current-base.iso"]},
     "windows-11": {"matches": [
       {"filename": "Win11_25H2_German_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "25H2"}},
       {"filename": "Win11_25H2_English_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-us", "version": "25H2"}}
