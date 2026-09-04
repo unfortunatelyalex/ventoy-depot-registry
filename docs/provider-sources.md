@@ -15,7 +15,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | FreeBSD | official `releases/ISO-IMAGES` index | official SHA-256 list | disc1/DVD/boot-only and architecture remain distinct |
 | Gentoo Linux | official autobuild directories on `distfiles.gentoo.org` | official SHA-256 sidecar | minimal/livegui and architecture remain distinct |
 | GhostBSD | official project download page and release host | official SHA-256 sidecar | official MATE, community XFCE and Gershwin preview remain distinct |
-| Grml | `grml.org/download` and `ftp-master.grml.org` | signed SHA-256 list | detection-only while official links redirect to rotating mirrors |
+| Grml | `grml.org/download` and direct official `ftp-master.grml.org` files | official SHA-256 sidecar | full/small and amd64/arm64 remain distinct; rotating mirror redirects are bypassed |
 | Haiku | official stable release page and Haiku CDN | SHA-256 embedded in the official page | x86_64 and hybrid x86 GCC2 anyboot images remain distinct |
 | Hiren's BootCD PE | official download page | SHA-256 embedded in the official page | stable filename requires explicit replacement |
 | Linux Mint | `linuxmint.com/download.php` | official SHA-256 list | Cinnamon, MATE and Xfce remain distinct |
