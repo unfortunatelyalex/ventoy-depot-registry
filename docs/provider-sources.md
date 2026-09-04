@@ -22,6 +22,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Mageia | official Mageia ISO tree on a project-listed HTTPS mirror | official SHA-512 sidecar | classic installer and GNOME/Plasma/Xfce live media remain distinct by architecture |
 | EndeavourOS | `endeavouros.com` | official SHA-512 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | CachyOS | official wiki and mirror index | SHA-256 + pinned full fingerprint | Desktop and handheld remain distinct |
+| CentOS Stream | official `mirror.stream.centos.org` BaseOS ISO trees | official SHA-256 list | Stream 9/10, boot/DVD1 and x86_64/aarch64 remain distinct |
 | Clonezilla Live | `clonezilla.org/downloads` | signed checksum list with pinned DRBL fingerprint | Debian- and Ubuntu-based stable images remain distinct |
 | GParted Live | `gparted.org/gparted-live/stable` | signed checksum list with pinned fingerprint | stable amd64 image only |
 | Kali Linux | `archive.kali.org/kali-images/current` | signed SHA-256 list with pinned Kali archive fingerprint | quarterly installer/live variants remain distinct |

@@ -17,6 +17,11 @@
       {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
       {"filename": "cachyos-kde-linux-240512.iso", "identity": {"product_id": "cachyos", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "240512"}}
     ], "non_matches": ["cachyos-desktop-linux-latest.iso", "cachyos-desktop-linux-260809.iso.sha256"]},
+    "centos-stream": {"matches": [
+      {"filename": "CentOS-Stream-10-20260901.0-x86_64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "10", "architecture": "x86_64", "version": "20260901.0"}},
+      {"filename": "CentOS-Stream-10-latest-aarch64-dvd1.iso", "identity": {"product_id": "centos-stream", "edition": "dvd1", "channel": "10", "architecture": "aarch64", "version": "latest"}},
+      {"filename": "CentOS-Stream-9-20260825.0-aarch64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "9", "architecture": "aarch64", "version": "20260825.0"}}
+    ], "non_matches": ["CentOS-Stream-11-latest-x86_64-boot.iso", "CentOS-Stream-10-latest-x86_64-minimal.iso", "CentOS-10-Stream-x86_64-dvd1.iso"]},
     "clonezilla": {"matches": [
       {"filename": "clonezilla-live-3.3.3-15-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "debian", "channel": "stable", "architecture": "amd64", "version": "3.3.3-15"}},
       {"filename": "clonezilla-live-20260705-resolute-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "ubuntu", "channel": "stable", "architecture": "amd64", "version": "20260705-resolute"}}
