@@ -24,6 +24,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Clonezilla Live | `clonezilla.org/downloads` | signed checksum list with pinned DRBL fingerprint | Debian- and Ubuntu-based stable images remain distinct |
 | GParted Live | `gparted.org/gparted-live/stable` | signed checksum list with pinned fingerprint | stable amd64 image only |
 | Kali Linux | `archive.kali.org/kali-images/current` | signed SHA-256 list with pinned Kali archive fingerprint | quarterly installer/live variants remain distinct |
+| KDE neon | official KDE image index and an advertised fixed HTTPS mirror | official SHA-256 sidecar | User, Testing and Unstable channels remain distinct |
 | NixOS | `nixos.org/download` and `channels.nixos.org` | official SHA-256 sidecar | graphical/minimal and architecture remain distinct |
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |

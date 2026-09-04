@@ -64,6 +64,11 @@
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
     ], "non_matches": ["kali-linux-weekly-live-amd64.iso", "kali-linux-2026.2-live-amd64.iso.torrent"]},
+    "kde-neon": {"matches": [
+      {"filename": "neon-user-desktop-20260903-0454.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "user", "architecture": "x86_64", "version": "20260903-0454"}},
+      {"filename": "neon-testing-desktop-20260901-0146.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64", "version": "20260901-0146"}},
+      {"filename": "neon-unstable-desktop-20260830-0628.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "unstable", "architecture": "x86_64", "version": "20260830-0628"}}
+    ], "non_matches": ["neon-user-desktop-current.iso", "neon-user-mobile-20260903-0454.iso"]},
     "linux-mint": {"matches": [
       {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
       {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}}
