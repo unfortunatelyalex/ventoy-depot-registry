@@ -109,6 +109,12 @@
       {"filename": "openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "KDE-Live", "channel": "rolling", "architecture": "aarch64", "version": "Current"}},
       {"filename": "openSUSE-Tumbleweed-Rescue-CD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "Rescue-CD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}}
     ], "non_matches": ["openSUSE-Leap-16.0-DVD-x86_64.iso", "openSUSE-Tumbleweed-DVD-x86_64.iso"]},
+    "parrot-os": {"matches": [
+      {"filename": "Parrot-home-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "home", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-security-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "security", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-spin-htb-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "htb", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-spin-lxqt-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "lxqt", "channel": "stable", "architecture": "amd64", "version": "7.3"}}
+    ], "non_matches": ["Parrot-home-7.3_arm64.iso", "Parrot-security-7.3_amd64.ova", "Parrot-core-7.3_amd64.iso"]},
     "pop-os": {"matches": [
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}

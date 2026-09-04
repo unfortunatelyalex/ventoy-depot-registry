@@ -29,6 +29,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
+| Parrot OS | official `deb.parrot.sh/parrot/iso` index | SHA-512 from the official signed hash list | Home, Security and each desktop/security spin remain distinct; non-ISO images are excluded |
 | Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
 | netboot.xyz | official GitHub releases | GitHub-bound SHA-256 asset digest | standard/legacy and architecture remain distinct |
 | NetBSD | official release directory on `cdn.netbsd.org` | official SHA-512 list | amd64/i386 release installers remain distinct |

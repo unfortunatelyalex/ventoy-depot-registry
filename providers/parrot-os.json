@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "parrot-os", "display_name": "Parrot OS", "homepage_url": "https://www.parrotsec.org/download/", "driver": "directory-index",
+  "allowed_hosts": ["www.parrotsec.org", "deb.parrot.sh"],
+  "capabilities": {"products": ["parrot-os"], "editions": ["home", "security", "enlightenment", "htb", "lxqt", "mate"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://deb.parrot.sh/parrot/iso/", "artifact_regex": "^Parrot-(?:spin-)?(?P<edition>home|security|enlightenment|htb|lxqt|mate)-(?P<version>\\d+\\.\\d+)_(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "parrot-os", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://deb.parrot.sh/parrot/iso/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://deb.parrot.sh/parrot/iso/{version}/signed-hashes.txt"}}}],
+  "detection": [{"regex": "^Parrot-(?:spin-)?(?P<edition>home|security|enlightenment|htb|lxqt|mate)-(?P<version>\\d+\\.\\d+)_(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "parrot-os", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}]
+}
