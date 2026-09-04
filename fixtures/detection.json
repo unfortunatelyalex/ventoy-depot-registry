@@ -73,6 +73,12 @@
       {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
       {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}}
     ], "non_matches": ["linuxmint-22.3-cinnamon-32bit.iso", "linuxmint-22.3-lmde-64bit.iso"]},
+    "mageia": {"matches": [
+      {"filename": "Mageia-10-x86_64.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "x86_64", "version": "10"}},
+      {"filename": "Mageia-10-i686.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "i686", "version": "10"}},
+      {"filename": "Mageia-10-Live-GNOME-x86_64.iso", "identity": {"product_id": "mageia", "edition": "GNOME", "channel": "stable", "architecture": "x86_64", "version": "10"}},
+      {"filename": "Mageia-10-Live-Xfce-i686.iso", "identity": {"product_id": "mageia", "edition": "Xfce", "channel": "stable", "architecture": "i686", "version": "10"}}
+    ], "non_matches": ["Mageia-10-Live-GNOME-i686.iso", "Mageia-10-x86_64.iso.sha512", "Mageia-Cauldron-x86_64.iso"]},
     "manjaro": {"matches": [
       {"filename": "manjaro-kde-26.1.1-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "kde", "flavor": "full", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},
       {"filename": "manjaro-xfce-26.1.1-minimal-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "xfce", "flavor": "minimal", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},

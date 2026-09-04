@@ -19,6 +19,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Haiku | official stable release page and Haiku CDN | SHA-256 embedded in the official page | x86_64 and hybrid x86 GCC2 anyboot images remain distinct |
 | Hiren's BootCD PE | official download page | SHA-256 embedded in the official page | stable filename requires explicit replacement |
 | Linux Mint | `linuxmint.com/download.php` | official SHA-256 list | Cinnamon, MATE and Xfce remain distinct |
+| Mageia | official Mageia ISO tree on a project-listed HTTPS mirror | official SHA-512 sidecar | classic installer and GNOME/Plasma/Xfce live media remain distinct by architecture |
 | EndeavourOS | `endeavouros.com` | official SHA-512 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | CachyOS | official wiki and mirror index | SHA-256 + pinned full fingerprint | Desktop and handheld remain distinct |
 | Clonezilla Live | `clonezilla.org/downloads` | signed checksum list with pinned DRBL fingerprint | Debian- and Ubuntu-based stable images remain distinct |

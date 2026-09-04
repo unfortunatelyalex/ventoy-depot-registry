@@ -38,7 +38,7 @@ are incremented and all roles receive their documented expiration periods.
 The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, Ubuntu, Debian, Fedora,
 FreeBSD, Gentoo, GhostBSD, Grml, Haiku, Hiren's BootCD PE, Qubes OS, Rocky Linux,
 openSUSE Tumbleweed,
-Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, KDE neon,
+Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, KDE neon, Mageia,
 Memtest86+,
 netboot.xyz, NetBSD, NixOS, Omarchy, Manjaro, Parrot OS, Pop!_OS, PorteuX, Proxmox installers,
 Rescuezilla, Nobara, ShredOS, Solus, SystemRescue, Tails, TrueNAS Community Edition,
