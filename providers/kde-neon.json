@@ -1,0 +1,14 @@
+{
+  "schema_version": 1, "provider_id": "kde-neon", "display_name": "KDE neon", "homepage_url": "https://neon.kde.org/download", "driver": "directory-index",
+  "allowed_hosts": ["neon.kde.org", "files.kde.org", "ftp.gwdg.de"],
+  "capabilities": {"products": ["kde-neon"], "editions": ["desktop"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["user", "testing", "unstable"]},
+  "release_sources": [
+    {"source_id": "user", "metadata_url": "https://files.kde.org/neon/images/desktop/user/current/", "artifact_regex": "^neon-user-desktop-(?P<version>\\d{8}-\\d{4})\\.iso$", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "user", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/user/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/user/{version}/neon-user-desktop-{version}.sha256sum"}}},
+    {"source_id": "testing", "metadata_url": "https://files.kde.org/neon/images/desktop/testing/current/", "artifact_regex": "^neon-testing-desktop-(?P<version>\\d{8}-\\d{4})\\.iso$", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/testing/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/testing/{version}/neon-testing-desktop-{version}.sha256sum"}}},
+    {"source_id": "unstable", "metadata_url": "https://files.kde.org/neon/images/desktop/unstable/current/", "artifact_regex": "^neon-unstable-desktop-(?P<version>\\d{8}-\\d{4})\\.iso$", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "unstable", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/unstable/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://ftp.gwdg.de/pub/linux/kde/extrafiles/neon/images/desktop/unstable/{version}/neon-unstable-desktop-{version}.sha256sum"}}}
+  ],
+  "detection": [
+    {"regex": "^neon-(?P<channel>user|testing|unstable)-(?P<edition>desktop)-(?P<version>\\d{8}-\\d{4})\\.iso$", "identity": {"product_id": "kde-neon", "edition": "$group:edition", "channel": "$group:channel", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The fixed GWDG path is one of the HTTPS mirrors advertised by KDE's official Mirrorbits service. Channels never cross-update."]
+}

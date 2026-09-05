@@ -20,26 +20,33 @@ Run `python scripts/validate_registry.py` before submitting a provider. Fixtures
 contain both matching and non-matching filenames. Downloads must be free, public,
 official, HTTPS-only, checksum verified and bound to explicit variants.
 
-The repository owner initializes signing once from a trusted machine. The key directory
-must be outside this checkout and backed up offline:
+The repository owner initializes signing once from a trusted machine. Root and targets
+keys use an offline directory; snapshot and timestamp keys use a separate publishing
+directory. Both must be outside this checkout, and the offline directory must be backed up:
 
 ```console
 python -m pip install -r requirements-signing.txt
-python scripts/tuf_repository.py init /secure/offline/ventoy-depot-keys
+python scripts/tuf_repository.py init /secure/offline/ventoy-depot-keys \
+  --online-key-directory /secure/publishing/ventoy-depot-keys
 ```
 
 Review and commit the generated `public/` tree, then copy the exact generated
 `public/metadata/root.json` into the application's bundled registry directory. Later
-registry releases use `publish` with the same external key directory; metadata versions
-are incremented and all roles receive their documented expiration periods.
+registry releases use `publish` with both external key directories; metadata versions are
+incremented and all roles receive their documented expiration periods. The command refuses
+identical or nested key directories so the role separation cannot be accidentally bypassed.
 
 ## Curated providers
 
-The initial registry contains Alpine Linux, Arch Linux, Ubuntu, Debian, Fedora, FreeBSD,
-openSUSE Tumbleweed, Linux Mint,
-EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, Memtest86+, NixOS,
-Omarchy, Manjaro, Pop!_OS, Proxmox installers, Rescuezilla, Nobara, SystemRescue,
-Tails, Vanilla OS, Windows 11 and Zorin OS.
+The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, Ubuntu and ten official Ubuntu flavors,
+CentOS Stream, Debian, Fedora,
+FreeBSD, Gentoo, GhostBSD, Grml, Haiku, Hiren's BootCD PE, Qubes OS, Rocky Linux,
+openSUSE Tumbleweed,
+Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, KDE neon, Mageia,
+Memtest86+,
+netboot.xyz, NetBSD, NixOS, Omarchy, Manjaro, Parrot OS, Pop!_OS, PorteuX, Proxmox installers,
+Rescuezilla, Nobara, ShredOS, Solus, SystemRescue, Tails, TrueNAS Community Edition,
+Vanilla OS, Void Linux, Windows 10/11, Windows Server Evaluation and Zorin OS.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared
 positive and negative fixtures.

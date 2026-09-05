@@ -14,10 +14,15 @@ jobs:
       - name: Smoke-test TUF repository generation
         run: |
           python -m pip install -r requirements-signing.txt
-          key_dir="$(mktemp -d)"
+          offline_key_dir="$(mktemp -d)"
+          online_key_dir="$(mktemp -d)"
           output_dir="$(mktemp -d)"
-          python scripts/tuf_repository.py init "$key_dir" --output-root "$output_dir"
-          python scripts/tuf_repository.py publish "$key_dir" --output-root "$output_dir"
+          python scripts/tuf_repository.py init "$offline_key_dir" --online-key-directory "$online_key_dir" --output-root "$output_dir"
+          python scripts/tuf_repository.py publish "$offline_key_dir" --online-key-directory "$online_key_dir" --output-root "$output_dir"
+          if python scripts/tuf_repository.py init "$offline_key_dir" --online-key-directory "$offline_key_dir" --output-root "$(mktemp -d)"; then
+            echo "identical offline and online key directories were accepted" >&2
+            exit 1
+          fi
           test -s "$output_dir/metadata/root.json"
           test -s "$output_dir/metadata/targets.json"
           test -s "$output_dir/metadata/snapshot.json"

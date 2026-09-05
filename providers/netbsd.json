@@ -1,0 +1,7 @@
+{
+  "schema_version": 1, "provider_id": "netbsd", "display_name": "NetBSD", "homepage_url": "https://www.netbsd.org/releases/", "driver": "directory-index",
+  "allowed_hosts": ["www.netbsd.org", "cdn.netbsd.org"],
+  "capabilities": {"products": ["netbsd"], "editions": ["installer"], "flavors": [], "architectures": ["amd64", "i386"], "languages": [], "channels": ["release"]},
+  "release_sources": [{"source_id": "release", "metadata_url": "https://cdn.netbsd.org/pub/NetBSD/", "artifact_regex": "^NetBSD-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|i386)\\.iso$", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-{version}/images/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://cdn.netbsd.org/pub/NetBSD/NetBSD-{version}/images/SHA512"}}}],
+  "detection": [{"regex": "^NetBSD-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|i386)\\.iso$", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}]
+}

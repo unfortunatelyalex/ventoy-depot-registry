@@ -1,6 +1,10 @@
 {
   "schema_version": 1,
   "providers": {
+    "almalinux": {"matches": [
+      {"filename": "AlmaLinux-10.2-aarch64-dvd.iso", "identity": {"product_id": "almalinux", "edition": "dvd", "channel": "10", "architecture": "aarch64", "version": "10.2"}},
+      {"filename": "AlmaLinux-9-latest-x86_64-minimal.iso", "identity": {"product_id": "almalinux", "edition": "minimal", "flavor": "latest-alias", "channel": "9", "architecture": "x86_64", "version": "latest"}}
+    ], "non_matches": ["AlmaLinux-10.2-x86_64-cloud.iso", "AlmaLinux-10-Kitten-x86_64-dvd.iso"]},
     "alpine": {"matches": [
       {"filename": "alpine-standard-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}},
       {"filename": "alpine-extended-3.24.1-x86.iso", "identity": {"product_id": "alpine-linux", "edition": "extended", "channel": "stable", "architecture": "x86", "version": "3.24.1"}},
@@ -13,6 +17,11 @@
       {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
       {"filename": "cachyos-kde-linux-240512.iso", "identity": {"product_id": "cachyos", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "240512"}}
     ], "non_matches": ["cachyos-desktop-linux-latest.iso", "cachyos-desktop-linux-260809.iso.sha256"]},
+    "centos-stream": {"matches": [
+      {"filename": "CentOS-Stream-10-20260901.0-x86_64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "10", "architecture": "x86_64", "version": "20260901.0"}},
+      {"filename": "CentOS-Stream-10-latest-aarch64-dvd1.iso", "identity": {"product_id": "centos-stream", "edition": "dvd1", "channel": "10", "architecture": "aarch64", "version": "latest"}},
+      {"filename": "CentOS-Stream-9-20260825.0-aarch64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "9", "architecture": "aarch64", "version": "20260825.0"}}
+    ], "non_matches": ["CentOS-Stream-11-latest-x86_64-boot.iso", "CentOS-Stream-10-latest-x86_64-minimal.iso", "CentOS-10-Stream-x86_64-dvd1.iso"]},
     "clonezilla": {"matches": [
       {"filename": "clonezilla-live-3.3.3-15-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "debian", "channel": "stable", "architecture": "amd64", "version": "3.3.3-15"}},
       {"filename": "clonezilla-live-20260705-resolute-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "ubuntu", "channel": "stable", "architecture": "amd64", "version": "20260705-resolute"}}
@@ -26,22 +35,55 @@
     "fedora": {"matches": [
       {"filename": "Fedora-Workstation-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Workstation", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
       {"filename": "Fedora-Server-dvd-aarch64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Server", "flavor": "dvd", "channel": "stable", "architecture": "aarch64", "version": "44", "build": "1.4"}},
+      {"filename": "Fedora-Xfce-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Xfce", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
+      {"filename": "Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "MATE_Compiz", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
       {"filename": "Fedora-Silverblue-ostree-x86_64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Silverblue", "flavor": "ostree", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.4"}}
-    ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso"]},
+    ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso", "Fedora-Xfce-Live-44-1.7.aarch64.iso"]},
     "freebsd": {"matches": [
       {"filename": "FreeBSD-15.0-RELEASE-amd64-dvd1.iso", "identity": {"product_id": "freebsd", "edition": "dvd1", "channel": "release", "architecture": "amd64", "version": "15.0"}},
       {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
       {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
     ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
+    "ghostbsd": {"matches": [
+      {"filename": "GhostBSD-26.1-R15.0p2.iso", "identity": {"product_id": "ghostbsd", "edition": "mate", "channel": "official", "architecture": "amd64", "version": "26.1-R15.0p2"}},
+      {"filename": "GhostBSD-26.1-R15.0p2-XFCE.iso", "identity": {"product_id": "ghostbsd", "edition": "xfce", "channel": "community", "architecture": "amd64", "version": "26.1-R15.0p2"}},
+      {"filename": "GhostBSD-26.1-R15.0p2-GERSHWIN.iso", "identity": {"product_id": "ghostbsd", "edition": "gershwin", "channel": "preview", "architecture": "amd64", "version": "26.1-R15.0p2"}}
+    ], "non_matches": ["GhostBSD-26.1-R15.0p2.img", "GhostBSD-26.1-R15.0p2-KDE.iso"]},
+    "gentoo": {"matches": [
+      {"filename": "install-amd64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}},
+      {"filename": "install-arm64-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "arm64", "version": "20260830T151604Z"}},
+      {"filename": "install-x86-minimal-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "minimal", "channel": "stable", "architecture": "x86", "version": "20260830T151604Z"}},
+      {"filename": "livegui-amd64-20260830T151604Z.iso", "identity": {"product_id": "gentoo", "edition": "livegui", "channel": "stable", "architecture": "amd64", "version": "20260830T151604Z"}}
+    ], "non_matches": ["install-amd64-minimal-latest.iso", "livegui-arm64-20260830T151604Z.iso"]},
     "gparted-live": {"matches": [{"filename": "gparted-live-1.7.0-1-amd64.iso", "identity": {"product_id": "gparted-live", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "1.7.0-1"}}], "non_matches": ["gparted-live-1.8.1-6-i686.iso", "gparted-live-testing-amd64.iso"]},
+    "haiku": {"matches": [
+      {"filename": "haiku-r1beta6-x86_64-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_64", "version": "r1beta6"}},
+      {"filename": "haiku-r1beta6-x86_gcc2h-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_gcc2h", "version": "r1beta6"}}
+    ], "non_matches": ["haiku-r1beta6-x86_64-anyboot.zip", "haiku-nightly-x86_64-anyboot.iso"]},
+    "grml": {"matches": [
+      {"filename": "grml-full-2026.04-amd64.iso", "identity": {"product_id": "grml", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "2026.04"}},
+      {"filename": "grml-small-2026.04-arm64.iso", "identity": {"product_id": "grml", "edition": "small", "channel": "stable", "architecture": "arm64", "version": "2026.04"}}
+    ], "non_matches": ["grml32-full_2024.02.iso", "grml-full-amd64-testing.iso"]},
+    "hirens-bootcd-pe": {"matches": [{"filename": "HBCD_PE_x64.iso", "identity": {"product_id": "hirens-bootcd-pe", "edition": "pe", "channel": "stable", "architecture": "x86_64", "version": null}}], "non_matches": ["HBCD_PE_x86.iso", "HBCD_PE_x64.zip"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
     ], "non_matches": ["kali-linux-weekly-live-amd64.iso", "kali-linux-2026.2-live-amd64.iso.torrent"]},
+    "kde-neon": {"matches": [
+      {"filename": "neon-user-desktop-20260903-0454.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "user", "architecture": "x86_64", "version": "20260903-0454"}},
+      {"filename": "neon-testing-desktop-20260901-0146.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64", "version": "20260901-0146"}},
+      {"filename": "neon-unstable-desktop-20260830-0628.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "unstable", "architecture": "x86_64", "version": "20260830-0628"}}
+    ], "non_matches": ["neon-user-desktop-current.iso", "neon-user-mobile-20260903-0454.iso"]},
     "linux-mint": {"matches": [
       {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
       {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}}
     ], "non_matches": ["linuxmint-22.3-cinnamon-32bit.iso", "linuxmint-22.3-lmde-64bit.iso"]},
+    "mageia": {"matches": [
+      {"filename": "Mageia-10-x86_64.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "x86_64", "version": "10"}},
+      {"filename": "Mageia-10-i686.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "i686", "version": "10"}},
+      {"filename": "Mageia-10-Live-GNOME-x86_64.iso", "identity": {"product_id": "mageia", "edition": "GNOME", "channel": "stable", "architecture": "x86_64", "version": "10"}},
+      {"filename": "Mageia-10-Live-Xfce-i686.iso", "identity": {"product_id": "mageia", "edition": "Xfce", "channel": "stable", "architecture": "i686", "version": "10"}}
+    ], "non_matches": ["Mageia-10-Live-GNOME-i686.iso", "Mageia-10-x86_64.iso.sha512", "Mageia-Cauldron-x86_64.iso"]},
     "manjaro": {"matches": [
       {"filename": "manjaro-kde-26.1.1-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "kde", "flavor": "full", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},
       {"filename": "manjaro-xfce-26.1.1-minimal-260825-linux71.iso", "identity": {"product_id": "manjaro", "edition": "xfce", "flavor": "minimal", "channel": "stable", "architecture": "x86_64", "version": "26.1.1", "build": "260825"}},
@@ -51,6 +93,15 @@
       {"filename": "mt86plus_8.10_x86_64.grub.iso", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "x86_64", "version": "8.10"}},
       {"filename": "mt86plus_8.10_i586.iso", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "i586", "version": "8.10"}}
     ], "non_matches": ["memtest86-usb.img", "mt86plus_8.10_x86_64.iso.zip"]},
+    "netboot-xyz": {"matches": [
+      {"filename": "netboot.xyz.iso", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": null}},
+      {"filename": "netboot.xyz-legacy.iso", "identity": {"product_id": "netboot-xyz", "edition": "legacy", "channel": "stable", "architecture": "x86_64", "version": null}},
+      {"filename": "netboot.xyz-arm64.iso", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "arm64", "version": null}}
+    ], "non_matches": ["netboot.xyz.img", "netboot.xyz-rpi4.iso"]},
+    "netbsd": {"matches": [
+      {"filename": "NetBSD-11.0-amd64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "amd64", "version": "11.0"}},
+      {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}}
+    ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso"]},
     "nixos": {"matches": [
       {"filename": "nixos-plasma5-23.11.7202.e7cc61784ddf-x86_64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "flavor": "plasma5", "channel": "stable", "architecture": "x86_64", "version": "23.11.7202.e7cc61784ddf"}},
       {"filename": "nixos-graphical-26.05.8846.a3116115851d-aarch64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "channel": "stable", "architecture": "aarch64", "version": "26.05.8846.a3116115851d"}},
@@ -69,35 +120,93 @@
       {"filename": "openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "KDE-Live", "channel": "rolling", "architecture": "aarch64", "version": "Current"}},
       {"filename": "openSUSE-Tumbleweed-Rescue-CD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "Rescue-CD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}}
     ], "non_matches": ["openSUSE-Leap-16.0-DVD-x86_64.iso", "openSUSE-Tumbleweed-DVD-x86_64.iso"]},
+    "parrot-os": {"matches": [
+      {"filename": "Parrot-home-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "home", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-security-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "security", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-spin-htb-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "htb", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
+      {"filename": "Parrot-spin-lxqt-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "lxqt", "channel": "stable", "architecture": "amd64", "version": "7.3"}}
+    ], "non_matches": ["Parrot-home-7.3_arm64.iso", "Parrot-security-7.3_amd64.ova", "Parrot-core-7.3_amd64.iso"]},
     "pop-os": {"matches": [
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
     ], "non_matches": ["pop-os_24.04_amd64_intel_27.iso", "pop-os_24.04_x86_64_generic_27.iso"]},
+    "porteux": {"matches": [
+      {"filename": "porteux-2.8-current-xfce-4.20-x86_64.iso", "identity": {"product_id": "porteux", "edition": "xfce", "channel": "current", "architecture": "x86_64", "version": "2.8", "build": "4.20"}},
+      {"filename": "porteux-2.4-stable-kde-5.23.5-x86_64.iso", "identity": {"product_id": "porteux", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "2.4", "build": "5.23.5"}}
+    ], "non_matches": ["porteux-2.8-current-xfce-4.20-aarch64.iso", "porteux-current-xfce-x86_64.iso"]},
     "proxmox": {"matches": [
       {"filename": "proxmox-ve_9.2-1.iso", "identity": {"product_id": "proxmox-ve", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "9.2-1"}},
       {"filename": "proxmox-ve_9.2-1-arm64.iso", "identity": {"product_id": "proxmox-ve", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "9.2-1"}},
       {"filename": "proxmox-backup-server_4.2-1.iso", "identity": {"product_id": "proxmox-backup-server", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "4.2-1"}},
       {"filename": "proxmox-mailgateway_7.3-1.iso", "identity": {"product_id": "proxmox-mail-gateway", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "7.3-1"}}
     ], "non_matches": ["proxmox-ve_9.2-1-aarch64.iso", "proxmox-backup-server_4.2-1-arm64.iso"]},
+    "qubes-os": {"matches": [
+      {"filename": "Qubes-R4.3.1-x86_64.iso", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "4.3.1"}}
+    ], "non_matches": ["Qubes-R4.3.1-aarch64.iso", "Qubes-R4.3.1-x86_64.iso.asc"]},
     "rescuezilla": {"matches": [
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
       {"filename": "rescuezilla-2.6.2-64bit.noble.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "noble", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}}
     ], "non_matches": ["rescuezilla-2.6.2-32bit.resolute.iso", "rescuezilla-2.6.2-64bit.unknown.iso"]},
+    "rocky-linux": {"matches": [
+      {"filename": "Rocky-9.8-x86_64-minimal.iso", "identity": {"product_id": "rocky-linux", "edition": "minimal", "channel": "9", "architecture": "x86_64", "version": "9.8"}},
+      {"filename": "Rocky-10-latest-aarch64-boot.iso", "identity": {"product_id": "rocky-linux", "edition": "boot", "flavor": "latest-alias", "channel": "10", "architecture": "aarch64", "version": "latest"}}
+    ], "non_matches": ["Rocky-9.8-x86_64-live.iso", "Rocky-Linux-9.8-x86_64-minimal.iso"]},
+    "shredos": {"matches": [
+      {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716.iso", "identity": {"product_id": "shredos", "edition": "standard", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite.iso", "identity": {"product_id": "shredos", "edition": "lite", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "standard", "flavor": "plus-partition", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
+      {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "lite", "flavor": "plus-partition", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}}
+    ], "non_matches": ["shredos-2025.11_31_x86-64_v0.42_20260716.img", "shredos-latest-x86-64.iso"]},
+    "solus": {"matches": [
+      {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
+      {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}
+    ], "non_matches": ["Solus-Budgie-Testing-2026-04-18.iso", "Solus-Budgie-Release.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
+    "truenas": {"matches": [
+      {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
+      {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}
+    ], "non_matches": ["TrueNAS-SCALE-25.10.7.img", "TrueNAS-Enterprise-25.10.7.iso"]},
     "ubuntu": {"matches": [
       {"filename": "ubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntu-25.10-live-server-arm64.iso", "identity": {"product_id": "ubuntu", "edition": "live-server", "channel": "interim", "architecture": "arm64", "version": "25.10"}}
     ], "non_matches": ["ubuntu-26.04.1-desktop-i386.iso", "ubuntu-26.04.1-netboot-amd64.iso"]},
+    "ubuntu-flavors": {"matches": [
+      {"filename": "kubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "kubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "lubuntu-25.10-desktop-amd64.iso", "identity": {"product_id": "lubuntu", "edition": "desktop", "channel": "interim", "architecture": "amd64", "version": "25.10"}},
+      {"filename": "xubuntu-24.04.4-desktop-amd64.iso", "identity": {"product_id": "xubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "24.04.4"}},
+      {"filename": "ubuntu-budgie-26.04-desktop-amd64.iso", "identity": {"product_id": "ubuntu-budgie", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04"}},
+      {"filename": "ubuntu-unity-26.04-desktop-amd64.iso", "identity": {"product_id": "ubuntu-unity", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04"}},
+      {"filename": "ubuntu-mate-24.04.4-desktop-amd64.iso", "identity": {"product_id": "ubuntu-mate", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "24.04.4"}},
+      {"filename": "ubuntucinnamon-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntucinnamon", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "edubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "edubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "ubuntustudio-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntustudio", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "ubuntukylin-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntukylin", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}}
+    ], "non_matches": ["kubuntu-26.04.1-desktop-arm64.iso", "xubuntu-26.04.1-minimal-amd64.iso", "ubuntu-mate-26.04-desktop-arm64.iso"]},
     "vanilla-os": {"matches": [
       {"filename": "Vanilla-OS-3-stable-amd64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "3", "build": "20260828"}},
       {"filename": "Vanilla-OS-3-stable-arm64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "arm64", "version": "3", "build": "20260828"}},
       {"filename": "VanillaOS-22.10-all.20231009.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "22.10", "build": "20231009"}}
     ], "non_matches": ["Vanilla-OS-3-testing-amd64.20260828.iso", "Vanilla-OS-3-stable-amd64.iso"]},
+    "void-linux": {"matches": [
+      {"filename": "void-live-x86_64-20250202-base.iso", "identity": {"product_id": "void-linux", "edition": "base", "flavor": "glibc", "channel": "stable", "architecture": "x86_64", "version": "20250202"}},
+      {"filename": "void-live-x86_64-musl-20250202-xfce.iso", "identity": {"product_id": "void-linux", "edition": "xfce", "flavor": "musl", "channel": "stable", "architecture": "x86_64", "version": "20250202"}},
+      {"filename": "void-live-aarch64-20250202-base.iso", "identity": {"product_id": "void-linux", "edition": "base", "flavor": "glibc", "channel": "stable", "architecture": "aarch64", "version": "20250202"}},
+      {"filename": "void-live-asahi-musl-20250202-xfce.iso", "identity": {"product_id": "void-linux", "edition": "xfce", "flavor": "musl", "channel": "stable", "architecture": "asahi", "version": "20250202"}}
+    ], "non_matches": ["void-live-i686-musl-20250202-base.iso", "void-x86_64-ROOTFS-20250202.tar.xz", "void-live-x86_64-current-base.iso"]},
+    "windows-10": {"matches": [
+      {"filename": "Win10_22H2_German_x64v1.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "22H2", "build": "1"}},
+      {"filename": "Win10_22H2_English_x32v1.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86", "language": "en-us", "version": "22H2", "build": "1"}},
+      {"filename": "Win10_22H2_EnglishInternational_x64.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-gb", "version": "22H2", "build": null}}
+    ], "non_matches": ["Win10_22H2_German_arm64.iso", "Win10_22H2_French_x64.iso", "Win10_22H2_German_x64.iso.sha256"]},
     "windows-11": {"matches": [
       {"filename": "Win11_25H2_German_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "25H2"}},
       {"filename": "Win11_25H2_English_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-us", "version": "25H2"}}
     ], "non_matches": ["Win10_22H2_German_x64.iso", "Win11_25H2_German_arm64.iso"]},
+    "windows-server": {"matches": [
+      {"filename": "SERVER_EVAL_x64FRE_de-de.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "de-de", "version": null}},
+      {"filename": "26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "en-us", "version": null, "build": "26100.1742.240906-0331.ge_release_svc_refresh"}}
+    ], "non_matches": ["SERVER_EVAL_arm64FRE_en-us.iso", "SERVER_EVAL_x64FRE_pt-br.iso", "SERVER_EVAL_x64FRE_en-us.iso.sha256"]},
     "zorin-os": {"matches": [
       {"filename": "Zorin-OS-18.1-Core-64-bit.iso", "identity": {"product_id": "zorin-os", "edition": "Core", "channel": "stable", "architecture": "x86_64", "version": "18.1", "build": null}},
       {"filename": "Zorin-OS-17.3-Education-64-bit-r2.iso", "identity": {"product_id": "zorin-os", "edition": "Education", "channel": "stable", "architecture": "x86_64", "version": "17.3", "build": "2"}},
