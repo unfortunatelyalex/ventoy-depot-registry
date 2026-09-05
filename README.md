@@ -35,7 +35,7 @@ are incremented and all roles receive their documented expiration periods.
 
 ## Curated providers
 
-The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, Ubuntu and five official Ubuntu flavors,
+The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, Ubuntu and ten official Ubuntu flavors,
 CentOS Stream, Debian, Fedora,
 FreeBSD, Gentoo, GhostBSD, Grml, Haiku, Hiren's BootCD PE, Qubes OS, Rocky Linux,
 openSUSE Tumbleweed,
