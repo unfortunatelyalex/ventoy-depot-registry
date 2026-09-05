@@ -42,7 +42,7 @@ Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, KDE
 Memtest86+,
 netboot.xyz, NetBSD, NixOS, Omarchy, Manjaro, Parrot OS, Pop!_OS, PorteuX, Proxmox installers,
 Rescuezilla, Nobara, ShredOS, Solus, SystemRescue, Tails, TrueNAS Community Edition,
-Vanilla OS, Void Linux, Windows 11 and Zorin OS.
+Vanilla OS, Void Linux, Windows 10/11, Windows Server Evaluation and Zorin OS.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared
 positive and negative fixtures.

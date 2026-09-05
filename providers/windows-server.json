@@ -1,0 +1,11 @@
+{
+  "schema_version": 1, "provider_id": "windows-server", "display_name": "Windows Server Evaluation", "homepage_url": "https://www.microsoft.com/evalcenter/download-windows-server-2025", "driver": "static-html",
+  "allowed_hosts": ["www.microsoft.com", "software-download.microsoft.com", "go.microsoft.com"],
+  "capabilities": {"products": ["windows-server"], "editions": ["evaluation"], "flavors": ["standard-datacenter"], "architectures": ["x86_64"], "languages": ["en-us", "de-de", "es-es", "fr-fr", "it-it", "ja-jp", "ru-ru", "zh-cn"], "channels": ["evaluation"]},
+  "release_sources": [{"source_id": "server-evaluation", "metadata_url": "https://www.microsoft.com/evalcenter/download-windows-server-2025", "artifact_regex": "^(?:(?P<build>\\d+\\.\\d+\\.\\d{6}-\\d{4}\\.[A-Za-z0-9_-]+)_)?SERVER_EVAL_x64FRE_(?P<language>en-us|de-de|es-es|fr-fr|it-it|ja-jp|ru-ru|zh-cn)\\.iso$", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64"}, "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}, "automatic_download": false}],
+  "detection": [
+    {"regex": "^(?P<build>\\d+\\.\\d+\\.\\d{6}-\\d{4}\\.[A-Za-z0-9_-]+)_SERVER_EVAL_x64FRE_(?P<language>en-us|de-de|es-es|fr-fr|it-it|ja-jp|ru-ru|zh-cn)\\.iso$", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "$group:language", "version": null, "build": "$group:build"}, "downloadable": false},
+    {"regex": "^SERVER_EVAL_x64FRE_(?P<language>en-us|de-de|es-es|fr-fr|it-it|ja-jp|ru-ru|zh-cn)\\.iso$", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "$group:language", "version": null}, "downloadable": false}
+  ],
+  "notes": ["Evaluation media is time-limited and requires activation according to Microsoft's terms. Automatic form submission and short-lived URL acquisition are intentionally disabled."]
+}

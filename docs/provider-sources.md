@@ -49,7 +49,8 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | TrueNAS Community Edition | official Community Edition page and release hosts | official SHA-256 sidecar | stable and beta channels remain distinct; enterprise media is excluded |
 | Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
 | Void Linux | official `repo-default.voidlinux.org/live/current` directory | official SHA-256 checksum list | base/Xfce, glibc/musl and architecture remain distinct; Minisign trust is not yet provisioned |
-| Windows 11 | `microsoft.com/software-download/windows11` | SHA-256 from Microsoft's language table | detection and user-supplied official links only |
+| Windows 10/11 | official Microsoft software-download pages | SHA-256 from Microsoft's language table | detection and user-supplied official links only; product, language and architecture remain distinct |
+| Windows Server Evaluation | official Microsoft Evaluation Center | official SHA-256 value | detection and user-supplied official links only; evaluation and activation warnings apply |
 | Zorin OS | official download and help pages | SHA-256 from official integrity table | Core/Education/Lite only; Pro is detection-only |
 
 ## Key decisions

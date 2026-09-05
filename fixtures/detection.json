@@ -182,10 +182,19 @@
       {"filename": "void-live-aarch64-20250202-base.iso", "identity": {"product_id": "void-linux", "edition": "base", "flavor": "glibc", "channel": "stable", "architecture": "aarch64", "version": "20250202"}},
       {"filename": "void-live-asahi-musl-20250202-xfce.iso", "identity": {"product_id": "void-linux", "edition": "xfce", "flavor": "musl", "channel": "stable", "architecture": "asahi", "version": "20250202"}}
     ], "non_matches": ["void-live-i686-musl-20250202-base.iso", "void-x86_64-ROOTFS-20250202.tar.xz", "void-live-x86_64-current-base.iso"]},
+    "windows-10": {"matches": [
+      {"filename": "Win10_22H2_German_x64v1.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "22H2", "build": "1"}},
+      {"filename": "Win10_22H2_English_x32v1.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86", "language": "en-us", "version": "22H2", "build": "1"}},
+      {"filename": "Win10_22H2_EnglishInternational_x64.iso", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-gb", "version": "22H2", "build": null}}
+    ], "non_matches": ["Win10_22H2_German_arm64.iso", "Win10_22H2_French_x64.iso", "Win10_22H2_German_x64.iso.sha256"]},
     "windows-11": {"matches": [
       {"filename": "Win11_25H2_German_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "25H2"}},
       {"filename": "Win11_25H2_English_x64.iso", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-us", "version": "25H2"}}
     ], "non_matches": ["Win10_22H2_German_x64.iso", "Win11_25H2_German_arm64.iso"]},
+    "windows-server": {"matches": [
+      {"filename": "SERVER_EVAL_x64FRE_de-de.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "de-de", "version": null}},
+      {"filename": "26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "en-us", "version": null, "build": "26100.1742.240906-0331.ge_release_svc_refresh"}}
+    ], "non_matches": ["SERVER_EVAL_arm64FRE_en-us.iso", "SERVER_EVAL_x64FRE_pt-br.iso", "SERVER_EVAL_x64FRE_en-us.iso.sha256"]},
     "zorin-os": {"matches": [
       {"filename": "Zorin-OS-18.1-Core-64-bit.iso", "identity": {"product_id": "zorin-os", "edition": "Core", "channel": "stable", "architecture": "x86_64", "version": "18.1", "build": null}},
       {"filename": "Zorin-OS-17.3-Education-64-bit-r2.iso", "identity": {"product_id": "zorin-os", "edition": "Education", "channel": "stable", "architecture": "x86_64", "version": "17.3", "build": "2"}},
