@@ -20,18 +20,21 @@ Run `python scripts/validate_registry.py` before submitting a provider. Fixtures
 contain both matching and non-matching filenames. Downloads must be free, public,
 official, HTTPS-only, checksum verified and bound to explicit variants.
 
-The repository owner initializes signing once from a trusted machine. The key directory
-must be outside this checkout and backed up offline:
+The repository owner initializes signing once from a trusted machine. Root and targets
+keys use an offline directory; snapshot and timestamp keys use a separate publishing
+directory. Both must be outside this checkout, and the offline directory must be backed up:
 
 ```console
 python -m pip install -r requirements-signing.txt
-python scripts/tuf_repository.py init /secure/offline/ventoy-depot-keys
+python scripts/tuf_repository.py init /secure/offline/ventoy-depot-keys \
+  --online-key-directory /secure/publishing/ventoy-depot-keys
 ```
 
 Review and commit the generated `public/` tree, then copy the exact generated
 `public/metadata/root.json` into the application's bundled registry directory. Later
-registry releases use `publish` with the same external key directory; metadata versions
-are incremented and all roles receive their documented expiration periods.
+registry releases use `publish` with both external key directories; metadata versions are
+incremented and all roles receive their documented expiration periods. The command refuses
+identical or nested key directories so the role separation cannot be accidentally bypassed.
 
 ## Curated providers
 
