@@ -171,6 +171,13 @@
       {"filename": "ubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntu-25.10-live-server-arm64.iso", "identity": {"product_id": "ubuntu", "edition": "live-server", "channel": "interim", "architecture": "arm64", "version": "25.10"}}
     ], "non_matches": ["ubuntu-26.04.1-desktop-i386.iso", "ubuntu-26.04.1-netboot-amd64.iso"]},
+    "ubuntu-flavors": {"matches": [
+      {"filename": "kubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "kubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
+      {"filename": "lubuntu-25.10-desktop-amd64.iso", "identity": {"product_id": "lubuntu", "edition": "desktop", "channel": "interim", "architecture": "amd64", "version": "25.10"}},
+      {"filename": "xubuntu-24.04.4-desktop-amd64.iso", "identity": {"product_id": "xubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "24.04.4"}},
+      {"filename": "ubuntu-budgie-26.04-desktop-amd64.iso", "identity": {"product_id": "ubuntu-budgie", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04"}},
+      {"filename": "ubuntu-unity-26.04-desktop-amd64.iso", "identity": {"product_id": "ubuntu-unity", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04"}}
+    ], "non_matches": ["kubuntu-26.04.1-desktop-arm64.iso", "xubuntu-26.04.1-minimal-amd64.iso", "ubuntu-mate-26.04-desktop-amd64.iso"]},
     "vanilla-os": {"matches": [
       {"filename": "Vanilla-OS-3-stable-amd64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "3", "build": "20260828"}},
       {"filename": "Vanilla-OS-3-stable-arm64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "arm64", "version": "3", "build": "20260828"}},
