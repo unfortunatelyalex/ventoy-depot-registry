@@ -7,5 +7,6 @@
     {"regex": "^Win11_(?P<version>\\d{2}H\\d)_German_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "de-de", "version": "$group:version"}, "downloadable": false},
     {"regex": "^Win11_(?P<version>\\d{2}H\\d)_English_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-us", "version": "$group:version"}, "downloadable": false},
     {"regex": "^Win11_(?P<version>\\d{2}H\\d)_EnglishInternational_x64\\.iso$", "identity": {"product_id": "windows-11", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-gb", "version": "$group:version"}, "downloadable": false}
-  ]
+  ],
+  "notes": ["The TUI accepts a user-supplied temporary Microsoft URL and published SHA-256 only when filename identity, language and architecture match. Microsoft form submission is never automated."]
 }

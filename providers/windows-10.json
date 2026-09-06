@@ -14,5 +14,5 @@
     {"regex": "^Win10_(?P<version>\\d{2}H\\d)_EnglishInternational_x64(?:v(?P<build>\\d+))?\\.iso$", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86_64", "language": "en-gb", "version": "$group:version", "build": "$group:build"}, "downloadable": false},
     {"regex": "^Win10_(?P<version>\\d{2}H\\d)_EnglishInternational_x32(?:v(?P<build>\\d+))?\\.iso$", "identity": {"product_id": "windows-10", "edition": "multi-edition", "flavor": "consumer", "channel": "stable", "architecture": "x86", "language": "en-gb", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
   ],
-  "notes": ["Automatic acquisition of Microsoft's short-lived download URLs is disabled. Supply an official ISO and verify it against Microsoft's published SHA-256 value."]
+  "notes": ["Automatic acquisition of Microsoft's short-lived download URLs is disabled. The TUI accepts a user-supplied official Microsoft URL and published SHA-256 only when filename identity, language and architecture match."]
 }

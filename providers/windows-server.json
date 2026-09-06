@@ -7,5 +7,5 @@
     {"regex": "^(?P<build>\\d+\\.\\d+\\.\\d{6}-\\d{4}\\.[A-Za-z0-9_-]+)_SERVER_EVAL_x64FRE_(?P<language>en-us|de-de|es-es|fr-fr|it-it|ja-jp|ru-ru|zh-cn)\\.iso$", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "$group:language", "version": null, "build": "$group:build"}, "downloadable": false},
     {"regex": "^SERVER_EVAL_x64FRE_(?P<language>en-us|de-de|es-es|fr-fr|it-it|ja-jp|ru-ru|zh-cn)\\.iso$", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "$group:language", "version": null}, "downloadable": false}
   ],
-  "notes": ["Evaluation media is time-limited and requires activation according to Microsoft's terms. Automatic form submission and short-lived URL acquisition are intentionally disabled."]
+  "notes": ["Evaluation media is time-limited and requires activation according to Microsoft's terms. Automatic form submission is disabled; the TUI accepts a matching official Microsoft URL and published SHA-256 supplied by the user."]
 }
