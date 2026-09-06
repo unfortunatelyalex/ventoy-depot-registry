@@ -117,6 +117,11 @@
       {"filename": "NetBSD-11.0-amd64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "amd64", "version": "11.0"}},
       {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}}
     ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso"]},
+    "openindiana": {"matches": [
+      {"filename": "OI-hipster-gui-20260430.iso", "identity": {"product_id": "openindiana", "edition": "gui", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
+      {"filename": "OI-hipster-text-20260430.iso", "identity": {"product_id": "openindiana", "edition": "text", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
+      {"filename": "OI-hipster-minimal-20260430.iso", "identity": {"product_id": "openindiana", "edition": "minimal", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}}
+    ], "non_matches": ["OI-hipster-gui-20260430.usb", "OI-hipster-cloudimage-20251031.iso"]},
     "nixos": {"matches": [
       {"filename": "nixos-plasma5-23.11.7202.e7cc61784ddf-x86_64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "flavor": "plasma5", "channel": "stable", "architecture": "x86_64", "version": "23.11.7202.e7cc61784ddf"}},
       {"filename": "nixos-graphical-26.05.8846.a3116115851d-aarch64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "channel": "stable", "architecture": "aarch64", "version": "26.05.8846.a3116115851d"}},
@@ -234,6 +239,10 @@
       {"filename": "SERVER_EVAL_x64FRE_de-de.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "de-de", "version": null}},
       {"filename": "26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso", "identity": {"product_id": "windows-server", "edition": "evaluation", "flavor": "standard-datacenter", "channel": "evaluation", "architecture": "x86_64", "language": "en-us", "version": null, "build": "26100.1742.240906-0331.ge_release_svc_refresh"}}
     ], "non_matches": ["SERVER_EVAL_arm64FRE_en-us.iso", "SERVER_EVAL_x64FRE_pt-br.iso", "SERVER_EVAL_x64FRE_en-us.iso.sha256"]},
+    "xcp-ng": {"matches": [
+      {"filename": "xcp-ng-8.3.0-20260806.iso", "identity": {"product_id": "xcp-ng", "edition": "full", "channel": "lts", "architecture": "x86_64", "version": "8.3.0", "build": "20260806"}},
+      {"filename": "xcp-ng-8.3.0-20260806-netinstall.iso", "identity": {"product_id": "xcp-ng", "edition": "netinstall", "channel": "lts", "architecture": "x86_64", "version": "8.3.0", "build": "20260806"}}
+    ], "non_matches": ["xcp-ng-8.3.0-20260806-upgrade.iso", "xcp-ng-8.3.0-20260806.img"]},
     "zorin-os": {"matches": [
       {"filename": "Zorin-OS-18.1-Core-64-bit.iso", "identity": {"product_id": "zorin-os", "edition": "Core", "channel": "stable", "architecture": "x86_64", "version": "18.1", "build": null}},
       {"filename": "Zorin-OS-17.3-Education-64-bit-r2.iso", "identity": {"product_id": "zorin-os", "edition": "Education", "channel": "stable", "architecture": "x86_64", "version": "17.3", "build": "2"}},
