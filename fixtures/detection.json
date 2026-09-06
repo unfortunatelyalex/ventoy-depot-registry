@@ -5,6 +5,12 @@
       {"filename": "AlmaLinux-10.2-aarch64-dvd.iso", "identity": {"product_id": "almalinux", "edition": "dvd", "channel": "10", "architecture": "aarch64", "version": "10.2"}},
       {"filename": "AlmaLinux-9-latest-x86_64-minimal.iso", "identity": {"product_id": "almalinux", "edition": "minimal", "flavor": "latest-alias", "channel": "9", "architecture": "x86_64", "version": "latest"}}
     ], "non_matches": ["AlmaLinux-10.2-x86_64-cloud.iso", "AlmaLinux-10-Kitten-x86_64-dvd.iso"]},
+    "alt-rescue": {"matches": [
+      {"filename": "alt-p10-rescue-20240309-i586.iso", "identity": {"product_id": "alt-rescue", "edition": "rescue", "channel": "p10", "architecture": "i586", "version": "20240309"}},
+      {"filename": "alt-p10-rescue-20240309-x86_64.iso", "identity": {"product_id": "alt-rescue", "edition": "rescue", "channel": "p10", "architecture": "x86_64", "version": "20240309"}},
+      {"filename": "alt-p11-rescue-20260612-x86_64.iso", "identity": {"product_id": "alt-rescue", "edition": "rescue", "channel": "p11", "architecture": "x86_64", "version": "20260612"}},
+      {"filename": "alt-p11-rescue-live-20260612-x86_64.iso", "identity": {"product_id": "alt-rescue", "edition": "rescue-live", "channel": "p11", "architecture": "x86_64", "version": "20260612"}}
+    ], "non_matches": ["alt-p11-rescue-20260612-i586.iso", "alt-p10-rescue-live-20240309-x86_64.iso", "alt-sisyphus-rescue-20260902-x86_64.iso"]},
     "alpine": {"matches": [
       {"filename": "alpine-standard-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}},
       {"filename": "alpine-extended-3.24.1-x86.iso", "identity": {"product_id": "alpine-linux", "edition": "extended", "channel": "stable", "architecture": "x86", "version": "3.24.1"}},
@@ -39,6 +45,10 @@
       {"filename": "Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "MATE_Compiz", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
       {"filename": "Fedora-Silverblue-ostree-x86_64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Silverblue", "flavor": "ostree", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.4"}}
     ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso", "Fedora-Xfce-Live-44-1.7.aarch64.iso"]},
+    "finnix": {"matches": [
+      {"filename": "finnix-251.iso", "identity": {"product_id": "finnix", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "251"}},
+      {"filename": "finnix-120.1.iso", "identity": {"product_id": "finnix", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "120.1"}}
+    ], "non_matches": ["finnix-latest.iso", "finnix-251-arm64.iso", "finnix-251.iso.gpg"]},
     "freebsd": {"matches": [
       {"filename": "FreeBSD-15.0-RELEASE-amd64-dvd1.iso", "identity": {"product_id": "freebsd", "edition": "dvd1", "channel": "release", "architecture": "amd64", "version": "15.0"}},
       {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
@@ -115,6 +125,13 @@
       {"filename": "omarchy-4.0.2.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}},
       {"filename": "omarchy-4.0.2-x86_64.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}}
     ], "non_matches": ["omarchy-latest.iso", "omarchy-4.0.2-aarch64.iso"]},
+    "opensuse-leap": {"matches": [
+      {"filename": "openSUSE-Leap-15.6-DVD-x86_64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "DVD", "channel": "15.6", "architecture": "x86_64", "version": "15.6"}},
+      {"filename": "openSUSE-Leap-15.6-NET-aarch64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "NET", "channel": "15.6", "architecture": "aarch64", "version": "15.6"}},
+      {"filename": "Leap-16.0-offline-installer-x86_64-Build178.27.install.iso", "identity": {"product_id": "opensuse-leap", "edition": "offline", "channel": "16.0", "architecture": "x86_64", "version": "16.0", "build": "178.27"}},
+      {"filename": "Leap-16.0-online-installer-aarch64-Build178.27.install.iso", "identity": {"product_id": "opensuse-leap", "edition": "online", "channel": "16.0", "architecture": "aarch64", "version": "16.0", "build": "178.27"}},
+      {"filename": "Leap-16.0-online-installer-x86_64.install.iso", "identity": {"product_id": "opensuse-leap", "edition": "online", "channel": "16.0", "architecture": "x86_64", "version": "16.0"}}
+    ], "non_matches": ["openSUSE-Leap-16.0-DVD-x86_64-Media.iso", "Leap-16.0-offline-installer-arm64.install.iso", "Leap-16.0-online-installer-x86_64.raw"]},
     "opensuse-tumbleweed": {"matches": [
       {"filename": "openSUSE-Tumbleweed-DVD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "DVD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}},
       {"filename": "openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "KDE-Live", "channel": "rolling", "architecture": "aarch64", "version": "Current"}},

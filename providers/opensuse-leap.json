@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "provider_id": "opensuse-leap",
+  "display_name": "openSUSE Leap",
+  "homepage_url": "https://get.opensuse.org/leap/",
+  "driver": "directory-index",
+  "allowed_hosts": ["get.opensuse.org", "download.opensuse.org"],
+  "capabilities": {
+    "products": ["opensuse-leap"],
+    "editions": ["dvd", "net", "offline", "online"],
+    "flavors": [],
+    "architectures": ["x86_64", "aarch64", "ppc64le", "s390x"],
+    "languages": [],
+    "channels": ["15.6", "16.0"]
+  },
+  "release_sources": [
+    {
+      "source_id": "leap-15.6",
+      "metadata_url": "https://download.opensuse.org/distribution/leap/15.6/iso/",
+      "artifact_regex": "^openSUSE-Leap-(?P<version>15\\.6)-(?P<edition>DVD|NET)-(?P<architecture>x86_64|aarch64|ppc64le|s390x)-Media\\.iso$",
+      "identity": {"product_id": "opensuse-leap", "edition": "$group:edition", "channel": "15.6", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://download.opensuse.org/distribution/leap/15.6/iso/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}
+    },
+    {
+      "source_id": "leap-16.0",
+      "metadata_url": "https://download.opensuse.org/distribution/leap/16.0/offline/",
+      "artifact_regex": "^Leap-(?P<version>16\\.0)-(?P<edition>offline|online)-installer-(?P<architecture>x86_64|aarch64|ppc64le|s390x)-Build(?P<build>\\d+(?:\\.\\d+)+)\\.install\\.iso$",
+      "identity": {"product_id": "opensuse-leap", "edition": "$group:edition", "channel": "16.0", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://download.opensuse.org/distribution/leap/16.0/offline/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "suffix": ".sha512"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^openSUSE-Leap-(?P<version>15\\.6)-(?P<edition>DVD|NET)-(?P<architecture>x86_64|aarch64|ppc64le|s390x)-Media\\.iso$",
+      "identity": {"product_id": "opensuse-leap", "edition": "$group:edition", "channel": "15.6", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^Leap-(?P<version>16\\.0)-(?P<edition>offline|online)-installer-(?P<architecture>x86_64|aarch64|ppc64le|s390x)-Build(?P<build>\\d+(?:\\.\\d+)+)\\.install\\.iso$",
+      "identity": {"product_id": "opensuse-leap", "edition": "$group:edition", "channel": "16.0", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"},
+      "downloadable": true
+    },
+    {
+      "regex": "^Leap-(?P<version>16\\.0)-(?P<edition>offline|online)-installer-(?P<architecture>x86_64|aarch64|ppc64le|s390x)\\.install\\.iso$",
+      "identity": {"product_id": "opensuse-leap", "edition": "$group:edition", "channel": "16.0", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["Leap 15.6 and Leap 16.0 remain separate channels. The provider never migrates an installed medium across the major-release boundary.", "Leap 16.0 offline media exists for x86_64 only; the integrated resolver rejects impossible edition/architecture combinations."]
+}
