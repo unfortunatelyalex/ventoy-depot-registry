@@ -37,6 +37,10 @@
       {"filename": "debian-13.6.0-arm64-DVD-1.iso", "identity": {"product_id": "debian", "edition": "DVD-1", "channel": "stable", "architecture": "arm64", "version": "13.6.0"}},
       {"filename": "debian-live-13.6.0-amd64-kde.iso", "identity": {"product_id": "debian", "edition": "live", "flavor": "kde", "channel": "stable", "architecture": "amd64", "version": "13.6.0"}}
     ], "non_matches": ["debian-13.6.0-i386-netinst.iso", "debian-live-13.6.0-amd64-unknown.iso"]},
+    "devuan": {"matches": [
+      {"filename": "devuan_excalibur_6.1.1_amd64_netinstall.iso", "identity": {"product_id": "devuan", "edition": "netinstall", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}},
+      {"filename": "devuan_excalibur_6.1.1_amd64_desktop-live.iso", "identity": {"product_id": "devuan", "edition": "desktop-live", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}}
+    ], "non_matches": ["devuan_excalibur_6.1.1_arm64_netinstall.iso", "devuan_excalibur_6.1.1_amd64_netinstall.iso.asc"]},
     "endeavouros": {"matches": [{"filename": "EndeavourOS_Titan-Nova-2026.08.15.iso", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "2026.08.15", "build": "Titan-Nova"}}], "non_matches": ["EndeavourOS_Titan-Nova-latest.iso", "EndeavourOS_Titan-Nova-2026.08.15.iso.sig"]},
     "fedora": {"matches": [
       {"filename": "Fedora-Workstation-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Workstation", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
@@ -86,7 +90,8 @@
     ], "non_matches": ["neon-user-desktop-current.iso", "neon-user-mobile-20260903-0454.iso"]},
     "linux-mint": {"matches": [
       {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
-      {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}}
+      {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
+      {"filename": "linuxmint-21.3-cinnamon-64bit-edge.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "flavor": "edge", "channel": "stable", "architecture": "x86_64", "version": "21.3"}}
     ], "non_matches": ["linuxmint-22.3-cinnamon-32bit.iso", "linuxmint-22.3-lmde-64bit.iso"]},
     "mageia": {"matches": [
       {"filename": "Mageia-10-x86_64.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "x86_64", "version": "10"}},
@@ -119,7 +124,8 @@
     ], "non_matches": ["nixos-graphical-unstable-x86_64-linux.iso", "nixos-26.05-x86_64-linux.img"]},
     "nobara": {"matches": [
       {"filename": "Nobara-44-Official-2026-08-28.iso", "identity": {"product_id": "nobara", "edition": "Official", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "2026-08-28"}},
-      {"filename": "Nobara-44-Steam-Handheld-2026-08-28.iso", "identity": {"product_id": "nobara", "edition": "Steam-Handheld", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "2026-08-28"}}
+      {"filename": "Nobara-44-Steam-Handheld-2026-08-28.iso", "identity": {"product_id": "nobara", "edition": "Steam-Handheld", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "2026-08-28"}},
+      {"filename": "Nobara-39-KDE-Nvidia-2024-01-24.iso", "identity": {"product_id": "nobara", "edition": "KDE", "flavor": "nvidia", "channel": "stable", "architecture": "x86_64", "version": "39", "build": "2024-01-24"}}
     ], "non_matches": ["Nobara-44-NVIDIA-2026-08-28.iso", "Nobara-44-Official-2026-08-28.iso.sha256sum"]},
     "omarchy": {"matches": [
       {"filename": "omarchy-4.0.2.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}},
