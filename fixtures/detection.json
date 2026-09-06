@@ -122,6 +122,12 @@
       {"filename": "OI-hipster-text-20260430.iso", "identity": {"product_id": "openindiana", "edition": "text", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
       {"filename": "OI-hipster-minimal-20260430.iso", "identity": {"product_id": "openindiana", "edition": "minimal", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}}
     ], "non_matches": ["OI-hipster-gui-20260430.usb", "OI-hipster-cloudimage-20251031.iso"]},
+    "oracle-linux": {"matches": [
+      {"filename": "OracleLinux-R10-U2-x86_64-dvd.iso", "identity": {"product_id": "oracle-linux", "edition": "dvd", "channel": "10", "architecture": "x86_64", "version": "10-U2"}},
+      {"filename": "OracleLinux-R10-U2-x86_64-boot.iso", "identity": {"product_id": "oracle-linux", "edition": "boot", "channel": "10", "architecture": "x86_64", "version": "10-U2"}},
+      {"filename": "OracleLinux-R9-U8-aarch64-boot-uek.iso", "identity": {"product_id": "oracle-linux", "edition": "boot-uek", "channel": "9", "architecture": "aarch64", "version": "9-U8"}},
+      {"filename": "OracleLinux-R8-U10-Server-aarch64-dvd.iso", "identity": {"product_id": "oracle-linux", "edition": "dvd", "channel": "8", "architecture": "aarch64", "version": "8-U10"}}
+    ], "non_matches": ["OracleLinux-R10-U2-src-dvd.iso", "OracleLinux-R10-U2-x86_64-dvd.img"]},
     "nixos": {"matches": [
       {"filename": "nixos-plasma5-23.11.7202.e7cc61784ddf-x86_64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "flavor": "plasma5", "channel": "stable", "architecture": "x86_64", "version": "23.11.7202.e7cc61784ddf"}},
       {"filename": "nixos-graphical-26.05.8846.a3116115851d-aarch64-linux.iso", "identity": {"product_id": "nixos", "edition": "graphical", "channel": "stable", "architecture": "aarch64", "version": "26.05.8846.a3116115851d"}},
