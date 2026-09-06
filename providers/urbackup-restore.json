@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "provider_id": "urbackup-restore",
+  "display_name": "UrBackup Restore Stick",
+  "homepage_url": "https://www.urbackup.org/download.html",
+  "driver": "github-releases",
+  "allowed_hosts": ["www.urbackup.org", "api.github.com", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {"products": ["urbackup-restore"], "editions": ["restore"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {
+      "source_id": "stable-x64",
+      "metadata_url": "https://api.github.com/repos/uroni/urbackup_restore_cd/releases/latest",
+      "artifact_regex": "^urbackup_restore_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$",
+      "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "release-asset"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^urbackup_restore_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$",
+      "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The ISO is linked by the official UrBackup download page and published by the project's official GitHub repository with an asset SHA-256 digest."]
+}

@@ -200,6 +200,10 @@
       {"filename": "ubuntustudio-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntustudio", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntukylin-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntukylin", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}}
     ], "non_matches": ["kubuntu-26.04.1-desktop-arm64.iso", "xubuntu-26.04.1-minimal-amd64.iso", "ubuntu-mate-26.04-desktop-arm64.iso"]},
+    "urbackup-restore": {"matches": [
+      {"filename": "urbackup_restore_2.6.0.iso", "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64", "version": "2.6.0"}},
+      {"filename": "urbackup_restore_2.5.1.iso", "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64", "version": "2.5.1"}}
+    ], "non_matches": ["urbackup_restore_latest.iso", "urbackup_restore_2.6.0.img", "urbackup_restore_2.6.0.iso.sha256"]},
     "vanilla-os": {"matches": [
       {"filename": "Vanilla-OS-3-stable-amd64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "amd64", "version": "3", "build": "20260828"}},
       {"filename": "Vanilla-OS-3-stable-arm64.20260828.iso", "identity": {"product_id": "vanilla-os", "channel": "stable", "architecture": "arm64", "version": "3", "build": "20260828"}},
