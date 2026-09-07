@@ -23,6 +23,10 @@
       {"filename": "artix-community-qt-openrc-20260821-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "community-qt", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260821"}},
       {"filename": "artix-stable-plasma-dinit-20260813-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "plasma", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "20260813"}}
     ], "non_matches": ["artix-base-openrc-20260903-x86_64.iso", "artix-testing-plasma-dinit-20260813-x86_64.iso", "artix-base-systemd-20260813-x86_64.iso"]},
+    "backbox": {"matches": [
+      {"filename": "backbox-9-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "9"}},
+      {"filename": "backbox-8.1-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "8.1"}}
+    ], "non_matches": ["backbox-9-server-amd64.iso", "backbox-9-desktop-arm64.iso", "backbox-9-desktop-amd64.iso.sha256"]},
     "cachyos": {"matches": [
       {"filename": "cachyos-desktop-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
       {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
