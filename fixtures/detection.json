@@ -21,6 +21,11 @@
       {"filename": "alpine-virtual-3.24.1-aarch64.iso", "identity": {"product_id": "alpine-linux", "edition": "virtual", "channel": "stable", "architecture": "aarch64", "version": "3.24.1"}},
       {"filename": "alpine-xen-3.24.1-x86_64.iso", "identity": {"product_id": "alpine-linux", "edition": "xen", "channel": "stable", "architecture": "x86_64", "version": "3.24.1"}}
     ], "non_matches": ["alpine-standard-3.24.1-x86_64.iso.sha256", "alpine-netboot-3.24.1-x86_64.tar.gz"]},
+    "antix": {"matches": [
+      {"filename": "antiX-26_x64-full.iso", "identity": {"product_id": "antix", "edition": "full", "channel": "stable", "architecture": "x86_64", "version": "26"}},
+      {"filename": "antiX-23.2_386-core.iso", "identity": {"product_id": "antix", "edition": "core", "channel": "stable", "architecture": "386", "version": "23.2"}},
+      {"filename": "antiX-23.2-net_x64-net.iso", "identity": {"product_id": "antix", "edition": "net", "channel": "stable", "architecture": "x86_64", "version": "23.2"}}
+    ], "non_matches": ["antiX-26_x64-full.iso.sha256", "antiX-26_x64-full.img", "antiX-sid_x64-full.iso"]},
     "arch": {"matches": [{"filename": "archlinux-2026.09.01-x86_64.iso", "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "x86_64", "version": "2026.09.01"}}], "non_matches": ["archlinux-2026.09.01-aarch64.iso", "archlinux-bootstrap-2026.09.01-x86_64.tar.zst"]},
     "artix-linux": {"matches": [
       {"filename": "artix-base-openrc-20260813-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260813"}},
@@ -150,6 +155,12 @@
       {"filename": "mt86plus_8.10_x86_64.grub.iso", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "x86_64", "version": "8.10"}},
       {"filename": "mt86plus_8.10_i586.iso", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "i586", "version": "8.10"}}
     ], "non_matches": ["memtest86-usb.img", "mt86plus_8.10_x86_64.iso.zip"]},
+    "mx-linux": {"matches": [
+      {"filename": "MX-25.2_Xfce_x64.iso", "identity": {"product_id": "mx-linux", "edition": "Xfce", "flavor": "standard", "channel": "stable", "architecture": "x86_64", "version": "25.2"}},
+      {"filename": "MX-25.2_Xfce_ahs_x64.iso", "identity": {"product_id": "mx-linux", "edition": "Xfce", "flavor": "ahs", "channel": "stable", "architecture": "x86_64", "version": "25.2"}},
+      {"filename": "MX-25.2_KDE_x64.iso", "identity": {"product_id": "mx-linux", "edition": "KDE", "flavor": "ahs", "channel": "stable", "architecture": "x86_64", "version": "25.2"}},
+      {"filename": "MX-25.2_fluxbox_x64.iso", "identity": {"product_id": "mx-linux", "edition": "fluxbox", "flavor": "standard", "channel": "stable", "architecture": "x86_64", "version": "25.2"}}
+    ], "non_matches": ["MX-25.2_Xfce_x64.iso.sha256", "MX-25.2_Xfce_arm64.iso", "MX-25.2_KDE_beta1_x64.iso"]},
     "netboot-xyz": {"matches": [
       {"filename": "netboot.xyz.iso", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": null}},
       {"filename": "netboot.xyz-legacy.iso", "identity": {"product_id": "netboot-xyz", "edition": "legacy", "channel": "stable", "architecture": "x86_64", "version": null}},
@@ -250,6 +261,9 @@
       {"filename": "Rocky-9.8-x86_64-minimal.iso", "identity": {"product_id": "rocky-linux", "edition": "minimal", "channel": "9", "architecture": "x86_64", "version": "9.8"}},
       {"filename": "Rocky-10-latest-aarch64-boot.iso", "identity": {"product_id": "rocky-linux", "edition": "boot", "flavor": "latest-alias", "channel": "10", "architecture": "aarch64", "version": "latest"}}
     ], "non_matches": ["Rocky-9.8-x86_64-live.iso", "Rocky-Linux-9.8-x86_64-minimal.iso"]},
+    "security-onion": {"matches": [
+      {"filename": "securityonion-3.2.0-20260729.iso", "identity": {"product_id": "security-onion", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "3.2.0", "build": "20260729"}}
+    ], "non_matches": ["securityonion-3.2.0.iso", "securityonion-3.2.0-20260729.img", "securityonion-3.2.0-20260729-arm64.iso"]},
     "shredos": {"matches": [
       {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716.iso", "identity": {"product_id": "shredos", "edition": "standard", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
       {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite.iso", "identity": {"product_id": "shredos", "edition": "lite", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}},
@@ -266,6 +280,10 @@
     ], "non_matches": ["supergrub2-2.06s4-multiarch-CD.iso", "supergrub2-classic-2.06s4-multiarch-USB.img.zip", "supergrub2-classic-2.06s4-powerpc-CD.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
+    "talos-linux": {"matches": [
+      {"filename": "metal-amd64.iso", "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "amd64", "version": null}},
+      {"filename": "metal-arm64.iso", "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "arm64", "version": null}}
+    ], "non_matches": ["metal-x86.iso", "metal-amd64.img", "talos-metal-amd64.iso"]},
     "truenas": {"matches": [
       {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
       {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}

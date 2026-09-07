@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "provider_id": "security-onion",
+  "display_name": "Security Onion",
+  "homepage_url": "https://docs.securityonion.net/en/3/main/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["docs.securityonion.net", "raw.githubusercontent.com", "download.securityonion.net"],
+  "capabilities": {
+    "products": ["security-onion"],
+    "editions": ["installer"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "stable-x86_64",
+    "metadata_url": "https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/3/main/DOWNLOAD_AND_VERIFY_ISO.md",
+    "artifact_regex": "^securityonion-(?P<version>\\d+(?:\\.\\d+)+)-(?P<build>\\d{8})\\.iso$",
+    "identity": {
+      "product_id": "security-onion",
+      "edition": "installer",
+      "channel": "stable",
+      "architecture": "x86_64"
+    },
+    "download": {
+      "strategy": "url-template",
+      "url_template": "https://download.securityonion.net/file/securityonion/{filename}"
+    },
+    "verification": {
+      "level": "CHECKSUM",
+      "checksum": {
+        "algorithm": "sha256",
+        "strategy": "checksum-list",
+        "url_template": "https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/3/main/DOWNLOAD_AND_VERIFY_ISO.md"
+      }
+    }
+  }],
+  "detection": [{
+    "regex": "^securityonion-(?P<version>\\d+(?:\\.\\d+)+)-(?P<build>\\d{8})\\.iso$",
+    "identity": {
+      "product_id": "security-onion",
+      "edition": "installer",
+      "channel": "stable",
+      "architecture": "x86_64",
+      "version": "$group:version",
+      "build": "$group:build"
+    },
+    "downloadable": true
+  }]
+}

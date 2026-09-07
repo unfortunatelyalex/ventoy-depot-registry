@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "provider_id": "talos-linux",
+  "display_name": "Talos Linux",
+  "homepage_url": "https://www.talos.dev/latest/introduction/getting-started/",
+  "driver": "github-releases",
+  "allowed_hosts": ["www.talos.dev", "api.github.com", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {
+    "products": ["talos-linux"],
+    "editions": ["metal"],
+    "flavors": [],
+    "architectures": ["amd64", "arm64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "metal-amd64",
+      "metadata_url": "https://api.github.com/repos/siderolabs/talos/releases/latest",
+      "artifact_regex": "^metal-amd64\\.iso$",
+      "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "amd64"},
+      "download": {"strategy": "release-asset"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}
+    },
+    {
+      "source_id": "metal-arm64",
+      "metadata_url": "https://api.github.com/repos/siderolabs/talos/releases/latest",
+      "artifact_regex": "^metal-arm64\\.iso$",
+      "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "arm64"},
+      "download": {"strategy": "release-asset"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^metal-(?P<architecture>amd64|arm64)\\.iso$",
+      "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "$group:architecture", "version": null},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The release version comes from GitHub metadata because the official metal ISO filenames are stable."]
+}

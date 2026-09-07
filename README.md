@@ -38,14 +38,14 @@ identical or nested key directories so the role separation cannot be accidentall
 
 ## Curated providers
 
-The initial registry contains AlmaLinux, Alpine Linux, Arch Linux, BunsenLabs, Ubuntu and ten official Ubuntu flavors,
+The initial registry contains AlmaLinux, Alpine Linux, antiX Linux, Arch Linux, BunsenLabs, Ubuntu and ten official Ubuntu flavors,
 CentOS Stream, Debian, Fedora,
-FreeBSD, Gentoo, GhostBSD, Grml, Haiku, Hiren's BootCD PE, Qubes OS, Rocky Linux,
+FreeBSD, Gentoo, GhostBSD, Grml, Haiku, Hiren's BootCD PE, Qubes OS, Rocky Linux, Security Onion,
 openSUSE Tumbleweed,
 Linux Mint, EndeavourOS, CachyOS, Clonezilla Live, GParted Live, Kali Linux, KDE neon, Mageia,
-Memtest86+,
+Memtest86+, MX Linux,
 netboot.xyz, NetBSD, NixOS, Omarchy, Manjaro, Parrot OS, Pop!_OS, PorteuX, Proxmox installers,
-Rescuezilla, Nobara, ShredOS, Solus, SystemRescue, Tails, TrueNAS Community Edition,
+Rescuezilla, Nobara, ShredOS, Solus, SystemRescue, Tails, Talos Linux, TrueNAS Community Edition,
 Vanilla OS, Void Linux, Windows 10/11, Windows Server Evaluation and Zorin OS.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared

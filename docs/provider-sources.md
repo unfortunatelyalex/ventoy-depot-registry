@@ -8,6 +8,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | --- | --- | --- | --- |
 | AlmaLinux OS | official package repository | official SHA-256 CHECKSUM | major version, image type and architecture remain distinct |
 | Alpine Linux | `alpinelinux.org/downloads` and official CDN | official SHA-256 sidecar | standard/extended/virtual/Xen and architecture remain distinct |
+| antiX Linux | official SourceForge Final index and fixed documented mirror | official SHA-256 sidecar | Full/Base/Core/Net and x64/386 remain distinct; unavailable historical variants are blocked |
 | Arch Linux | `archlinux.org/download` and the official pkgbuild mirror | SHA-256 + pinned Arch ISO signing key | x86_64 stable only |
 | Ubuntu | `releases.ubuntu.com` | official SHA256SUMS | Desktop/server and LTS/interim remain distinct |
 | Official Ubuntu flavors | official `cdimage.ubuntu.com` release trees | official SHA256SUMS | ten official desktop flavors; product and LTS/interim remain distinct |
@@ -33,6 +34,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
+| MX Linux | official SourceForge Final folders and fixed documented mirror | official SHA-256 sidecar | Xfce standard/AHS, KDE AHS and Fluxbox remain distinct |
 | Parrot OS | official `deb.parrot.sh/parrot/iso` index | SHA-512 from the official signed hash list | Home, Security and each desktop/security spin remain distinct; non-ISO images are excluded |
 | Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
 | netboot.xyz | official GitHub releases | GitHub-bound SHA-256 asset digest | standard/legacy and architecture remain distinct |
@@ -43,11 +45,13 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Qubes OS | official downloads page and security pack | detached OpenPGP signature | detection-only until its signing-key chain is distributed as trusted targets |
 | Rescuezilla | official GitHub releases | GitHub-bound SHA-256 asset digest | Ubuntu base variant remains distinct |
 | Rocky Linux | official download repository | official SHA-256 CHECKSUM | major version, image type and architecture remain distinct |
+| Security Onion | official verification document and `download.securityonion.net` | SHA-256 from the official verification document | stable x86_64 installer only; release and build stay bound |
 | ShredOS | official GitHub releases | GitHub-bound SHA-256 asset digest | architecture, lite/full and partition variants remain distinct |
 | Solus | official project download page and release host | official SHA-256 sidecar | Budgie, GNOME, Plasma and Xfce remain distinct |
 | Nobara | `nobaraproject.org/download.html` | official SHA-256 sidecar | Official/GNOME/KDE/Steam variants remain distinct |
 | SystemRescue | `system-rescue.org/Download` | official SHA-256 sidecar | stable amd64 image only |
 | Tails | official stable release JSON and its advertised HTTPS mirrors | embedded SHA-256 | redirects are accepted only to the curated mirror host list |
+| Talos Linux | official `siderolabs/talos` GitHub releases | GitHub-bound SHA-256 asset digest | stable metal ISO and architecture remain distinct; version comes from release metadata |
 | TrueNAS Community Edition | official Community Edition page and release hosts | official SHA-256 sidecar | stable and beta channels remain distinct; enterprise media is excluded |
 | Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
 | Void Linux | official `repo-default.voidlinux.org/live/current` directory | official SHA-256 checksum list | base/Xfce, glibc/musl and architecture remain distinct; Minisign trust is not yet provisioned |

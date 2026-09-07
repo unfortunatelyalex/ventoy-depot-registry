@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "provider_id": "mx-linux",
+  "display_name": "MX Linux",
+  "homepage_url": "https://mxlinux.org/download-links/",
+  "driver": "static-html",
+  "allowed_hosts": ["mxlinux.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {
+    "products": ["mx-linux"],
+    "editions": ["xfce", "kde", "fluxbox"],
+    "flavors": ["standard", "ahs"],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "sourceforge-final",
+    "metadata_url": "https://sourceforge.net/projects/mx-linux/files/Final/",
+    "artifact_regex": "^MX-(?P<version>\\d+(?:\\.\\d+)*)_(?P<edition>Xfce|KDE|fluxbox)(?:_(?P<flavor>ahs))?_x64\\.iso$",
+    "identity": {"product_id": "mx-linux", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "user-supplied"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}},
+    "automatic_download": false
+  }],
+  "detection": [
+    {
+      "regex": "^MX-(?P<version>\\d+(?:\\.\\d+)*)_(?P<edition>Xfce)_x64\\.iso$",
+      "identity": {"product_id": "mx-linux", "edition": "$group:edition", "flavor": "standard", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^MX-(?P<version>\\d+(?:\\.\\d+)*)_(?P<edition>Xfce)_(?P<flavor>ahs)_x64\\.iso$",
+      "identity": {"product_id": "mx-linux", "edition": "$group:edition", "flavor": "$group:flavor", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^MX-(?P<version>\\d+(?:\\.\\d+)*)_(?P<edition>KDE)_x64\\.iso$",
+      "identity": {"product_id": "mx-linux", "edition": "$group:edition", "flavor": "ahs", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^MX-(?P<version>\\d+(?:\\.\\d+)*)_(?P<edition>fluxbox)_x64\\.iso$",
+      "identity": {"product_id": "mx-linux", "edition": "$group:edition", "flavor": "standard", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The integrated resolver pins SourceForge's documented netix mirror and fetches the matching official SHA-256 sidecar; Xfce standard/AHS, KDE AHS and Fluxbox remain distinct."]
+}
