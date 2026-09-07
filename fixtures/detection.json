@@ -142,6 +142,12 @@
       {"filename": "cd79.iso", "volume_id": "OpenBSD/amd64   7.9 Install CD"},
       "install79.img"
     ]},
+    "omnios": {"matches": [
+      {"filename": "omnios-stable-r151058.iso", "identity": {"product_id": "omnios", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "151058"}},
+      {"filename": "omnios-lts-r151054r.iso", "identity": {"product_id": "omnios", "edition": "installer", "channel": "lts", "architecture": "x86_64", "version": "151054r"}},
+      {"filename": "omnios-bloody-20260823.iso", "identity": {"product_id": "omnios", "edition": "installer", "channel": "bloody", "architecture": "x86_64", "version": "20260823"}},
+      {"filename": "omnios-r151058.iso", "identity": {"product_id": "omnios", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "151058"}}
+    ], "non_matches": ["omnios-r151056.iso", "omnios-weekly-r151058.iso", "omnios-r151058.usb-dd"]},
     "openindiana": {"matches": [
       {"filename": "OI-hipster-gui-20260430.iso", "identity": {"product_id": "openindiana", "edition": "gui", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
       {"filename": "OI-hipster-text-20260430.iso", "identity": {"product_id": "openindiana", "edition": "text", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
@@ -226,6 +232,9 @@
       {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
       {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}
     ], "non_matches": ["TrueNAS-SCALE-25.10.7.img", "TrueNAS-Enterprise-25.10.7.iso"]},
+    "tuxedo-os": {"matches": [
+      {"filename": "TUXEDO-OS-202608031247.iso", "identity": {"product_id": "tuxedo-os", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "202608031247"}}
+    ], "non_matches": ["TUXEDO-OS_current.iso", "TUXEDO-OS-202608031247.img", "TUXEDO-OS-20260803.iso"]},
     "ubuntu": {"matches": [
       {"filename": "ubuntu-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntu", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntu-25.10-live-server-arm64.iso", "identity": {"product_id": "ubuntu", "edition": "live-server", "channel": "interim", "architecture": "arm64", "version": "25.10"}}

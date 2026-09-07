@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "provider_id": "omnios",
+  "display_name": "OmniOS",
+  "homepage_url": "https://omnios.org/download.html",
+  "driver": "sidecar",
+  "allowed_hosts": ["omnios.org", "downloads.omnios.org"],
+  "capabilities": {
+    "products": ["omnios"],
+    "editions": ["installer"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable", "lts", "bloody"]
+  },
+  "release_sources": [
+    {
+      "source_id": "stable",
+      "metadata_url": "https://downloads.omnios.org/media/stable/",
+      "artifact_regex": "^omnios-r(?P<version>\\d+[a-z]?)\\.iso$",
+      "identity": {"product_id": "omnios", "edition": "installer", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.omnios.org/media/stable/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://downloads.omnios.org/media/stable/{filename}.sha256"}}
+    },
+    {
+      "source_id": "lts",
+      "metadata_url": "https://downloads.omnios.org/media/lts/",
+      "artifact_regex": "^omnios-r(?P<version>\\d+[a-z]?)\\.iso$",
+      "identity": {"product_id": "omnios", "edition": "installer", "channel": "lts", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.omnios.org/media/lts/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://downloads.omnios.org/media/lts/{filename}.sha256"}}
+    },
+    {
+      "source_id": "bloody",
+      "metadata_url": "https://downloads.omnios.org/media/bloody/",
+      "artifact_regex": "^omnios-bloody-(?P<version>\\d{8})\\.iso$",
+      "identity": {"product_id": "omnios", "edition": "installer", "channel": "bloody", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.omnios.org/media/bloody/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://downloads.omnios.org/media/bloody/{filename}.sha256"}}
+    }
+  ],
+  "detection": [
+    {"regex": "^omnios-(?P<channel>stable|lts)-r(?P<version>\\d+[a-z]?)\\.iso$", "identity": {"product_id": "omnios", "edition": "installer", "channel": "$group:channel", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^omnios-bloody-(?P<version>\\d{8})\\.iso$", "identity": {"product_id": "omnios", "edition": "installer", "channel": "bloody", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^omnios-r(?P<version>151058)\\.iso$", "identity": {"product_id": "omnios", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^omnios-r(?P<version>151054r)\\.iso$", "identity": {"product_id": "omnios", "edition": "installer", "channel": "lts", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Upstream stable and LTS filenames omit the channel. Only currently curated raw names and channel-labelled Ventoy Depot names are recognized, preventing a silent channel switch."]
+}
