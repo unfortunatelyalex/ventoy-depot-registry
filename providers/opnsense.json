@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider_id": "opnsense",
+  "display_name": "OPNsense",
+  "homepage_url": "https://opnsense.org/download/",
+  "driver": "directory-index",
+  "allowed_hosts": ["opnsense.org", "pkg.opnsense.org"],
+  "capabilities": {"products": ["opnsense"], "editions": ["dvd", "cdrom"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^OPNsense-(?P<version>\\d+(?:\\.\\d+)+)-(?:OpenSSL-)?(?P<edition>dvd|cdrom)-(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "opnsense", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["Official downloads are bzip2-compressed and their SHA-256 values cover the compressed bytes. The extracted ISO is recognized, but automatic updates wait for a transactional archive-extraction stage."]
+}

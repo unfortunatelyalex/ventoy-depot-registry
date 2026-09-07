@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "provider_id": "flatcar",
+  "display_name": "Flatcar Container Linux",
+  "homepage_url": "https://www.flatcar.org/docs/latest/installing/bare-metal/booting-with-iso/",
+  "driver": "sidecar",
+  "allowed_hosts": ["www.flatcar.org", "stable.release.flatcar-linux.net", "beta.release.flatcar-linux.net", "alpha.release.flatcar-linux.net", "lts.release.flatcar-linux.net", "flatcar.cdn.cncf.io"],
+  "capabilities": {
+    "products": ["flatcar"],
+    "editions": ["live-iso"],
+    "flavors": [],
+    "architectures": ["amd64"],
+    "languages": [],
+    "channels": ["stable", "beta", "alpha", "lts"]
+  },
+  "release_sources": [
+    {
+      "source_id": "stable",
+      "metadata_url": "https://stable.release.flatcar-linux.net/amd64-usr/current/version.txt",
+      "artifact_regex": "^flatcar-(?P<channel>stable)-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "stable", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://stable.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://stable.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso.DIGESTS"}},
+      "automatic_download": false
+    },
+    {
+      "source_id": "beta",
+      "metadata_url": "https://beta.release.flatcar-linux.net/amd64-usr/current/version.txt",
+      "artifact_regex": "^flatcar-(?P<channel>beta)-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "beta", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://beta.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://beta.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso.DIGESTS"}},
+      "automatic_download": false
+    },
+    {
+      "source_id": "alpha",
+      "metadata_url": "https://alpha.release.flatcar-linux.net/amd64-usr/current/version.txt",
+      "artifact_regex": "^flatcar-(?P<channel>alpha)-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "alpha", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://alpha.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://alpha.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso.DIGESTS"}},
+      "automatic_download": false
+    },
+    {
+      "source_id": "lts",
+      "metadata_url": "https://lts.release.flatcar-linux.net/amd64-usr/current/version.txt",
+      "artifact_regex": "^flatcar-(?P<channel>lts)-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "lts", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://lts.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://lts.release.flatcar-linux.net/amd64-usr/{version}/flatcar_production_iso_image.iso.DIGESTS"}},
+      "automatic_download": false
+    }
+  ],
+  "detection": [
+    {"regex": "^flatcar-(?P<channel>stable|beta|alpha|lts)-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Upstream calls the ISO flatcar_production_iso_image.iso in every channel. Ventoy Depot stores a channel- and version-labelled name to prevent ambiguous updates.", "Release lookup is handled by the integrated resolver because version.txt does not itself contain an ISO filename. The official SHA-512 DIGESTS file and CNCF CDN redirects remain allow-listed."]
+}

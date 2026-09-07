@@ -106,6 +106,8 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
         validate_regex(rule.get("regex", ""), path)
         if "volume_regex" in rule:
             validate_regex(rule["volume_regex"], path)
+    if not value["release_sources"] and any(rule.get("downloadable") for rule in rules):
+        raise ValueError(f"{path}: downloadable detection rule requires a release source")
     for source in value["release_sources"]:
         validate_identity(source.get("identity"), path)
         verification = source.get("verification", {})

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider_id": "redo-rescue",
+  "display_name": "Redo Rescue",
+  "homepage_url": "https://github.com/redorescue/redorescue",
+  "driver": "static-html",
+  "allowed_hosts": ["github.com", "sourceforge.net"],
+  "capabilities": {"products": ["redo-rescue"], "editions": ["live"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^redorescue-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "redo-rescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["The official project delegates binaries to SourceForge but does not expose a stable strong-checksum feed suitable for unattended updates."]
+}

@@ -67,6 +67,14 @@
       {"filename": "Fedora-MATE_Compiz-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "MATE_Compiz", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
       {"filename": "Fedora-Silverblue-ostree-x86_64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Silverblue", "flavor": "ostree", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.4"}}
     ], "non_matches": ["Fedora-Workstation-Live-Rawhide-x86_64.iso", "Fedora-Everything-netinst-x86_64-44-1.4.iso", "Fedora-Xfce-Live-44-1.7.aarch64.iso"]},
+    "fedora-coreos": {"matches": [
+      {"filename": "fedora-coreos-stable-44.20260817.3.2-live-iso.x86_64.iso", "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "stable", "architecture": "x86_64", "version": "44.20260817.3.2"}},
+      {"filename": "fedora-coreos-testing-44.20260804.2.0-live-iso.aarch64.iso", "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "testing", "architecture": "aarch64", "version": "44.20260804.2.0"}}
+    ], "non_matches": ["fedora-coreos-44.20260817.3.2-live-iso.x86_64.iso", "fedora-coreos-rawhide-44.20260817.3.2-live-iso.x86_64.iso", "fedora-coreos-stable-44.20260817.3.2-metal.x86_64.raw.xz"]},
+    "flatcar": {"matches": [
+      {"filename": "flatcar-stable-4593.2.5-amd64.iso", "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "stable", "architecture": "amd64", "version": "4593.2.5"}},
+      {"filename": "flatcar-lts-4081.3.10-amd64.iso", "identity": {"product_id": "flatcar", "edition": "live-iso", "channel": "lts", "architecture": "amd64", "version": "4081.3.10"}}
+    ], "non_matches": ["flatcar_production_iso_image.iso", "flatcar-stable-4593.2.5-arm64.iso", "flatcar-nightly-4593.2.5-amd64.iso"]},
     "finnix": {"matches": [
       {"filename": "finnix-251.iso", "identity": {"product_id": "finnix", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "251"}},
       {"filename": "finnix-120.1.iso", "identity": {"product_id": "finnix", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "120.1"}}
@@ -92,11 +100,20 @@
       {"filename": "haiku-r1beta6-x86_64-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_64", "version": "r1beta6"}},
       {"filename": "haiku-r1beta6-x86_gcc2h-anyboot.iso", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_gcc2h", "version": "r1beta6"}}
     ], "non_matches": ["haiku-r1beta6-x86_64-anyboot.zip", "haiku-nightly-x86_64-anyboot.iso"]},
+    "harvester": {"matches": [
+      {"filename": "harvester-v1.8.2-amd64.iso", "identity": {"product_id": "harvester", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "1.8.2"}},
+      {"filename": "harvester-v1.8.2-arm64.iso", "identity": {"product_id": "harvester", "edition": "full", "channel": "stable", "architecture": "arm64", "version": "1.8.2"}},
+      {"filename": "harvester-v1.8.2-amd64-net-install.iso", "identity": {"product_id": "harvester", "edition": "netinstall", "channel": "stable", "architecture": "amd64", "version": "1.8.2"}}
+    ], "non_matches": ["harvester-v1.8.2-arm64-net-install.iso", "harvester-v1.9.0-rc1-amd64.iso", "harvester-v1.8.2-amd64.iso.sha512"]},
     "grml": {"matches": [
       {"filename": "grml-full-2026.04-amd64.iso", "identity": {"product_id": "grml", "edition": "full", "channel": "stable", "architecture": "amd64", "version": "2026.04"}},
       {"filename": "grml-small-2026.04-arm64.iso", "identity": {"product_id": "grml", "edition": "small", "channel": "stable", "architecture": "arm64", "version": "2026.04"}}
     ], "non_matches": ["grml32-full_2024.02.iso", "grml-full-amd64-testing.iso"]},
     "hirens-bootcd-pe": {"matches": [{"filename": "HBCD_PE_x64.iso", "identity": {"product_id": "hirens-bootcd-pe", "edition": "pe", "channel": "stable", "architecture": "x86_64", "version": null}}], "non_matches": ["HBCD_PE_x86.iso", "HBCD_PE_x64.zip"]},
+    "ipfire": {"matches": [
+      {"filename": "ipfire-2.29-core202-x86_64.iso", "identity": {"product_id": "ipfire", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "2.29", "build": "202"}},
+      {"filename": "ipfire-2.29-core202-aarch64.iso", "identity": {"product_id": "ipfire", "edition": "installer", "channel": "stable", "architecture": "aarch64", "version": "2.29", "build": "202"}}
+    ], "non_matches": ["ipfire-2.29-core202-x86_64.img.xz", "ipfire-3.0-x86_64.iso", "ipfire-2.29-core202-i686.iso"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
@@ -193,12 +210,17 @@
       {"filename": "openSUSE-Tumbleweed-KDE-Live-aarch64-Current.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "KDE-Live", "channel": "rolling", "architecture": "aarch64", "version": "Current"}},
       {"filename": "openSUSE-Tumbleweed-Rescue-CD-x86_64-Snapshot20260830-Media.iso", "identity": {"product_id": "opensuse-tumbleweed", "edition": "Rescue-CD", "channel": "rolling", "architecture": "x86_64", "version": "20260830"}}
     ], "non_matches": ["openSUSE-Leap-16.0-DVD-x86_64.iso", "openSUSE-Tumbleweed-DVD-x86_64.iso"]},
+    "opnsense": {"matches": [
+      {"filename": "OPNsense-26.7-dvd-amd64.iso", "identity": {"product_id": "opnsense", "edition": "dvd", "channel": "stable", "architecture": "amd64", "version": "26.7"}},
+      {"filename": "OPNsense-24.1-OpenSSL-cdrom-amd64.iso", "identity": {"product_id": "opnsense", "edition": "cdrom", "channel": "stable", "architecture": "amd64", "version": "24.1"}}
+    ], "non_matches": ["OPNsense-26.7-dvd-amd64.iso.bz2", "OPNsense-26.7-vga-amd64.img", "OPNsense-devel-26.7.b-dvd-amd64.iso"]},
     "parrot-os": {"matches": [
       {"filename": "Parrot-home-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "home", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
       {"filename": "Parrot-security-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "security", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
       {"filename": "Parrot-spin-htb-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "htb", "channel": "stable", "architecture": "amd64", "version": "7.3"}},
       {"filename": "Parrot-spin-lxqt-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "lxqt", "channel": "stable", "architecture": "amd64", "version": "7.3"}}
     ], "non_matches": ["Parrot-home-7.3_arm64.iso", "Parrot-security-7.3_amd64.ova", "Parrot-core-7.3_amd64.iso"]},
+    "pfsense-ce": {"matches": [{"filename": "pfSense-CE-2.8.1-RELEASE-amd64.iso", "identity": {"product_id": "pfsense-ce", "edition": "dvd", "channel": "stable", "architecture": "amd64", "version": "2.8.1"}}], "non_matches": ["pfSense-CE-2.8.1-RELEASE-amd64.iso.gz", "pfSense-Plus-25.03-RELEASE-amd64.iso", "pfSense-CE-2.8.1-BETA-amd64.iso"]},
     "pop-os": {"matches": [
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
@@ -216,6 +238,7 @@
     "qubes-os": {"matches": [
       {"filename": "Qubes-R4.3.1-x86_64.iso", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "4.3.1"}}
     ], "non_matches": ["Qubes-R4.3.1-aarch64.iso", "Qubes-R4.3.1-x86_64.iso.asc"]},
+    "redo-rescue": {"matches": [{"filename": "redorescue-4.0.0.iso", "identity": {"product_id": "redo-rescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "4.0.0"}}], "non_matches": ["redorescue-latest.iso", "redorescue-4.0.0.img", "redo-rescue-4.0.0.iso"]},
     "rescuezilla": {"matches": [
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
       {"filename": "rescuezilla-2.6.2-64bit.noble.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "noble", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}}
@@ -234,6 +257,10 @@
       {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
       {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}
     ], "non_matches": ["Solus-Budgie-Testing-2026-04-18.iso", "Solus-Budgie-Release.iso"]},
+    "super-grub2-disk": {"matches": [
+      {"filename": "supergrub2-classic-2.06s4-multiarch-CD.iso", "identity": {"product_id": "super-grub2-disk", "edition": "multiarch", "channel": "stable", "architecture": "multiarch", "version": "2.06s4"}},
+      {"filename": "supergrub2-classic-2.06s4-x86_64_efi-CD.iso", "identity": {"product_id": "super-grub2-disk", "edition": "x86_64_efi", "channel": "stable", "architecture": "multiarch", "version": "2.06s4"}}
+    ], "non_matches": ["supergrub2-2.06s4-multiarch-CD.iso", "supergrub2-classic-2.06s4-multiarch-USB.img.zip", "supergrub2-classic-2.06s4-powerpc-CD.iso"]},
     "systemrescue": {"matches": [{"filename": "systemrescue-13.02-amd64.iso", "identity": {"product_id": "systemrescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "13.02"}}], "non_matches": ["systemrescue-13.02-i686.iso", "systemrescue-13.02-amd64.iso.sha256"]},
     "tails": {"matches": [{"filename": "tails-amd64-7.11.iso", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "7.11"}}], "non_matches": ["tails-amd64-7.11.img", "tails-arm64-7.11.iso"]},
     "truenas": {"matches": [
@@ -259,6 +286,7 @@
       {"filename": "ubuntustudio-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntustudio", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}},
       {"filename": "ubuntukylin-26.04.1-desktop-amd64.iso", "identity": {"product_id": "ubuntukylin", "edition": "desktop", "channel": "lts", "architecture": "amd64", "version": "26.04.1"}}
     ], "non_matches": ["kubuntu-26.04.1-desktop-arm64.iso", "xubuntu-26.04.1-minimal-amd64.iso", "ubuntu-mate-26.04-desktop-arm64.iso"]},
+    "ultimate-boot-cd": {"matches": [{"filename": "ubcd539.iso", "identity": {"product_id": "ultimate-boot-cd", "edition": "diagnostics", "channel": "stable", "architecture": "x86", "version": "539"}}], "non_matches": ["ubcdlive039.iso", "ubcd539.zip", "ubcd.iso"]},
     "urbackup-restore": {"matches": [
       {"filename": "urbackup_restore_2.6.0.iso", "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64", "version": "2.6.0"}},
       {"filename": "urbackup_restore_2.5.1.iso", "identity": {"product_id": "urbackup-restore", "edition": "restore", "channel": "stable", "architecture": "x86_64", "version": "2.5.1"}}
