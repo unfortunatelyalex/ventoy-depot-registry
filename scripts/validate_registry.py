@@ -58,9 +58,11 @@ def validate_regex(expression: str, path: Path) -> re.Pattern[str]:
     return re.compile(expression, re.IGNORECASE)
 
 
-def resolve_identity(template: dict[str, Any], match: re.Match[str]) -> dict[str, Any]:
+def resolve_identity(template: dict[str, Any], *matches: re.Match[str]) -> dict[str, Any]:
     result: dict[str, Any] = {}
-    groups = match.groupdict()
+    groups: dict[str, str | None] = {}
+    for match in matches:
+        groups.update({key: value for key, value in match.groupdict().items() if value is not None})
     for key, value in template.items():
         if isinstance(value, str) and value.startswith("$group:"):
             result[key] = groups.get(value.removeprefix("$group:"))
@@ -92,7 +94,7 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
         key = item_path[-1] if item_path else ""
         if (key.endswith("_url") or key.endswith("_template")) and isinstance(item, str):
             validate_url(item, host_set, path)
-        if key in {"regex", "artifact_regex", "link_regex", "entry_regex"} and isinstance(item, str):
+        if (key == "regex" or key.endswith("_regex")) and isinstance(item, str):
             validate_regex(item, path)
         if key == "signer_fingerprints" and (not item or any(not FINGERPRINT.fullmatch(fingerprint) for fingerprint in item)):
             raise ValueError(f"{path}: incomplete signer fingerprint")
@@ -102,6 +104,8 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
     for rule in rules:
         validate_identity(rule.get("identity"), path)
         validate_regex(rule.get("regex", ""), path)
+        if "volume_regex" in rule:
+            validate_regex(rule["volume_regex"], path)
     for source in value["release_sources"]:
         validate_identity(source.get("identity"), path)
         verification = source.get("verification", {})
@@ -125,20 +129,48 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
 def validate_fixtures(provider_id: str, provider: dict[str, Any], fixture: Any) -> set[str]:
     if not isinstance(fixture, dict) or not fixture.get("matches") or not fixture.get("non_matches"):
         raise ValueError(f"{provider_id}: fixtures require matches and non_matches")
-    rules = [(validate_regex(rule["regex"], Path(provider_id)), rule) for rule in provider["detection"]]
+    rules = [
+        (
+            validate_regex(rule["regex"], Path(provider_id)),
+            validate_regex(rule["volume_regex"], Path(provider_id))
+            if rule.get("volume_regex")
+            else None,
+            rule,
+        )
+        for rule in provider["detection"]
+    ]
+
+    def matching(case: Any) -> list[tuple[re.Match[str], re.Match[str] | None, dict[str, Any]]]:
+        filename = case["filename"] if isinstance(case, dict) else case
+        volume_id = case.get("volume_id") if isinstance(case, dict) else None
+        found: list[tuple[re.Match[str], re.Match[str] | None, dict[str, Any]]] = []
+        for expression, volume_expression, rule in rules:
+            name_match = expression.fullmatch(filename)
+            if name_match is None:
+                continue
+            volume_match = volume_expression.fullmatch(volume_id or "") if volume_expression else None
+            if volume_expression is not None and volume_match is None:
+                continue
+            found.append((name_match, volume_match, rule))
+        return found
+
     filenames: set[str] = set()
     for case in fixture["matches"]:
         filename = case["filename"]
         filenames.add(filename)
-        matches = [(regex.fullmatch(filename), rule) for regex, rule in rules]
-        matches = [(match, rule) for match, rule in matches if match is not None]
+        matches = matching(case)
         if len(matches) != 1:
             raise ValueError(f"{provider_id}: {filename!r} matched {len(matches)} rules")
-        actual = resolve_identity(matches[0][1]["identity"], matches[0][0])
+        name_match, volume_match, rule = matches[0]
+        actual = resolve_identity(
+            rule["identity"],
+            *([name_match, volume_match] if volume_match is not None else [name_match]),
+        )
         if actual != case["identity"]:
             raise ValueError(f"{provider_id}: identity mismatch for {filename!r}: {actual!r}")
-    for filename in fixture["non_matches"]:
-        if any(regex.fullmatch(filename) for regex, _ in rules):
+    for case in fixture["non_matches"]:
+        filename = case["filename"] if isinstance(case, dict) else case
+        if matching(case):
             raise ValueError(f"{provider_id}: negative fixture matched {filename!r}")
     return filenames
 

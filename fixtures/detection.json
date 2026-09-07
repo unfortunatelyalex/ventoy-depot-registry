@@ -117,6 +117,17 @@
       {"filename": "NetBSD-11.0-amd64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "amd64", "version": "11.0"}},
       {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}}
     ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso"]},
+    "openbsd": {"matches": [
+      {"filename": "OpenBSD-7.9-amd64-install.iso", "identity": {"product_id": "openbsd", "edition": "install", "channel": "release", "architecture": "amd64", "version": "7.9"}},
+      {"filename": "install79.iso", "volume_id": "OpenBSD/arm64   7.9 Install CD", "identity": {"product_id": "openbsd", "edition": "install", "channel": "release", "architecture": "arm64", "version": "7.9"}},
+      {"filename": "cd79.iso", "volume_id": "OpenBSD/loongson 7.9 bootonly CD", "identity": {"product_id": "openbsd", "edition": "bootonly", "channel": "release", "architecture": "loongson", "version": "7.9"}},
+      {"filename": "install78.iso", "volume_id": "OpenBSD/amd64   7.8 Install CD", "identity": {"product_id": "openbsd", "edition": "install", "channel": "release", "architecture": "amd64", "version": "7.8"}}
+    ], "non_matches": [
+      "install79.iso",
+      {"filename": "install78.iso", "volume_id": "OpenBSD/amd64   7.9 Install CD"},
+      {"filename": "cd79.iso", "volume_id": "OpenBSD/amd64   7.9 Install CD"},
+      "install79.img"
+    ]},
     "openindiana": {"matches": [
       {"filename": "OI-hipster-gui-20260430.iso", "identity": {"product_id": "openindiana", "edition": "gui", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
       {"filename": "OI-hipster-text-20260430.iso", "identity": {"product_id": "openindiana", "edition": "text", "channel": "rolling", "architecture": "x86_64", "version": "20260430"}},
