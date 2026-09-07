@@ -1,6 +1,10 @@
 {
   "schema_version": 1,
   "providers": {
+    "adelie-linux": {"matches": [
+      {"filename": "adelie-inst-x86_64-1.0-beta6-20241223.iso", "identity": {"product_id": "adelie-linux", "edition": "inst", "channel": "beta", "architecture": "x86_64", "version": "1.0-beta6", "build": "20241223"}},
+      {"filename": "adelie-live-kde-aarch64-1.0-beta6-20241223.iso", "identity": {"product_id": "adelie-linux", "edition": "live", "flavor": "kde", "channel": "beta", "architecture": "aarch64", "version": "1.0-beta6", "build": "20241223"}}
+    ], "non_matches": ["adelie-live-gnome-x86_64-1.0-beta6-20241223.iso", "adelie-inst-riscv64-1.0-beta6-20241223.iso", "adelie-inst-x86_64-current.iso"]},
     "almalinux": {"matches": [
       {"filename": "AlmaLinux-10.2-aarch64-dvd.iso", "identity": {"product_id": "almalinux", "edition": "dvd", "channel": "10", "architecture": "aarch64", "version": "10.2"}},
       {"filename": "AlmaLinux-9-latest-x86_64-minimal.iso", "identity": {"product_id": "almalinux", "edition": "minimal", "flavor": "latest-alias", "channel": "9", "architecture": "x86_64", "version": "latest"}}
@@ -97,6 +101,10 @@
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}
     ], "non_matches": ["kali-linux-weekly-live-amd64.iso", "kali-linux-2026.2-live-amd64.iso.torrent"]},
+    "kaos": {"matches": [
+      {"filename": "KaOS-DINIT-2026.06-x86_64.iso", "identity": {"product_id": "kaos", "edition": "dinit", "channel": "stable", "architecture": "x86_64", "version": "2026.06"}},
+      {"filename": "KaOS-2025.09-x86_64.iso", "identity": {"product_id": "kaos", "edition": "systemd", "channel": "stable", "architecture": "x86_64", "version": "2025.09"}}
+    ], "non_matches": ["KaOS-DINIT-current-x86_64.iso", "KaOS-DINIT-2026.06-aarch64.iso", "KaOS-2026.06-x86_64.iso.sig"]},
     "kde-neon": {"matches": [
       {"filename": "neon-user-desktop-20260903-0454.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "user", "architecture": "x86_64", "version": "20260903-0454"}},
       {"filename": "neon-testing-desktop-20260901-0146.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64", "version": "20260901-0146"}},

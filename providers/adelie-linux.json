@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "provider_id": "adelie-linux",
+  "display_name": "Adélie Linux",
+  "homepage_url": "https://www.adelielinux.org/download/",
+  "driver": "checksum-list",
+  "allowed_hosts": ["www.adelielinux.org", "distfiles.adelielinux.org"],
+  "capabilities": {
+    "products": ["adelie-linux"],
+    "editions": ["inst", "live"],
+    "flavors": ["kde", "lxqt", "mate", "xfce"],
+    "architectures": ["aarch64", "armv7", "pmmx", "ppc", "ppc64", "x86_64"],
+    "languages": [],
+    "channels": ["beta"]
+  },
+  "release_sources": [
+    {
+      "source_id": "installer",
+      "metadata_url": "https://distfiles.adelielinux.org/adelie/current/iso/",
+      "artifact_regex": "^adelie-(?P<edition>inst)-(?P<architecture>aarch64|armv7|pmmx|ppc|ppc64|x86_64)-(?P<version>\\d+\\.\\d+-beta\\d+)-(?P<build>\\d{8})\\.iso$",
+      "identity": {"product_id": "adelie-linux", "edition": "$group:edition", "channel": "beta", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://distfiles.adelielinux.org/adelie/current/iso/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://distfiles.adelielinux.org/adelie/current/iso/SHA512SUMS"}}
+    },
+    {
+      "source_id": "live-desktops",
+      "metadata_url": "https://distfiles.adelielinux.org/adelie/current/iso/",
+      "artifact_regex": "^adelie-(?P<edition>live)-(?P<flavor>kde|lxqt|mate|xfce)-(?P<architecture>aarch64|armv7|pmmx|ppc|ppc64|x86_64)-(?P<version>\\d+\\.\\d+-beta\\d+)-(?P<build>\\d{8})\\.iso$",
+      "identity": {"product_id": "adelie-linux", "edition": "$group:edition", "flavor": "$group:flavor", "channel": "beta", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://distfiles.adelielinux.org/adelie/current/iso/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://distfiles.adelielinux.org/adelie/current/iso/SHA512SUMS"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^adelie-(?P<edition>inst)-(?P<architecture>aarch64|armv7|pmmx|ppc|ppc64|x86_64)-(?P<version>\\d+\\.\\d+-beta\\d+)-(?P<build>\\d{8})\\.iso$",
+      "identity": {"product_id": "adelie-linux", "edition": "$group:edition", "channel": "beta", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"},
+      "downloadable": true
+    },
+    {
+      "regex": "^adelie-(?P<edition>live)-(?P<flavor>kde|lxqt|mate|xfce)-(?P<architecture>aarch64|armv7|pmmx|ppc|ppc64|x86_64)-(?P<version>\\d+\\.\\d+-beta\\d+)-(?P<build>\\d{8})\\.iso$",
+      "identity": {"product_id": "adelie-linux", "edition": "$group:edition", "flavor": "$group:flavor", "channel": "beta", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The official current directory publishes SHA-512 sums for installer and all four live desktop variants on every supported architecture."]
+}
