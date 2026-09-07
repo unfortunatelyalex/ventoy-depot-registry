@@ -31,6 +31,9 @@
       {"filename": "backbox-9-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "9"}},
       {"filename": "backbox-8.1-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "8.1"}}
     ], "non_matches": ["backbox-9-server-amd64.iso", "backbox-9-desktop-arm64.iso", "backbox-9-desktop-amd64.iso.sha256"]},
+    "bunsenlabs": {"matches": [
+      {"filename": "carbon-1-260211-amd64.hybrid.iso", "identity": {"product_id": "bunsenlabs", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "1", "build": "260211"}}
+    ], "non_matches": ["carbon-1-260211-i386.hybrid.iso", "carbon-1-260211-amd64.iso", "carbon-current-amd64.hybrid.iso"]},
     "cachyos": {"matches": [
       {"filename": "cachyos-desktop-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
       {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
