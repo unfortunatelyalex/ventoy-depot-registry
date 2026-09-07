@@ -28,6 +28,11 @@
       {"filename": "CentOS-Stream-10-latest-aarch64-dvd1.iso", "identity": {"product_id": "centos-stream", "edition": "dvd1", "channel": "10", "architecture": "aarch64", "version": "latest"}},
       {"filename": "CentOS-Stream-9-20260825.0-aarch64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "9", "architecture": "aarch64", "version": "20260825.0"}}
     ], "non_matches": ["CentOS-Stream-11-latest-x86_64-boot.iso", "CentOS-Stream-10-latest-x86_64-minimal.iso", "CentOS-10-Stream-x86_64-dvd1.iso"]},
+    "chimera-linux": {"matches": [
+      {"filename": "chimera-linux-x86_64-LIVE-20251220-base.iso", "identity": {"product_id": "chimera-linux", "edition": "base", "channel": "stable", "architecture": "x86_64", "version": "20251220"}},
+      {"filename": "chimera-linux-aarch64-LIVE-20251220-gnome.iso", "identity": {"product_id": "chimera-linux", "edition": "gnome", "channel": "stable", "architecture": "aarch64", "version": "20251220"}},
+      {"filename": "chimera-linux-riscv64-LIVE-20251220-plasma.iso", "identity": {"product_id": "chimera-linux", "edition": "plasma", "channel": "stable", "architecture": "riscv64", "version": "20251220"}}
+    ], "non_matches": ["chimera-linux-x86_64-IMAGE-20251220-base.iso", "chimera-linux-x86_64-LIVE-latest-base.iso", "chimera-linux-x86_64-LIVE-20251220-xfce.iso"]},
     "clonezilla": {"matches": [
       {"filename": "clonezilla-live-3.3.3-15-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "debian", "channel": "stable", "architecture": "amd64", "version": "3.3.3-15"}},
       {"filename": "clonezilla-live-20260705-resolute-amd64.iso", "identity": {"product_id": "clonezilla-live", "edition": "ubuntu", "channel": "stable", "architecture": "amd64", "version": "20260705-resolute"}}
