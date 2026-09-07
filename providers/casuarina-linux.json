@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provider_id": "casuarina-linux",
+  "display_name": "Casuarina Linux",
+  "homepage_url": "https://casuarina.org/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["casuarina.org", "repo.casuarina.org"],
+  "capabilities": {
+    "products": ["casuarina-linux"],
+    "editions": ["base"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["preview"]
+  },
+  "release_sources": [{
+    "source_id": "preview-x86_64",
+    "metadata_url": "https://casuarina.org/download/",
+    "artifact_regex": "^casuarina-linux-(?P<architecture>x86_64)-LIVE-(?P<version>\\d{8})-(?P<edition>base)\\.iso$",
+    "identity": {"product_id": "casuarina-linux", "edition": "$group:edition", "channel": "preview", "architecture": "$group:architecture"},
+    "download": {"strategy": "url-template", "url_template": "https://repo.casuarina.org/live/{version}/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://repo.casuarina.org/live/{version}/sha256sums.txt"}}
+  }],
+  "detection": [{
+    "regex": "^casuarina-linux-(?P<architecture>x86_64)-LIVE-(?P<version>\\d{8})-(?P<edition>base)\\.iso$",
+    "identity": {"product_id": "casuarina-linux", "edition": "$group:edition", "channel": "preview", "architecture": "$group:architecture", "version": "$group:version"},
+    "downloadable": true
+  }],
+  "notes": ["The project currently labels its ISO as an initial preview; Ventoy Depot preserves that channel instead of presenting it as stable."]
+}

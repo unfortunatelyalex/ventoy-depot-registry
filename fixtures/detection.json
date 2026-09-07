@@ -44,6 +44,13 @@
       {"filename": "cachyos-handheld-linux-260809.iso", "identity": {"product_id": "cachyos", "edition": "handheld", "channel": "stable", "architecture": "x86_64", "version": "260809"}},
       {"filename": "cachyos-kde-linux-240512.iso", "identity": {"product_id": "cachyos", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "240512"}}
     ], "non_matches": ["cachyos-desktop-linux-latest.iso", "cachyos-desktop-linux-260809.iso.sha256"]},
+    "caine": {"matches": [
+      {"filename": "caine14.0.iso", "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64", "version": "14.0"}},
+      {"filename": "Caine13.0.iso", "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64", "version": "13.0"}}
+    ], "non_matches": ["caine14.0.iso.sha256.txt", "caine14.0.img", "nbcaine14.0.iso"]},
+    "casuarina-linux": {"matches": [
+      {"filename": "casuarina-linux-x86_64-LIVE-20260518-base.iso", "identity": {"product_id": "casuarina-linux", "edition": "base", "channel": "preview", "architecture": "x86_64", "version": "20260518"}}
+    ], "non_matches": ["casuarina-linux-aarch64-LIVE-20260518-base.iso", "casuarina-linux-x86_64-LIVE-latest-base.iso", "casuarina-linux-x86_64-LIVE-20260518-base.img"]},
     "centos-stream": {"matches": [
       {"filename": "CentOS-Stream-10-20260901.0-x86_64-boot.iso", "identity": {"product_id": "centos-stream", "edition": "boot", "channel": "10", "architecture": "x86_64", "version": "20260901.0"}},
       {"filename": "CentOS-Stream-10-latest-aarch64-dvd1.iso", "identity": {"product_id": "centos-stream", "edition": "dvd1", "channel": "10", "architecture": "aarch64", "version": "latest"}},
@@ -122,6 +129,11 @@
       {"filename": "ipfire-2.29-core202-x86_64.iso", "identity": {"product_id": "ipfire", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "2.29", "build": "202"}},
       {"filename": "ipfire-2.29-core202-aarch64.iso", "identity": {"product_id": "ipfire", "edition": "installer", "channel": "stable", "architecture": "aarch64", "version": "2.29", "build": "202"}}
     ], "non_matches": ["ipfire-2.29-core202-x86_64.img.xz", "ipfire-3.0-x86_64.iso", "ipfire-2.29-core202-i686.iso"]},
+    "kaisen-linux": {"matches": [
+      {"filename": "kaisenlinuxrolling3.0-amd64-KDE.iso", "identity": {"product_id": "kaisen-linux", "edition": "KDE", "channel": "rolling", "architecture": "amd64", "version": "3.0"}},
+      {"filename": "kaisenlinuxrolling3.0-amd64-SR.iso", "identity": {"product_id": "kaisen-linux", "edition": "system-rescue", "channel": "rolling", "architecture": "amd64", "version": "3.0"}},
+      {"filename": "kaisenlinuxrolling3.0-amd64-NETINST.iso", "identity": {"product_id": "kaisen-linux", "edition": "netinst", "channel": "rolling", "architecture": "amd64", "version": "3.0"}}
+    ], "non_matches": ["kaisenlinuxrolling3.0-arm64-KDE.iso", "kaisenlinuxrolling3.0-amd64-GNOME.iso", "kaisenlinuxrolling3.0-amd64-KDE.iso.sha256"]},
     "kali-linux": {"matches": [
       {"filename": "kali-linux-2024.1-live-amd64.iso", "identity": {"product_id": "kali-linux", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "2024.1"}},
       {"filename": "kali-linux-2026.2-installer-arm64.iso", "identity": {"product_id": "kali-linux", "edition": "installer", "channel": "stable", "architecture": "arm64", "version": "2026.2"}}

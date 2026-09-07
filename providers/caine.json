@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "provider_id": "caine",
+  "display_name": "CAINE",
+  "homepage_url": "https://www.caine-live.net/page5/page5.html",
+  "driver": "static-html",
+  "allowed_hosts": ["www.caine-live.net"],
+  "capabilities": {
+    "products": ["caine"],
+    "editions": ["forensics-live"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "stable-x86_64",
+    "metadata_url": "https://www.caine-live.net/page5/page5.html",
+    "artifact_regex": "^caine(?P<version>\\d+(?:\\.\\d+)*)\\.iso$",
+    "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://www.caine-live.net/Downloads/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://www.caine-live.net/page5/{filename}.sha256.txt"}}
+  }],
+  "detection": [{
+    "regex": "^caine(?P<version>\\d+(?:\\.\\d+)*)\\.iso$",
+    "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+    "downloadable": true
+  }]
+}
