@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "provider_id": "harvester",
+  "display_name": "Harvester HCI",
+  "homepage_url": "https://github.com/harvester/harvester/releases",
+  "driver": "github-releases",
+  "allowed_hosts": ["github.com", "api.github.com", "releases.rancher.com"],
+  "capabilities": {
+    "products": ["harvester"],
+    "editions": ["full", "netinstall"],
+    "flavors": [],
+    "architectures": ["amd64", "arm64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "full",
+      "metadata_url": "https://api.github.com/repos/harvester/harvester/releases?per_page=100",
+      "artifact_regex": "^harvester-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64)\\.iso$",
+      "identity": {"product_id": "harvester", "edition": "full", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://releases\\.rancher\\.com/harvester/v.+/harvester-v.+-(?:amd64|arm64)\\.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://releases.rancher.com/harvester/v{version}/harvester-v{version}-{architecture}.sha512"}}
+    },
+    {
+      "source_id": "netinstall-amd64",
+      "metadata_url": "https://api.github.com/repos/harvester/harvester/releases?per_page=100",
+      "artifact_regex": "^harvester-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)-net-install\\.iso$",
+      "identity": {"product_id": "harvester", "edition": "netinstall", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://releases\\.rancher\\.com/harvester/v.+/harvester-v.+-amd64-net-install\\.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://releases.rancher.com/harvester/v{version}/harvester-v{version}-{architecture}.sha512"}}
+    }
+  ],
+  "detection": [
+    {"regex": "^harvester-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64)\\.iso$", "identity": {"product_id": "harvester", "edition": "full", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^harvester-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64)-net-install\\.iso$", "identity": {"product_id": "harvester", "edition": "netinstall", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Only formal non-prerelease GitHub releases are eligible. Full AMD64/ARM64 and AMD64 net-install ISOs are covered by the official architecture-specific SHA-512 list."]
+}

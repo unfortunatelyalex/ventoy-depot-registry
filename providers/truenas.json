@@ -1,0 +1,14 @@
+{
+  "schema_version": 1, "provider_id": "truenas", "display_name": "TrueNAS Community Edition", "homepage_url": "https://www.truenas.com/download-truenas-community-edition/", "driver": "static-html",
+  "allowed_hosts": ["www.truenas.com", "download.sys.truenas.net", "iso.sys.truenas.net"],
+  "capabilities": {"products": ["truenas"], "editions": ["community"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable", "beta"]},
+  "release_sources": [
+    {"source_id": "stable", "metadata_url": "https://www.truenas.com/download-truenas-community-edition/", "artifact_regex": "^TrueNAS-SCALE-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://download\\.sys\\.truenas\\.net/.+/TrueNAS-SCALE-.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}},
+    {"source_id": "beta", "metadata_url": "https://www.truenas.com/download-truenas-community-edition/", "artifact_regex": "^TrueNAS-(?P<version>\\d+(?:\\.\\d+)+-BETA\\.\\d+)\\.iso$", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64"}, "download": {"strategy": "page-link", "link_regex": "^https://iso\\.sys\\.truenas\\.net/.+/TrueNAS-.+-BETA\\..+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}}
+  ],
+  "detection": [
+    {"regex": "^TrueNAS-SCALE-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^TrueNAS-(?P<version>\\d+(?:\\.\\d+)+-BETA\\.\\d+)\\.iso$", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Enterprise-only media is outside this public provider. Stable and beta Community Edition streams never cross-update."]
+}

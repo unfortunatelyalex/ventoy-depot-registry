@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "provider_id": "bunsenlabs",
+  "display_name": "BunsenLabs",
+  "homepage_url": "https://www.bunsenlabs.org/installation.html",
+  "driver": "static-html",
+  "allowed_hosts": ["www.bunsenlabs.org", "ddl.bunsenlabs.org"],
+  "capabilities": {"products": ["bunsenlabs"], "editions": ["desktop"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{
+    "source_id": "stable-amd64",
+    "metadata_url": "https://www.bunsenlabs.org/installation.html",
+    "artifact_regex": "^[a-z]+-(?P<version>\\d+)-(?P<build>\\d{6})-(?P<architecture>amd64)\\.hybrid\\.iso$",
+    "identity": {"product_id": "bunsenlabs", "edition": "desktop", "channel": "stable", "architecture": "$group:architecture"},
+    "download": {"strategy": "url-template", "url_template": "https://ddl.bunsenlabs.org/ddl/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://ddl.bunsenlabs.org/ddl/release.sha256.txt"}}
+  }],
+  "detection": [{
+    "regex": "^[a-z]+-(?P<version>\\d+)-(?P<build>\\d{6})-(?P<architecture>amd64)\\.hybrid\\.iso$",
+    "identity": {"product_id": "bunsenlabs", "edition": "desktop", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"},
+    "downloadable": true
+  }]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "provider_id": "kaos",
+  "display_name": "KaOS",
+  "homepage_url": "https://kaosx.us/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["kaosx.us", "kaosx-eu.yourhostingsolutions.com"],
+  "capabilities": {
+    "products": ["kaos"],
+    "editions": ["dinit", "systemd"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "official-dinit-page",
+      "metadata_url": "https://kaosx.us/download/",
+      "artifact_regex": "^KaOS-(?P<edition>DINIT)-(?P<version>\\d{4}\\.\\d{2})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "kaos", "edition": "dinit", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://kaosx-eu\\.yourhostingsolutions\\.com/(?P<filename>KaOS-DINIT-\\d{4}\\.\\d{2}-x86_64\\.iso)"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table", "entry_regex": "SHA256SUM\\s+KaOS-DINIT\\s+{version}.{0,2000}(?P<checksum>[A-Fa-f0-9]{64})"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^KaOS-(?P<edition>DINIT)-(?P<version>\\d{4}\\.\\d{2})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "kaos", "edition": "dinit", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^KaOS-(?P<version>\\d{4}\\.\\d{2})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "kaos", "edition": "systemd", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": false
+    }
+  ],
+  "notes": ["KaOS switched from systemd to Dinit in 2026. Historical systemd media are recognized but never changed to Dinit automatically.", "The canonical trailing-slash HTTPS URL avoids an upstream redirect through plain HTTP."]
+}

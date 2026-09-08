@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "peppermint-os",
+  "display_name": "Peppermint OS",
+  "homepage_url": "https://peppermintos.com/",
+  "driver": "static-html",
+  "allowed_hosts": ["peppermintos.com", "nightly.peppermintos.org"],
+  "capabilities": {"products": ["peppermint-os"], "editions": ["debian", "devuan"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["manual"]},
+  "release_sources": [],
+  "detection": [{"regex": "^peppermint_(?P<edition>debian|devuan)-amd64\\.iso$", "identity": {"product_id": "peppermint-os", "edition": "$group:edition", "channel": "manual", "architecture": "amd64", "version": null}, "downloadable": false}],
+  "notes": ["Peppermint uses stable filenames across rebuilds. The edition is recognized, but a version cannot be bound safely without additional publisher metadata."]
+}

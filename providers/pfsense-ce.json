@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider_id": "pfsense-ce",
+  "display_name": "pfSense Community Edition",
+  "homepage_url": "https://www.pfsense.org/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.pfsense.org"],
+  "capabilities": {"products": ["pfsense-ce"], "editions": ["dvd"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^pfSense-CE-(?P<version>\\d+(?:\\.\\d+)+)-RELEASE-(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "pfsense-ce", "edition": "dvd", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["The official SHA-256 covers the gzip archive rather than the extracted ISO, and current downloads may require the Netgate handoff. Detection never initiates login or acquisition."]
+}

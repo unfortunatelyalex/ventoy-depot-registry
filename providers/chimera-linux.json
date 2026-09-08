@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "provider_id": "chimera-linux",
+  "display_name": "Chimera Linux",
+  "homepage_url": "https://chimera-linux.org/download/",
+  "driver": "checksum-list",
+  "allowed_hosts": ["chimera-linux.org", "repo.chimera-linux.org"],
+  "capabilities": {
+    "products": ["chimera-linux"],
+    "editions": ["base", "gnome", "plasma"],
+    "flavors": [],
+    "architectures": ["aarch64", "loongarch64", "ppc", "ppc64", "ppc64le", "riscv64", "x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "latest-live",
+      "metadata_url": "https://repo.chimera-linux.org/live/latest/",
+      "artifact_regex": "^chimera-linux-(?P<architecture>aarch64|loongarch64|ppc|ppc64|ppc64le|riscv64|x86_64)-LIVE-(?P<version>\\d{8})-(?P<edition>base|gnome|plasma)\\.iso$",
+      "identity": {"product_id": "chimera-linux", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://repo.chimera-linux.org/live/latest/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://repo.chimera-linux.org/live/latest/sha256sums.txt"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^chimera-linux-(?P<architecture>aarch64|loongarch64|ppc|ppc64|ppc64le|riscv64|x86_64)-LIVE-(?P<version>\\d{8})-(?P<edition>base|gnome|plasma)\\.iso$",
+      "identity": {"product_id": "chimera-linux", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["Official SHA-256 sums cover all published live ISO variants; compressed board images and root filesystems are intentionally excluded."]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "provider_id": "drift-linux",
+  "display_name": "DRIFT Linux",
+  "homepage_url": "https://www.driftlinux.org/downloads/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.driftlinux.org", "downloads.driftlinux.org"],
+  "capabilities": {"products": ["drift-linux"], "editions": ["fast", "fast-xs"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {
+      "source_id": "fast", "metadata_url": "https://www.driftlinux.org/downloads/", "artifact_regex": "^drift-linux-FAST-hybrid\\.iso$", "identity": {"product_id": "drift-linux", "edition": "fast", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.driftlinux.org/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://downloads.driftlinux.org/{filename}.sha256"}}, "automatic_download": false
+    },
+    {
+      "source_id": "fast-xs", "metadata_url": "https://www.driftlinux.org/downloads/", "artifact_regex": "^drift-linux-FAST-XS-hybrid\\.iso$", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.driftlinux.org/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://downloads.driftlinux.org/{filename}.sha256"}}, "automatic_download": false
+    }
+  ],
+  "detection": [
+    {"regex": "^drift-linux-FAST-hybrid\\.iso$", "identity": {"product_id": "drift-linux", "edition": "fast", "channel": "stable", "architecture": "x86_64"}, "downloadable": true},
+    {"regex": "^drift-linux-FAST-XS-hybrid\\.iso$", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"}, "downloadable": true}
+  ],
+  "notes": ["Official filenames are stable aliases. The integrated resolver reads the edition-specific version from the official page and requires its SHA-256 sidecar; replacement of an existing same-name ISO remains explicit."]
+}

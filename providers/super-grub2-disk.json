@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provider_id": "super-grub2-disk",
+  "display_name": "Super Grub2 Disk",
+  "homepage_url": "https://www.supergrubdisk.org/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.supergrubdisk.org", "sourceforge.net", "downloads.sourceforge.net", "sf-eu-introserv-3.dl.sourceforge.net"],
+  "capabilities": {
+    "products": ["super-grub2-disk"],
+    "editions": ["multiarch", "i386_pc", "x86_64_efi", "i386_efi"],
+    "flavors": [],
+    "architectures": ["multiarch"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "classic-cd-images",
+      "metadata_url": "https://www.supergrubdisk.org/",
+      "artifact_regex": "^supergrub2-classic-(?P<version>\\d+\\.\\d+s\\d+)-(?P<edition>multiarch|i386_pc|x86_64_efi|i386_efi)-CD\\.iso$",
+      "identity": {"product_id": "super-grub2-disk", "edition": "$group:edition", "channel": "stable", "architecture": "multiarch"},
+      "download": {"strategy": "url-template", "url_template": "https://downloads.sourceforge.net/project/supergrub2/{version}/super_grub2_disk_{version}/{filename}?use_mirror=sf-eu-introserv-3"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}
+    }
+  ],
+  "detection": [
+    {"regex": "^supergrub2-classic-(?P<version>\\d+\\.\\d+s\\d+)-(?P<edition>multiarch|i386_pc|x86_64_efi|i386_efi)-CD\\.iso$", "identity": {"product_id": "super-grub2-disk", "edition": "$group:edition", "channel": "stable", "architecture": "multiarch", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Only the four classic CD images covered by the official SHA256SUMS section are enabled. Unhashed ISO links and ZIP/EFI/USB artifacts are excluded."]
+}

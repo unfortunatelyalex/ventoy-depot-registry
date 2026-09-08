@@ -1,0 +1,8 @@
+{
+  "schema_version": 1, "provider_id": "qubes-os", "display_name": "Qubes OS", "homepage_url": "https://www.qubes-os.org/downloads/", "driver": "static-html",
+  "allowed_hosts": ["www.qubes-os.org", "ftp.qubes-os.org", "keys.qubes-os.org"],
+  "capabilities": {"products": ["qubes-os"], "editions": ["installer"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://www.qubes-os.org/downloads/", "artifact_regex": "^Qubes-R(?P<version>\\d+(?:\\.\\d+)+)-x86_64\\.iso$", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}, "automatic_download": false}],
+  "detection": [{"regex": "^Qubes-R(?P<version>\\d+(?:\\.\\d+)+)-x86_64\\.iso$", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": false}],
+  "notes": ["Automatic updates require a curated Qubes master/release signing-key chain and remain disabled until that trust material is shipped as signed registry targets."]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "provider_id": "xcp-ng",
+  "display_name": "XCP-ng",
+  "homepage_url": "https://xcp-ng.org/",
+  "driver": "checksum-list",
+  "allowed_hosts": ["xcp-ng.org", "updates.xcp-ng.org"],
+  "capabilities": {
+    "products": ["xcp-ng"],
+    "editions": ["full", "netinstall"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["lts"]
+  },
+  "release_sources": [
+    {
+      "source_id": "lts-8-3",
+      "metadata_url": "https://updates.xcp-ng.org/isos/8.3/SHA256SUMS",
+      "artifact_regex": "^xcp-ng-(?P<version>\\d+(?:\\.\\d+){2})-(?P<build>\\d{8}(?:\\.\\d+)?)(?:-(?P<edition>netinstall))?\\.iso$",
+      "identity": {
+        "product_id": "xcp-ng",
+        "channel": "lts",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "url-template",
+        "url_template": "https://updates.xcp-ng.org/isos/8.3/{filename}"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}
+      }
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^xcp-ng-(?P<version>\\d+(?:\\.\\d+){2})(?:-(?P<build>\\d{8}(?:\\.\\d+)?))?\\.iso$",
+      "identity": {
+        "product_id": "xcp-ng",
+        "edition": "full",
+        "channel": "lts",
+        "architecture": "x86_64",
+        "version": "$group:version",
+        "build": "$group:build"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^xcp-ng-(?P<version>\\d+(?:\\.\\d+){2})(?:-(?P<build>\\d{8}(?:\\.\\d+)?))-netinstall\\.iso$",
+      "identity": {
+        "product_id": "xcp-ng",
+        "edition": "netinstall",
+        "channel": "lts",
+        "architecture": "x86_64",
+        "version": "$group:version",
+        "build": "$group:build"
+      },
+      "downloadable": true
+    }
+  ],
+  "notes": [
+    "The audited integrated resolver selects the newest stable series and refresh build; preview and upgrade-only images are excluded."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "provider_id": "tuxedo-os",
+  "display_name": "TUXEDO OS",
+  "homepage_url": "https://tuxedocomputers.com/os",
+  "driver": "sidecar",
+  "allowed_hosts": ["tuxedocomputers.com", "os.tuxedocomputers.com"],
+  "capabilities": {
+    "products": ["tuxedo-os"],
+    "editions": ["desktop"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "latest-builds",
+      "metadata_url": "https://os.tuxedocomputers.com/",
+      "artifact_regex": "^TUXEDO-OS-(?P<version>\\d{12})\\.iso$",
+      "identity": {"product_id": "tuxedo-os", "edition": "desktop", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://os.tuxedocomputers.com/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://os.tuxedocomputers.com/checksums/{filename}.sha256"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^TUXEDO-OS-(?P<version>\\d{12})\\.iso$",
+      "identity": {"product_id": "tuxedo-os", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The official site also publishes OpenPGP signatures, but only a short key ID is documented there; automatic updates enforce the official SHA-256 sidecar until a full fingerprint can be pinned."]
+}

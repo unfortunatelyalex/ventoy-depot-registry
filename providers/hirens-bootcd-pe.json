@@ -1,0 +1,8 @@
+{
+  "schema_version": 1, "provider_id": "hirens-bootcd-pe", "display_name": "Hiren's BootCD PE", "homepage_url": "https://www.hirensbootcd.org/download/", "driver": "static-html",
+  "allowed_hosts": ["www.hirensbootcd.org"],
+  "capabilities": {"products": ["hirens-bootcd-pe"], "editions": ["pe"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://www.hirensbootcd.org/download/", "artifact_regex": "^HBCD_PE_x64\\.iso$", "identity": {"product_id": "hirens-bootcd-pe", "edition": "pe", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://www.hirensbootcd.org/files/HBCD_PE_x64.iso"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}}],
+  "detection": [{"regex": "^HBCD_PE_x64\\.iso$", "identity": {"product_id": "hirens-bootcd-pe", "edition": "pe", "channel": "stable", "architecture": "x86_64", "version": null}, "downloadable": true}],
+  "notes": ["The publisher keeps a stable ISO filename; Ventoy Depot therefore requires an explicit REPLACE action for updates."]
+}

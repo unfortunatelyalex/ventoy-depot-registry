@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "provider_id": "kaisen-linux",
+  "display_name": "Kaisen Linux",
+  "homepage_url": "https://kaisenlinux.org/downloads",
+  "driver": "checksum-list",
+  "allowed_hosts": ["kaisenlinux.org", "iso.kaisenlinux.org"],
+  "capabilities": {
+    "products": ["kaisen-linux"],
+    "editions": ["kde", "lxqt", "mate", "xfce", "system-rescue", "netinst"],
+    "flavors": [],
+    "architectures": ["amd64"],
+    "languages": [],
+    "channels": ["rolling"]
+  },
+  "release_sources": [
+    {
+      "source_id": "desktop",
+      "metadata_url": "https://kaisenlinux.org/checksums.txt",
+      "artifact_regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-(?P<edition>KDE|LXQT|MATE|XFCE)\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "$group:edition", "channel": "rolling", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://iso.kaisenlinux.org/rolling/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://kaisenlinux.org/checksums.txt"}}
+    },
+    {
+      "source_id": "system-rescue",
+      "metadata_url": "https://kaisenlinux.org/checksums.txt",
+      "artifact_regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-SR\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "system-rescue", "channel": "rolling", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://iso.kaisenlinux.org/rolling/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://kaisenlinux.org/checksums.txt"}}
+    },
+    {
+      "source_id": "netinst",
+      "metadata_url": "https://kaisenlinux.org/checksums.txt",
+      "artifact_regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-NETINST\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "netinst", "channel": "rolling", "architecture": "amd64"},
+      "download": {"strategy": "url-template", "url_template": "https://iso.kaisenlinux.org/rolling/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://kaisenlinux.org/checksums.txt"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-(?P<edition>KDE|LXQT|MATE|XFCE)\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "$group:edition", "channel": "rolling", "architecture": "amd64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-SR\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "system-rescue", "channel": "rolling", "architecture": "amd64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^kaisenlinuxrolling(?P<version>\\d+(?:\\.\\d+)*)-amd64-NETINST\\.iso$",
+      "identity": {"product_id": "kaisen-linux", "edition": "netinst", "channel": "rolling", "architecture": "amd64", "version": "$group:version"},
+      "downloadable": true
+    }
+  ]
+}

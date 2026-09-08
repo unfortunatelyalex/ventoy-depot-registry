@@ -9,11 +9,18 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from securesystemslib.signer import CryptoSigner
-from tuf.api.metadata import MetaFile, Metadata, Root, Snapshot, TargetFile, Targets, Timestamp
+from tuf.api.metadata import (
+    Metadata,
+    MetaFile,
+    Root,
+    Snapshot,
+    TargetFile,
+    Targets,
+    Timestamp,
+)
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 ROLE_EXPIRY = {"root": 365, "targets": 90, "snapshot": 30, "timestamp": 14}
-ROLES = ("root", "targets", "snapshot", "timestamp")
 
 
 def parser() -> argparse.ArgumentParser:
@@ -21,7 +28,17 @@ def parser() -> argparse.ArgumentParser:
         description="Initialize or refresh the signed Ventoy Depot TUF repository."
     )
     result.add_argument("command", choices=("init", "publish"))
-    result.add_argument("key_directory", type=Path)
+    result.add_argument(
+        "offline_key_directory",
+        type=Path,
+        help="External directory for the offline root and targets keys.",
+    )
+    result.add_argument(
+        "--online-key-directory",
+        type=Path,
+        required=True,
+        help="Separate external directory for snapshot and timestamp keys.",
+    )
     result.add_argument(
         "--output-root",
         type=Path,
@@ -33,24 +50,34 @@ def parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     arguments = parser().parse_args(argv)
-    key_directory = arguments.key_directory.expanduser().resolve()
+    offline_key_directory = arguments.offline_key_directory.expanduser().resolve()
+    online_key_directory = arguments.online_key_directory.expanduser().resolve()
     output_root = arguments.output_root.expanduser().resolve()
-    _require_external_key_directory(key_directory)
+    _require_external_key_directory(offline_key_directory)
+    _require_external_key_directory(online_key_directory)
+    _require_separate_key_directories(offline_key_directory, online_key_directory)
     if arguments.command == "init":
-        initialize(key_directory, output_root)
+        initialize(offline_key_directory, online_key_directory, output_root)
     else:
-        publish(key_directory, output_root)
+        publish(offline_key_directory, online_key_directory, output_root)
     print(f"Generated signed TUF repository at {output_root}")
     return 0
 
 
-def initialize(key_directory: Path, output_root: Path) -> None:
+def initialize(offline_keys: Path, online_keys: Path, output_root: Path) -> None:
     root_path = output_root / "metadata" / "root.json"
-    if root_path.exists() or any((key_directory / f"{role}.pem").exists() for role in ROLES):
+    key_paths = {
+        "root": offline_keys / "root.pem",
+        "targets": offline_keys / "targets.pem",
+        "snapshot": online_keys / "snapshot.pem",
+        "timestamp": online_keys / "timestamp.pem",
+    }
+    if root_path.exists() or any(path.exists() for path in key_paths.values()):
         raise RuntimeError("Refusing to overwrite an existing TUF root or private key.")
-    key_directory.mkdir(parents=True, mode=0o700, exist_ok=True)
-    os.chmod(key_directory, 0o700)
-    signers = {role: _generate_signer(key_directory / f"{role}.pem") for role in ROLES}
+    for directory in (offline_keys, online_keys):
+        directory.mkdir(parents=True, mode=0o700, exist_ok=True)
+        os.chmod(directory, 0o700)
+    signers = {role: _generate_signer(path) for role, path in key_paths.items()}
     root = Metadata(
         Root(
             version=1,
@@ -62,10 +89,10 @@ def initialize(key_directory: Path, output_root: Path) -> None:
         root.signed.add_key(signer.public_key, role)
     root.sign(signers["root"])
     _write_metadata(root_path, root)
-    _publish_roles(key_directory, output_root, root)
+    _publish_roles(offline_keys, online_keys, output_root, root)
 
 
-def publish(key_directory: Path, output_root: Path) -> None:
+def publish(offline_keys: Path, online_keys: Path, output_root: Path) -> None:
     root_path = output_root / "metadata" / "root.json"
     if not root_path.is_file():
         raise RuntimeError("No initialized root.json exists; run init first.")
@@ -73,10 +100,12 @@ def publish(key_directory: Path, output_root: Path) -> None:
     root.signed.verify_delegate("root", root.signed_bytes, root.signatures)
     if root.signed.is_expired(datetime.now(UTC)):
         raise RuntimeError("The TUF root is expired and must be rotated offline.")
-    _publish_roles(key_directory, output_root, root)
+    _publish_roles(offline_keys, online_keys, output_root, root)
 
 
-def _publish_roles(key_directory: Path, output_root: Path, root: Metadata[Root]) -> None:
+def _publish_roles(
+    offline_keys: Path, online_keys: Path, output_root: Path, root: Metadata[Root]
+) -> None:
     metadata_dir = output_root / "metadata"
     target_dir = output_root / "targets"
     metadata_dir.mkdir(parents=True, exist_ok=True)
@@ -93,7 +122,7 @@ def _publish_roles(key_directory: Path, output_root: Path, root: Metadata[Root])
             },
         )
     )
-    targets.sign(_load_signer("targets", key_directory, root))
+    targets.sign(_load_signer("targets", offline_keys, root))
     targets_bytes = targets.to_bytes()
     _atomic_write(metadata_dir / "targets.json", targets_bytes)
 
@@ -105,7 +134,7 @@ def _publish_roles(key_directory: Path, output_root: Path, root: Metadata[Root])
             meta={"targets.json": _meta(targets_version, targets_bytes)},
         )
     )
-    snapshot.sign(_load_signer("snapshot", key_directory, root))
+    snapshot.sign(_load_signer("snapshot", online_keys, root))
     snapshot_bytes = snapshot.to_bytes()
     _atomic_write(metadata_dir / "snapshot.json", snapshot_bytes)
 
@@ -117,14 +146,16 @@ def _publish_roles(key_directory: Path, output_root: Path, root: Metadata[Root])
             snapshot_meta=_meta(snapshot_version, snapshot_bytes),
         )
     )
-    timestamp.sign(_load_signer("timestamp", key_directory, root))
+    timestamp.sign(_load_signer("timestamp", online_keys, root))
     _atomic_write(metadata_dir / "timestamp.json", timestamp.to_bytes())
 
 
 def _copy_targets(target_dir: Path) -> dict[str, Path]:
     sources = {
         "providers/index.json": REPOSITORY / "providers" / "index.json",
-        "schema/provider-v1.schema.json": REPOSITORY / "schema" / "provider-v1.schema.json",
+        "schema/provider-v1.schema.json": REPOSITORY
+        / "schema"
+        / "provider-v1.schema.json",
     }
     sources.update(
         {
@@ -167,12 +198,12 @@ def _load_signer(role: str, key_directory: Path, root: Metadata[Root]) -> Crypto
     return CryptoSigner.from_priv_key_uri(f"file2:{path}", key)
 
 
-def _next_version(path: Path, role_type: type[Targets] | type[Snapshot] | type[Timestamp]) -> int:
+def _next_version(path: Path, role_type: type[Targets | Snapshot | Timestamp]) -> int:
     if not path.is_file():
         return 1
     metadata = Metadata.from_file(str(path))
     if not isinstance(metadata.signed, role_type):
-        raise RuntimeError(f"Unexpected metadata role in {path.name}.")
+        raise TypeError(f"Unexpected metadata role in {path.name}.")
     return metadata.signed.version + 1
 
 
@@ -207,6 +238,13 @@ def _require_external_key_directory(path: Path) -> None:
     repository = REPOSITORY.resolve()
     if path == repository or repository in path.parents:
         raise RuntimeError("Private TUF keys must be stored outside the repository.")
+
+
+def _require_separate_key_directories(offline: Path, online: Path) -> None:
+    if offline == online or offline in online.parents or online in offline.parents:
+        raise RuntimeError(
+            "Offline and online TUF keys must use separate directory trees."
+        )
 
 
 if __name__ == "__main__":
