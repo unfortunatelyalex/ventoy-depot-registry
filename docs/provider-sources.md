@@ -37,6 +37,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | NixOS | `nixos.org/download` and `channels.nixos.org` | official SHA-256 sidecar | graphical/minimal and architecture remain distinct |
 | Omarchy | `omarchy.org` and `iso.omarchy.org` | official SHA-256 sidecar | `.sig` is not trusted until a stable full fingerprint is officially published |
 | openSUSE Tumbleweed | official openSUSE download service | official SHA-256 sidecar | DVD/net/rescue/live desktop and architecture remain distinct |
+| openEuler | official `repo.openeuler.org` release tree | official SHA-256 sidecar | LTS/interim, DVD/netinstall/everything and architecture remain distinct; debug/source images are excluded |
 | Manjaro | official `manjaro-get-iso` project and download host | official SHA-256 sidecar | preview channel needs persisted manual mapping |
 | MX Linux | official SourceForge Final folders and fixed documented mirror | official SHA-256 sidecar | Xfce standard/AHS, KDE AHS and Fluxbox remain distinct |
 | Parrot OS | official `deb.parrot.sh/parrot/iso` index | SHA-512 from the official signed hash list | Home, Security and each desktop/security spin remain distinct; non-ISO images are excluded |

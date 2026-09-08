@@ -301,6 +301,11 @@
       {"filename": "openmediavault_8.3.1-amd64.iso", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "8.3.1"}},
       {"filename": "openmediavault_7.4.17-amd64.iso", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "oldstable", "architecture": "amd64", "version": "7.4.17"}}
     ], "non_matches": ["openmediavault_8.3.1-arm64.iso", "openmediavault_9.0.0-amd64.iso", "openmediavault_8.3.1-amd64.iso.sha256"]},
+    "openeuler": {"matches": [
+      {"filename": "openEuler-24.03-LTS-SP4-x86_64-dvd.iso", "identity": {"product_id": "openeuler", "edition": "dvd", "channel": "lts", "architecture": "x86_64", "version": "24.03-LTS-SP4"}},
+      {"filename": "openEuler-24.03-LTS-SP4-netinst-aarch64-dvd.iso", "identity": {"product_id": "openeuler", "edition": "netinst", "channel": "lts", "architecture": "aarch64", "version": "24.03-LTS-SP4"}},
+      {"filename": "openEuler-25.09-everything-riscv64-dvd.iso", "identity": {"product_id": "openeuler", "edition": "everything", "channel": "interim", "architecture": "riscv64", "version": "25.09"}}
+    ], "non_matches": ["openEuler-24.03-LTS-SP4-source-dvd.iso", "openEuler-25.09-x86_64.img", "openEuler-latest-x86_64-dvd.iso"]},
     "opensuse-leap": {"matches": [
       {"filename": "openSUSE-Leap-15.6-DVD-x86_64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "DVD", "channel": "15.6", "architecture": "x86_64", "version": "15.6"}},
       {"filename": "openSUSE-Leap-15.6-NET-aarch64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "NET", "channel": "15.6", "architecture": "aarch64", "version": "15.6"}},
