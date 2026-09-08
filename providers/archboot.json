@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provider_id": "archboot",
+  "display_name": "Archboot",
+  "homepage_url": "https://archboot.com/",
+  "driver": "checksum-list",
+  "allowed_hosts": ["archboot.com", "release.archboot.com"],
+  "capabilities": {"products": ["archboot"], "editions": ["rescue-installer"], "flavors": ["standard", "latest", "local"], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^archboot-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-(?P<build>\\d{2}\\.\\d{2})-\\d+(?:\\.\\d+)+-arch\\d+-\\d+-x86_64\\.iso$", "identity": {"product_id": "archboot", "edition": "rescue-installer", "flavor": "standard", "channel": "rolling", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false},
+    {"regex": "^archboot-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-(?P<build>\\d{2}\\.\\d{2})-\\d+(?:\\.\\d+)+-arch\\d+-\\d+-(?P<flavor>latest|local)-x86_64\\.iso$", "identity": {"product_id": "archboot", "edition": "rescue-installer", "flavor": "$group:flavor", "channel": "rolling", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
+  ],
+  "notes": ["Archboot publishes BLAKE2b checksums and detached signatures, but Ventoy Depot's current checksum policy accepts only SHA-256/SHA-512. The x86_64 ISO variants are recognized without enabling automatic downloads."]
+}

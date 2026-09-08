@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provider_id": "knoppix",
+  "display_name": "KNOPPIX",
+  "homepage_url": "https://www.knopper.net/knoppix/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.knopper.net", "download.knopper.net"],
+  "capabilities": {"products": ["knoppix"], "editions": ["dvd", "cd"], "flavors": [], "architectures": ["multiarch"], "languages": ["de", "en"], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^KNOPPIX_V(?P<version>\\d+(?:\\.\\d+)+)DVD-\\d{4}-\\d{2}-\\d{2}-(?P<language>DE|EN)\\.iso$", "identity": {"product_id": "knoppix", "edition": "dvd", "channel": "stable", "architecture": "multiarch", "language": "$group:language", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^KNOPPIX_V(?P<version>\\d+(?:\\.\\d+)+)-\\d{4}-\\d{2}-\\d{2}-(?P<language>DE|EN)\\.iso$", "identity": {"product_id": "knoppix", "edition": "cd", "channel": "stable", "architecture": "multiarch", "language": "$group:language", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["KNOPPIX CD/DVD language variants are recognized. Automatic acquisition remains disabled because the current official distribution path does not provide a stable SHA-256/SHA-512 feed over valid HTTPS."]
+}

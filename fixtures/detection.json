@@ -31,6 +31,10 @@
       {"filename": "archbang-050926-x86_64.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.05"}},
       {"filename": "archbang-220826.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.08.22"}}
     ], "non_matches": ["archbang-latest-x86_64.iso", "fruitbang-050926-x86_64.iso", "archbang-050926-x86_64.img"]},
+    "archboot": {"matches": [
+      {"filename": "archboot-2026.09.07-01.02-7.2.3-arch1-3-x86_64.iso", "identity": {"product_id": "archboot", "edition": "rescue-installer", "flavor": "standard", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.07", "build": "01.02"}},
+      {"filename": "archboot-2026.09.07-01.02-7.2.3-arch1-3-latest-x86_64.iso", "identity": {"product_id": "archboot", "edition": "rescue-installer", "flavor": "latest", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.07", "build": "01.02"}}
+    ], "non_matches": ["archboot-2026.09.07-01.02-7.2.3-arch1-3-x86_64.img", "archboot-latest-x86_64.iso"]},
     "archcraft": {"matches": [
       {"filename": "archcraft-2026.08.01-x86_64.iso", "identity": {"product_id": "archcraft", "edition": "main", "channel": "rolling", "architecture": "x86_64", "version": "2026.08.01"}}
     ], "non_matches": ["archcraft-2026.08.01-aarch64.iso", "archcraft-prime-2026.08.01-x86_64.iso", "archcraft-latest-x86_64.iso"]},
@@ -194,6 +198,10 @@
       {"filename": "neon-testing-desktop-20260901-0146.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64", "version": "20260901-0146"}},
       {"filename": "neon-unstable-desktop-20260830-0628.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "unstable", "architecture": "x86_64", "version": "20260830-0628"}}
     ], "non_matches": ["neon-user-desktop-current.iso", "neon-user-mobile-20260903-0454.iso"]},
+    "knoppix": {"matches": [
+      {"filename": "KNOPPIX_V9.1DVD-2021-01-25-EN.iso", "identity": {"product_id": "knoppix", "edition": "dvd", "channel": "stable", "architecture": "multiarch", "language": "EN", "version": "9.1"}},
+      {"filename": "KNOPPIX_V8.6.1-2019-10-14-DE.iso", "identity": {"product_id": "knoppix", "edition": "cd", "channel": "stable", "architecture": "multiarch", "language": "DE", "version": "8.6.1"}}
+    ], "non_matches": ["KNOPPIX_V9.1DVD.iso", "KNOPPIX_V9.1DVD-2021-01-25-FR.iso"]},
     "linux-lite": {"matches": [
       {"filename": "linux-lite-8.0-64bit.iso", "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "8.0"}},
       {"filename": "linux-lite-7.8-64bit.iso", "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "7.8"}}
@@ -203,6 +211,9 @@
       {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
       {"filename": "linuxmint-21.3-cinnamon-64bit-edge.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "flavor": "edge", "channel": "stable", "architecture": "x86_64", "version": "21.3"}}
     ], "non_matches": ["linuxmint-22.3-cinnamon-32bit.iso", "linuxmint-22.3-lmde-64bit.iso"]},
+    "mabox-linux": {"matches": [
+      {"filename": "mabox-linux-26.09-Istredd-260904-linux618.iso", "identity": {"product_id": "mabox-linux", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "26.09", "build": "260904"}}
+    ], "non_matches": ["mabox-linux-current.iso", "mabox-linux-26.09-Istredd-260904-linux618.iso.md5"]},
     "mageia": {"matches": [
       {"filename": "Mageia-10-x86_64.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "x86_64", "version": "10"}},
       {"filename": "Mageia-10-i686.iso", "identity": {"product_id": "mageia", "edition": "classic", "channel": "stable", "architecture": "i686", "version": "10"}},
