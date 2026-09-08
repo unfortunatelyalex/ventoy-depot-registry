@@ -40,6 +40,20 @@
       {"filename": "backbox-9-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "9"}},
       {"filename": "backbox-8.1-desktop-amd64.iso", "identity": {"product_id": "backbox", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "8.1"}}
     ], "non_matches": ["backbox-9-server-amd64.iso", "backbox-9-desktop-arm64.iso", "backbox-9-desktop-amd64.iso.sha256"]},
+    "blackarch": {"matches": [
+      {"filename": "blackarch-linux-full-2026.09.01-x86_64.iso", "identity": {"product_id": "blackarch", "edition": "full", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.01"}},
+      {"filename": "blackarch-linux-netinst-2023.04.01-x86_64.iso", "identity": {"product_id": "blackarch", "edition": "netinst", "channel": "rolling", "architecture": "x86_64", "version": "2023.04.01"}}
+    ], "non_matches": ["blackarch-linux-full-latest-x86_64.iso", "blackarch-linux-full-2026.09.01-aarch64.iso"]},
+    "bodhi-linux": {"matches": [
+      {"filename": "bodhi-7.0.0-64.iso", "identity": {"product_id": "bodhi-linux", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": "7.0.0"}},
+      {"filename": "bodhi-7.0.0-64-hwe.iso", "identity": {"product_id": "bodhi-linux", "edition": "hwe", "channel": "stable", "architecture": "x86_64", "version": "7.0.0"}},
+      {"filename": "bodhi-7.0.0-64-s76.iso", "identity": {"product_id": "bodhi-linux", "edition": "s76", "channel": "stable", "architecture": "x86_64", "version": "7.0.0"}},
+      {"filename": "bodhi-7.0.0-64-apppack.iso", "identity": {"product_id": "bodhi-linux", "edition": "apppack", "channel": "stable", "architecture": "x86_64", "version": "7.0.0"}},
+      {"filename": "bodhi-5.1.0-legacy.iso", "identity": {"product_id": "bodhi-linux", "edition": "legacy", "channel": "stable", "architecture": "i386", "version": "5.1.0"}}
+    ], "non_matches": ["bodhi-7.0.0-32.iso", "bodhi-7.0.0-64-beta.iso"]},
+    "boot-repair-disk": {"matches": [
+      {"filename": "boot-repair-disk-64bit.iso", "identity": {"product_id": "boot-repair-disk", "edition": "live", "channel": "stable", "architecture": "x86_64", "version": null}}
+    ], "non_matches": ["boot-repair-disk-32bit.iso", "boot-repair-disk-64bit.img"]},
     "bunsenlabs": {"matches": [
       {"filename": "carbon-1-260211-amd64.hybrid.iso", "identity": {"product_id": "bunsenlabs", "edition": "desktop", "channel": "stable", "architecture": "amd64", "version": "1", "build": "260211"}}
     ], "non_matches": ["carbon-1-260211-i386.hybrid.iso", "carbon-1-260211-amd64.iso", "carbon-current-amd64.hybrid.iso"]},
@@ -88,6 +102,9 @@
       {"filename": "drift-linux-FAST-XS-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"}}
     ], "non_matches": ["drift-linux-FAST-Micro-hybrid.iso", "drift-linux-FAST-hybrid.img", "drift-linux-fast-hybrid.iso.sha256"]},
     "endeavouros": {"matches": [{"filename": "EndeavourOS_Titan-Nova-2026.08.15.iso", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "2026.08.15", "build": "Titan-Nova"}}], "non_matches": ["EndeavourOS_Titan-Nova-latest.iso", "EndeavourOS_Titan-Nova-2026.08.15.iso.sig"]},
+    "fatdog64": {"matches": [
+      {"filename": "Fatdog64-904.iso", "identity": {"product_id": "fatdog64", "edition": "live", "channel": "stable", "architecture": "x86_64", "version": "904"}}
+    ], "non_matches": ["Fatdog64-latest.iso", "Fatdog64-904.iso.md5sum.txt"]},
     "fedora": {"matches": [
       {"filename": "Fedora-Workstation-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Workstation", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
       {"filename": "Fedora-Server-dvd-aarch64-44-1.4.iso", "identity": {"product_id": "fedora", "edition": "Server", "flavor": "dvd", "channel": "stable", "architecture": "aarch64", "version": "44", "build": "1.4"}},
@@ -273,6 +290,10 @@
       {"filename": "Parrot-spin-lxqt-7.3_amd64.iso", "identity": {"product_id": "parrot-os", "edition": "lxqt", "channel": "stable", "architecture": "amd64", "version": "7.3"}}
     ], "non_matches": ["Parrot-home-7.3_arm64.iso", "Parrot-security-7.3_amd64.ova", "Parrot-core-7.3_amd64.iso"]},
     "pfsense-ce": {"matches": [{"filename": "pfSense-CE-2.8.1-RELEASE-amd64.iso", "identity": {"product_id": "pfsense-ce", "edition": "dvd", "channel": "stable", "architecture": "amd64", "version": "2.8.1"}}], "non_matches": ["pfSense-CE-2.8.1-RELEASE-amd64.iso.gz", "pfSense-Plus-25.03-RELEASE-amd64.iso", "pfSense-CE-2.8.1-BETA-amd64.iso"]},
+    "peppermint-os": {"matches": [
+      {"filename": "peppermint_debian-amd64.iso", "identity": {"product_id": "peppermint-os", "edition": "debian", "channel": "manual", "architecture": "amd64", "version": null}},
+      {"filename": "peppermint_devuan-amd64.iso", "identity": {"product_id": "peppermint-os", "edition": "devuan", "channel": "manual", "architecture": "amd64", "version": null}}
+    ], "non_matches": ["peppermint_devuan-arm64.iso", "peppermint_ubuntu-amd64.iso"]},
     "pop-os": {"matches": [
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
@@ -287,6 +308,15 @@
       {"filename": "proxmox-backup-server_4.2-1.iso", "identity": {"product_id": "proxmox-backup-server", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "4.2-1"}},
       {"filename": "proxmox-mailgateway_7.3-1.iso", "identity": {"product_id": "proxmox-mail-gateway", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "7.3-1"}}
     ], "non_matches": ["proxmox-ve_9.2-1-aarch64.iso", "proxmox-backup-server_4.2-1-arm64.iso"]},
+    "puppy-linux": {"matches": [
+      {"filename": "BookwormPup64_10.0.12.iso", "identity": {"product_id": "puppy-linux", "edition": "bookwormpup64", "channel": "stable", "architecture": "x86_64", "version": "10.0.12"}}
+    ], "non_matches": ["BookwormPup32_23.12.iso", "TrixiePup64_11.4.iso"]},
+    "q4os": {"matches": [
+      {"filename": "q4os-6.8-x64.r1.iso", "identity": {"product_id": "q4os", "edition": "plasma-live", "channel": "stable", "architecture": "x86_64", "version": "6.8", "build": "1"}},
+      {"filename": "q4os-6.8-x64-tde.r1.iso", "identity": {"product_id": "q4os", "edition": "trinity-live", "channel": "stable", "architecture": "x86_64", "version": "6.8", "build": "1"}},
+      {"filename": "q4os-6.8-x64-instcd.r1.iso", "identity": {"product_id": "q4os", "edition": "trinity-install", "channel": "stable", "architecture": "x86_64", "version": "6.8", "build": "1"}},
+      {"filename": "q4os-5.10-i386-instcd.r1.iso", "identity": {"product_id": "q4os", "edition": "trinity-install", "channel": "old-stable", "architecture": "i386", "version": "5.10", "build": "1"}}
+    ], "non_matches": ["q4os-6.8-arm64.r1.iso", "q4os-6.8-x64.iso"]},
     "qubes-os": {"matches": [
       {"filename": "Qubes-R4.3.1-x86_64.iso", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "4.3.1"}}
     ], "non_matches": ["Qubes-R4.3.1-aarch64.iso", "Qubes-R4.3.1-x86_64.iso.asc"]},
@@ -311,6 +341,10 @@
       {"filename": "shredos-2025.11_31_x86-64_v0.42_20260716_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "standard", "flavor": "plus-partition", "channel": "stable", "architecture": "x86-64", "version": "2025.11_31", "build": "0.42_20260716"}},
       {"filename": "shredos-2025.11_31_i686_v0.42_20260716_lite_plus-partition.iso", "identity": {"product_id": "shredos", "edition": "lite", "flavor": "plus-partition", "channel": "stable", "architecture": "i686", "version": "2025.11_31", "build": "0.42_20260716"}}
     ], "non_matches": ["shredos-2025.11_31_x86-64_v0.42_20260716.img", "shredos-latest-x86-64.iso"]},
+    "slax": {"matches": [
+      {"filename": "slax-64bit-15.0.1.iso", "identity": {"product_id": "slax", "edition": "debian", "channel": "stable", "architecture": "x86_64", "version": "15.0.1"}},
+      {"filename": "slax-32bit-slackware-15.0.4.iso", "identity": {"product_id": "slax", "edition": "slackware", "channel": "stable", "architecture": "i386", "version": "15.0.4"}}
+    ], "non_matches": ["slax-64bit-current.iso", "slax-64bit-15.0.1.zip"]},
     "solus": {"matches": [
       {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
       {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "boot-repair-disk",
+  "display_name": "Boot-Repair-Disk",
+  "homepage_url": "https://sourceforge.net/projects/boot-repair-cd/",
+  "driver": "static-json",
+  "allowed_hosts": ["sourceforge.net"],
+  "capabilities": {"products": ["boot-repair-disk"], "editions": ["live"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [{"regex": "^boot-repair-disk-64bit\\.iso$", "identity": {"product_id": "boot-repair-disk", "edition": "live", "channel": "stable", "architecture": "x86_64", "version": null}, "downloadable": false}],
+  "notes": ["The official SourceForge release uses a stable unversioned filename and does not expose a release-bound SHA-256/SHA-512 value, so it is detection-only."]
+}
