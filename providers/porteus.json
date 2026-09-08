@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provider_id": "porteus",
+  "display_name": "Porteus",
+  "homepage_url": "https://www.porteus.org/downloads.html",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.porteus.org", "mirrors.dotsrc.org"],
+  "capabilities": {
+    "products": ["porteus"],
+    "editions": ["cinnamon", "gnome", "kde", "lxde", "lxqt", "mate", "openbox", "xfce"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "stable-desktops",
+    "metadata_url": "https://mirrors.dotsrc.org/porteus/x86_64/current/",
+    "artifact_regex": "^Porteus-(?P<edition>CINNAMON|GNOME|KDE|LXDE|LXQT|MATE|OPENBOX|XFCE)-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)\\.iso$",
+    "identity": {"product_id": "porteus", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture"},
+    "download": {"strategy": "url-template", "url_template": "https://mirrors.dotsrc.org/porteus/x86_64/current/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://mirrors.dotsrc.org/porteus/x86_64/current/sha256sums.txt"}}
+  }],
+  "detection": [{
+    "regex": "^Porteus-(?P<edition>CINNAMON|GNOME|KDE|LXDE|LXQT|MATE|OPENBOX|XFCE)-v(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)\\.iso$",
+    "identity": {"product_id": "porteus", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"},
+    "downloadable": true
+  }],
+  "notes": ["The stable current directory publishes SHA-256 for all eight desktop editions. DotSrc is an HTTPS mirror explicitly listed by the Porteus project."]
+}

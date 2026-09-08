@@ -104,6 +104,7 @@
       {"filename": "drift-linux-FAST-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast", "channel": "stable", "architecture": "x86_64"}},
       {"filename": "drift-linux-FAST-XS-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"}}
     ], "non_matches": ["drift-linux-FAST-Micro-hybrid.iso", "drift-linux-FAST-hybrid.img", "drift-linux-fast-hybrid.iso.sha256"]},
+    "drweb-livedisk": {"matches": [{"filename": "drweb-livedisk-900-cd.iso", "identity": {"product_id": "drweb-livedisk", "edition": "rescue", "channel": "stable", "architecture": "x86_64", "version": "900"}}], "non_matches": ["drweb-livedisk-900-usb.exe", "drweb-livedisk.iso"]},
     "endeavouros": {"matches": [{"filename": "EndeavourOS_Titan-Nova-2026.08.15.iso", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "2026.08.15", "build": "Titan-Nova"}}], "non_matches": ["EndeavourOS_Titan-Nova-latest.iso", "EndeavourOS_Titan-Nova-2026.08.15.iso.sig"]},
     "fatdog64": {"matches": [
       {"filename": "Fatdog64-904.iso", "identity": {"product_id": "fatdog64", "edition": "live", "channel": "stable", "architecture": "x86_64", "version": "904"}}
@@ -305,6 +306,16 @@
       {"filename": "pop-os_24.04_amd64_generic_27.iso", "identity": {"product_id": "pop-os", "edition": "generic", "channel": "stable", "architecture": "amd64", "version": "24.04", "build": "27"}},
       {"filename": "pop-os_24.04_arm64_nvidia_3.iso", "identity": {"product_id": "pop-os", "edition": "nvidia", "channel": "stable", "architecture": "arm64", "version": "24.04", "build": "3"}}
     ], "non_matches": ["pop-os_24.04_amd64_intel_27.iso", "pop-os_24.04_x86_64_generic_27.iso"]},
+    "porteus": {"matches": [
+      {"filename": "Porteus-CINNAMON-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "CINNAMON", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-GNOME-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "GNOME", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-KDE-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "KDE", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-LXDE-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "LXDE", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-LXQT-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "LXQT", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-MATE-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "MATE", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-OPENBOX-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "OPENBOX", "channel": "stable", "architecture": "x86_64", "version": "5.01"}},
+      {"filename": "Porteus-XFCE-v5.01-x86_64.iso", "identity": {"product_id": "porteus", "edition": "XFCE", "channel": "stable", "architecture": "x86_64", "version": "5.01"}}
+    ], "non_matches": ["Porteus-KDE-v5.01-i586.iso", "Porteus-v5.01-x86_64.iso", "porteux-2.8-current-xfce-4.20-x86_64.iso"]},
     "porteux": {"matches": [
       {"filename": "porteux-2.8-current-xfce-4.20-x86_64.iso", "identity": {"product_id": "porteux", "edition": "xfce", "channel": "current", "architecture": "x86_64", "version": "2.8", "build": "4.20"}},
       {"filename": "porteux-2.4-stable-kde-5.23.5-x86_64.iso", "identity": {"product_id": "porteux", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "2.4", "build": "5.23.5"}}
