@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "provider_id": "rhino-linux",
+  "display_name": "Rhino Linux",
+  "homepage_url": "https://rhinolinux.org/download",
+  "driver": "static-html",
+  "allowed_hosts": ["rhinolinux.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {"products": ["rhino-linux"], "editions": ["unicorn", "lomiri"], "flavors": [], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [
+    {"source_id": "unicorn-amd64", "metadata_url": "https://rhinolinux.org/download", "artifact_regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://sourceforge\\.net/projects/rhino-linux-builder/files/.+/Rhino-Linux-.+-amd64\\.iso/download$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}},
+    {"source_id": "lomiri-amd64", "metadata_url": "https://rhinolinux.org/download", "artifact_regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-amd64-lomiri\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://sourceforge\\.net/projects/rhino-linux-builder/files/.+/Rhino-Linux-.+-amd64-lomiri\\.iso/download$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}},
+    {"source_id": "unicorn-arm64", "metadata_url": "https://rhinolinux.org/download", "artifact_regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-arm64\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "arm64"}, "download": {"strategy": "page-link", "link_regex": "^https://sourceforge\\.net/projects/rhino-linux-builder/files/.+/Rhino-Linux-.+-arm64\\.iso/download$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}},
+    {"source_id": "lomiri-arm64", "metadata_url": "https://rhinolinux.org/download", "artifact_regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-arm64-lomiri\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "arm64"}, "download": {"strategy": "page-link", "link_regex": "^https://sourceforge\\.net/projects/rhino-linux-builder/files/.+/Rhino-Linux-.+-arm64-lomiri\\.iso/download$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}}
+  ],
+  "detection": [
+    {"regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-amd64-lomiri\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-arm64\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "arm64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^Rhino-Linux-(?P<version>\\d+(?:\\.\\d+)+)-arm64-lomiri\\.iso$", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "arm64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The integrated provider follows the versioned Next.js metadata script served by the official page and binds each generic ISO URL to its displayed SHA-256. PinePhone, PineTab and Raspberry Pi disk images are outside this ISO provider."]
+}

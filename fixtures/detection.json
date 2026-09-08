@@ -338,6 +338,12 @@
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
       {"filename": "rescuezilla-2.6.2-64bit.noble.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "noble", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}}
     ], "non_matches": ["rescuezilla-2.6.2-32bit.resolute.iso", "rescuezilla-2.6.2-64bit.unknown.iso"]},
+    "rhino-linux": {"matches": [
+      {"filename": "Rhino-Linux-2026.1-amd64.iso", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "amd64", "version": "2026.1"}},
+      {"filename": "Rhino-Linux-2026.1-amd64-lomiri.iso", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "amd64", "version": "2026.1"}},
+      {"filename": "Rhino-Linux-2026.1-arm64.iso", "identity": {"product_id": "rhino-linux", "edition": "unicorn", "channel": "rolling", "architecture": "arm64", "version": "2026.1"}},
+      {"filename": "Rhino-Linux-2026.1-arm64-lomiri.iso", "identity": {"product_id": "rhino-linux", "edition": "lomiri", "channel": "rolling", "architecture": "arm64", "version": "2026.1"}}
+    ], "non_matches": ["Rhino-Linux-2026.1-rpi-desktop.img.xz", "Rhino-Linux-latest-amd64.iso", "Rhino-Linux-2026.1-i386.iso"]},
     "rocky-linux": {"matches": [
       {"filename": "Rocky-9.8-x86_64-minimal.iso", "identity": {"product_id": "rocky-linux", "edition": "minimal", "channel": "9", "architecture": "x86_64", "version": "9.8"}},
       {"filename": "Rocky-10-latest-aarch64-boot.iso", "identity": {"product_id": "rocky-linux", "edition": "boot", "flavor": "latest-alias", "channel": "10", "architecture": "aarch64", "version": "latest"}}
