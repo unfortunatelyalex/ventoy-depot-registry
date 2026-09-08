@@ -1,6 +1,6 @@
 # Provider source notes
 
-Last manually reviewed: 2026-09-02. Only official project pages, infrastructure and
+Last manually reviewed: 2026-09-08. Only official project pages, infrastructure and
 APIs are admitted. Current version numbers and checksums are intentionally not frozen
 in manifests; drivers resolve them at runtime and verify the selected artifact.
 
@@ -27,6 +27,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | CentOS Stream | official `mirror.stream.centos.org` BaseOS ISO trees | official SHA-256 list | Stream 9/10, boot/DVD1 and x86_64/aarch64 remain distinct |
 | BunsenLabs | official installation page and `ddl.bunsenlabs.org` | official SHA-256 list | stable AMD64 hybrid ISO only; release and build stay bound |
 | CAINE | official project download page and direct project-hosted ISO | official SHA-256 sidecar | free stable x86_64 forensics live ISO only |
+| Calculate Linux | official rolling release directory on `mirror.calculate-linux.org` | official SHA-512 list | all ten published profile codes remain distinct |
 | Casuarina Linux | official download page and `repo.casuarina.org` | official SHA-256 list | x86_64 base image remains explicitly on the preview channel |
 | Clonezilla Live | `clonezilla.org/downloads` | signed checksum list with pinned DRBL fingerprint | Debian- and Ubuntu-based stable images remain distinct |
 | GParted Live | `gparted.org/gparted-live/stable` | signed checksum list with pinned fingerprint | stable amd64 image only |
@@ -41,7 +42,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Parrot OS | official `deb.parrot.sh/parrot/iso` index | SHA-512 from the official signed hash list | Home, Security and each desktop/security spin remain distinct; non-ISO images are excluded |
 | Memtest86+ | `memtest.org` | SHA-256 list for ZIP archives | detection-only until safe archive extraction exists |
 | netboot.xyz | official GitHub releases | GitHub-bound SHA-256 asset digest | standard/legacy and architecture remain distinct |
-| NetBSD | official release directory on `cdn.netbsd.org` | official SHA-512 list | amd64/i386 release installers remain distinct |
+| NetBSD | official release directory on `cdn.netbsd.org` | official SHA-512 list | all published ISO architectures and installer/DVD media remain distinct |
 | Pop!_OS | `system76.com/download-pop` | SHA-256 embedded in the official page | generic/NVIDIA and amd64/arm64 remain distinct |
 | PorteuX | official `porteux/porteux` GitHub releases | GitHub-bound SHA-256 asset digest | current desktop and historical stable channels remain distinct; stable is detection-only |
 | Proxmox installers | `enterprise.proxmox.com/iso` | signed SHA-256 list with pinned release fingerprint | product and amd64/arm64 remain distinct |

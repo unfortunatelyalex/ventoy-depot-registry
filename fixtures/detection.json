@@ -73,6 +73,11 @@
       {"filename": "caine14.0.iso", "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64", "version": "14.0"}},
       {"filename": "Caine13.0.iso", "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64", "version": "13.0"}}
     ], "non_matches": ["caine14.0.iso.sha256.txt", "caine14.0.img", "nbcaine14.0.iso"]},
+    "calculate-linux": {"matches": [
+      {"filename": "cld-20260907-x86_64.iso", "identity": {"product_id": "calculate-linux", "edition": "cld", "channel": "rolling", "architecture": "x86_64", "version": "20260907"}},
+      {"filename": "cldxs-20260907-x86_64.iso", "identity": {"product_id": "calculate-linux", "edition": "cldxs", "channel": "rolling", "architecture": "x86_64", "version": "20260907"}},
+      {"filename": "css-20260907-x86_64.iso", "identity": {"product_id": "calculate-linux", "edition": "css", "channel": "rolling", "architecture": "x86_64", "version": "20260907"}}
+    ], "non_matches": ["cld-latest-x86_64.iso", "cld-20260907-aarch64.iso", "cld-20260907-x86_64.img"]},
     "casuarina-linux": {"matches": [
       {"filename": "casuarina-linux-x86_64-LIVE-20260518-base.iso", "identity": {"product_id": "casuarina-linux", "edition": "base", "channel": "preview", "architecture": "x86_64", "version": "20260518"}}
     ], "non_matches": ["casuarina-linux-aarch64-LIVE-20260518-base.iso", "casuarina-linux-x86_64-LIVE-latest-base.iso", "casuarina-linux-x86_64-LIVE-20260518-base.img"]},
@@ -246,8 +251,10 @@
     ], "non_matches": ["netboot.xyz.img", "netboot.xyz-rpi4.iso"]},
     "netbsd": {"matches": [
       {"filename": "NetBSD-11.0-amd64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "amd64", "version": "11.0"}},
-      {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}}
-    ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso"]},
+      {"filename": "NetBSD-11.0-i386.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "i386", "version": "11.0"}},
+      {"filename": "NetBSD-11.0-evbarm-aarch64.iso", "identity": {"product_id": "netbsd", "edition": "installer", "channel": "release", "architecture": "evbarm-aarch64", "version": "11.0"}},
+      {"filename": "NetBSD-11.0-sparc64-dvd.iso", "identity": {"product_id": "netbsd", "edition": "dvd", "channel": "release", "architecture": "sparc64", "version": "11.0"}}
+    ], "non_matches": ["NetBSD-11.0-amd64.img", "NetBSD-current-amd64.iso", "NetBSD-11.0-arm64.iso", "NetBSD-11.0-vax-dvd.iso"]},
     "openbsd": {"matches": [
       {"filename": "OpenBSD-7.9-amd64-install.iso", "identity": {"product_id": "openbsd", "edition": "install", "channel": "release", "architecture": "amd64", "version": "7.9"}},
       {"filename": "install79.iso", "volume_id": "OpenBSD/arm64   7.9 Install CD", "identity": {"product_id": "openbsd", "edition": "install", "channel": "release", "architecture": "arm64", "version": "7.9"}},
