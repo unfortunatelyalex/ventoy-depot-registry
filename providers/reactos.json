@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "provider_id": "reactos",
+  "display_name": "ReactOS",
+  "homepage_url": "https://reactos.org/download/",
+  "driver": "static-json",
+  "allowed_hosts": ["reactos.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {"products": ["reactos"], "editions": ["unified"], "flavors": [], "architectures": ["i386"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{
+    "source_id": "stable-i386",
+    "metadata_url": "https://sourceforge.net/projects/reactos/best_release.json",
+    "artifact_regex": "^ReactOS-(?P<version>\\d+(?:\\.\\d+)+)-i386\\.zip$",
+    "identity": {"product_id": "reactos", "edition": "unified", "channel": "stable", "architecture": "i386"},
+    "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/reactos/files/ReactOS/{version}/{filename}/download?use_mirror=netix"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}},
+    "archive": {"format": "zip", "member_template": "ReactOS-{version}-i386.iso", "output_filename_template": "ReactOS-{version}-i386.iso", "extracted_size_bytes": 406847488}
+  }],
+  "detection": [{"regex": "^ReactOS-(?P<version>\\d+(?:\\.\\d+)+)-i386\\.iso$", "identity": {"product_id": "reactos", "edition": "unified", "channel": "stable", "architecture": "i386", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["The official SourceForge release metadata supplies the ZIP size and SHA-256. The exact release-bound ISO member is extracted transactionally."]
+}

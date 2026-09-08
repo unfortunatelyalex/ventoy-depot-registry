@@ -14,7 +14,7 @@
     "channels": ["stable"]
   },
   "release_sources": [{
-    "source_id": "stable-x86_64",
+    "source_id": "stable-x86-64",
     "metadata_url": "https://www.caine-live.net/page5/page5.html",
     "artifact_regex": "^caine(?P<version>\\d+(?:\\.\\d+)*)\\.iso$",
     "identity": {"product_id": "caine", "edition": "forensics-live", "channel": "stable", "architecture": "x86_64"},

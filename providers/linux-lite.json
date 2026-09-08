@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "provider_id": "linux-lite",
+  "display_name": "Linux Lite",
+  "homepage_url": "https://www.linuxliteos.com/download.php",
+  "driver": "static-html",
+  "allowed_hosts": ["www.linuxliteos.com", "repo.linuxliteos.com"],
+  "capabilities": {"products": ["linux-lite"], "editions": ["desktop"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{
+    "source_id": "stable-x86-64",
+    "metadata_url": "https://www.linuxliteos.com/download.php",
+    "artifact_regex": "^linux-lite-(?P<version>\\d+(?:\\.\\d+)+)-64bit\\.iso$",
+    "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://repo.linuxliteos.com/linuxlite/isos/{version}/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://repo.linuxliteos.com/linuxlite/isos/{version}/{filename}.sha256"}}
+  }],
+  "detection": [{"regex": "^linux-lite-(?P<version>\\d+(?:\\.\\d+)+)-64bit\\.iso$", "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["The official download page identifies the current release; the ISO and its exact SHA-256 sidecar are fetched from the official Linux Lite repository."]
+}

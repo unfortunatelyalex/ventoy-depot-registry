@@ -14,7 +14,7 @@
     "channels": ["stable"]
   },
   "release_sources": [{
-    "source_id": "stable-x86_64",
+    "source_id": "stable-x86-64",
     "metadata_url": "https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/3/main/DOWNLOAD_AND_VERIFY_ISO.md",
     "artifact_regex": "^securityonion-(?P<version>\\d+(?:\\.\\d+)+)-(?P<build>\\d{8})\\.iso$",
     "identity": {

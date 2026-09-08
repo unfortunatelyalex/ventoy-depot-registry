@@ -14,7 +14,7 @@
     "channels": ["preview"]
   },
   "release_sources": [{
-    "source_id": "preview-x86_64",
+    "source_id": "preview-x86-64",
     "metadata_url": "https://casuarina.org/download/",
     "artifact_regex": "^casuarina-linux-(?P<architecture>x86_64)-LIVE-(?P<version>\\d{8})-(?P<edition>base)\\.iso$",
     "identity": {"product_id": "casuarina-linux", "edition": "$group:edition", "channel": "preview", "architecture": "$group:architecture"},

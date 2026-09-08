@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provider_id": "freedos",
+  "display_name": "FreeDOS",
+  "homepage_url": "https://www.freedos.org/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.freedos.org", "download.freedos.org"],
+  "capabilities": {"products": ["freedos"], "editions": ["livecd", "legacycd"], "flavors": [], "architectures": ["i386"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {
+      "source_id": "livecd", "metadata_url": "https://www.freedos.org/download/", "artifact_regex": "^FD(?P<major>\\d)(?P<minor>\\d)-LiveCD\\.zip$", "version_template": "{major}.{minor}",
+      "identity": {"product_id": "freedos", "edition": "livecd", "channel": "stable", "architecture": "i386"},
+      "download": {"strategy": "url-template", "url_template": "https://download.freedos.org/{version}/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://www.freedos.org/download/verify.txt"}},
+      "archive": {"format": "zip", "member_template": "FD{major}{minor}LIVE.iso", "output_filename_template": "FD{major}{minor}LIVE.iso"}
+    },
+    {
+      "source_id": "legacycd", "metadata_url": "https://www.freedos.org/download/", "artifact_regex": "^FD(?P<major>\\d)(?P<minor>\\d)-LegacyCD\\.zip$", "version_template": "{major}.{minor}",
+      "identity": {"product_id": "freedos", "edition": "legacycd", "channel": "stable", "architecture": "i386"},
+      "download": {"strategy": "url-template", "url_template": "https://download.freedos.org/{version}/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://www.freedos.org/download/verify.txt"}},
+      "archive": {"format": "zip", "member_template": "FD{major}{minor}LGCY.iso", "output_filename_template": "FD{major}{minor}LGCY.iso"}
+    }
+  ],
+  "detection": [
+    {"regex": "^FD(?P<major>\\d)(?P<minor>\\d)LIVE\\.iso$", "version_template": "{major}.{minor}", "identity": {"product_id": "freedos", "edition": "livecd", "channel": "stable", "architecture": "i386"}, "downloadable": true},
+    {"regex": "^FD(?P<major>\\d)(?P<minor>\\d)LGCY\\.iso$", "version_template": "{major}.{minor}", "identity": {"product_id": "freedos", "edition": "legacycd", "channel": "stable", "architecture": "i386"}, "downloadable": true}
+  ],
+  "notes": ["The application combines the compact filename major/minor fields into the displayed version (for example FD14 becomes 1.4)."]
+}

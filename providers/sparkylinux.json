@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "provider_id": "sparkylinux",
+  "display_name": "SparkyLinux",
+  "homepage_url": "https://sparkylinux.org/download/stable/",
+  "driver": "static-html",
+  "allowed_hosts": ["sparkylinux.org", "sourceforge.net", "downloads.sourceforge.net", "master.dl.sourceforge.net", "altushost-swe.dl.sourceforge.net"],
+  "capabilities": {"products": ["sparkylinux"], "editions": ["lxqt", "mate", "xfce", "kde", "minimalgui", "minimalcli"], "flavors": [], "architectures": ["x86_64", "i686-pae"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {
+      "source_id": "lxqt", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)-lxqt\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "lxqt", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/lxqt/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/lxqt/{filename}.allsums.txt/download?use_mirror=master"}}
+    },
+    {
+      "source_id": "mate", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)-mate\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "mate", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/mate/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/mate/{filename}.allsums.txt/download?use_mirror=master"}}
+    },
+    {
+      "source_id": "xfce", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)-xfce\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "xfce", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/xfce/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/xfce/{filename}.allsums.txt/download?use_mirror=master"}}
+    },
+    {
+      "source_id": "kde", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)-kde\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "kde", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/kde/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/kde/{filename}.allsums.txt/download?use_mirror=master"}}
+    },
+    {
+      "source_id": "minimalgui", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64|i686-pae)-minimalgui\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "minimalgui", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/base/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/base/{filename}.allsums.txt/download?use_mirror=master"}}
+    },
+    {
+      "source_id": "minimalcli", "metadata_url": "https://sparkylinux.org/download/stable/", "artifact_regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64|i686-pae)-minimalcli\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "minimalcli", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/sparkylinux/files/cli/{filename}/download?use_mirror=master"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://sourceforge.net/projects/sparkylinux/files/cli/{filename}.allsums.txt/download?use_mirror=master"}}
+    }
+  ],
+  "detection": [
+    {"regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64)-(?P<edition>lxqt|mate|xfce|kde)\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^sparkylinux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>x86_64|i686-pae)-(?P<edition>minimalgui|minimalcli)\\.iso$", "identity": {"product_id": "sparkylinux", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The publisher's all-sums sidecar is bound to the exact ISO filename; Ventoy Depot uses SHA-512 and preserves desktop/minimal edition and architecture."]
+}

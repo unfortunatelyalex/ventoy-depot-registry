@@ -70,10 +70,19 @@
       {"filename": "debian-13.6.0-arm64-DVD-1.iso", "identity": {"product_id": "debian", "edition": "DVD-1", "channel": "stable", "architecture": "arm64", "version": "13.6.0"}},
       {"filename": "debian-live-13.6.0-amd64-kde.iso", "identity": {"product_id": "debian", "edition": "live", "flavor": "kde", "channel": "stable", "architecture": "amd64", "version": "13.6.0"}}
     ], "non_matches": ["debian-13.6.0-i386-netinst.iso", "debian-live-13.6.0-amd64-unknown.iso"]},
+    "deepin": {"matches": [
+      {"filename": "deepin-desktop-community-25.2.0-amd64.iso", "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "stable", "architecture": "amd64", "version": "25.2.0"}},
+      {"filename": "deepin-desktop-community-25.2.0-loong64.iso", "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "stable", "architecture": "loong64", "version": "25.2.0"}},
+      {"filename": "deepin-desktop-community-25.2.0-riscv64.iso", "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "preview", "architecture": "riscv64", "version": "25.2.0"}}
+    ], "non_matches": ["deepin-desktop-community-25.2.0-x86_64.iso", "deepin-server-25.2.0-amd64.iso", "deepin-desktop-community-latest-amd64.iso"]},
     "devuan": {"matches": [
       {"filename": "devuan_excalibur_6.1.1_amd64_netinstall.iso", "identity": {"product_id": "devuan", "edition": "netinstall", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}},
       {"filename": "devuan_excalibur_6.1.1_amd64_desktop-live.iso", "identity": {"product_id": "devuan", "edition": "desktop-live", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}}
     ], "non_matches": ["devuan_excalibur_6.1.1_arm64_netinstall.iso", "devuan_excalibur_6.1.1_amd64_netinstall.iso.asc"]},
+    "drift-linux": {"matches": [
+      {"filename": "drift-linux-FAST-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast", "channel": "stable", "architecture": "x86_64"}},
+      {"filename": "drift-linux-FAST-XS-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"}}
+    ], "non_matches": ["drift-linux-FAST-Micro-hybrid.iso", "drift-linux-FAST-hybrid.img", "drift-linux-fast-hybrid.iso.sha256"]},
     "endeavouros": {"matches": [{"filename": "EndeavourOS_Titan-Nova-2026.08.15.iso", "identity": {"product_id": "endeavouros", "channel": "stable", "architecture": "x86_64", "version": "2026.08.15", "build": "Titan-Nova"}}], "non_matches": ["EndeavourOS_Titan-Nova-latest.iso", "EndeavourOS_Titan-Nova-2026.08.15.iso.sig"]},
     "fedora": {"matches": [
       {"filename": "Fedora-Workstation-Live-44-1.7.x86_64.iso", "identity": {"product_id": "fedora", "edition": "Workstation", "flavor": "Live", "channel": "stable", "architecture": "x86_64", "version": "44", "build": "1.7"}},
@@ -99,6 +108,15 @@
       {"filename": "FreeBSD-14.3-RELEASE-arm64-disc1.iso", "identity": {"product_id": "freebsd", "edition": "disc1", "channel": "release", "architecture": "arm64", "version": "14.3"}},
       {"filename": "FreeBSD-15.0-RELEASE-amd64-bootonly.iso", "identity": {"product_id": "freebsd", "edition": "bootonly", "channel": "release", "architecture": "amd64", "version": "15.0"}}
     ], "non_matches": ["FreeBSD-15.0-STABLE-amd64-dvd1.iso", "FreeBSD-15.0-RELEASE-amd64-memstick.img"]},
+    "freedos": {"matches": [
+      {"filename": "FD14LIVE.iso", "identity": {"product_id": "freedos", "edition": "livecd", "channel": "stable", "architecture": "i386", "version": "1.4"}},
+      {"filename": "FD14LGCY.iso", "identity": {"product_id": "freedos", "edition": "legacycd", "channel": "stable", "architecture": "i386", "version": "1.4"}}
+    ], "non_matches": ["FD14BNS.iso", "FD14LIVE.img", "FD14-LiveCD.zip"]},
+    "garuda-linux": {"matches": [
+      {"filename": "garuda-dr460nized-linux-zen-260819.iso", "identity": {"product_id": "garuda-linux", "edition": "dr460nized", "channel": "rolling", "architecture": "x86_64", "version": "260819"}},
+      {"filename": "garuda-dr460nized-gaming-linux-lts-260819.iso", "identity": {"product_id": "garuda-linux", "edition": "dr460nized-gaming", "channel": "rolling", "architecture": "x86_64", "version": "260819"}},
+      {"filename": "garuda-hyprland-linux-garuda-260819.iso", "identity": {"product_id": "garuda-linux", "edition": "hyprland", "channel": "rolling", "architecture": "x86_64", "version": "260819"}}
+    ], "non_matches": ["garuda-dr460nized-linux-zen-latest.iso", "garuda-unknown-linux-zen-260819.iso", "garuda-dr460nized-linux-zen-260819.img"]},
     "ghostbsd": {"matches": [
       {"filename": "GhostBSD-26.1-R15.0p2.iso", "identity": {"product_id": "ghostbsd", "edition": "mate", "channel": "official", "architecture": "amd64", "version": "26.1-R15.0p2"}},
       {"filename": "GhostBSD-26.1-R15.0p2-XFCE.iso", "identity": {"product_id": "ghostbsd", "edition": "xfce", "channel": "community", "architecture": "amd64", "version": "26.1-R15.0p2"}},
@@ -147,6 +165,10 @@
       {"filename": "neon-testing-desktop-20260901-0146.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "testing", "architecture": "x86_64", "version": "20260901-0146"}},
       {"filename": "neon-unstable-desktop-20260830-0628.iso", "identity": {"product_id": "kde-neon", "edition": "desktop", "channel": "unstable", "architecture": "x86_64", "version": "20260830-0628"}}
     ], "non_matches": ["neon-user-desktop-current.iso", "neon-user-mobile-20260903-0454.iso"]},
+    "linux-lite": {"matches": [
+      {"filename": "linux-lite-8.0-64bit.iso", "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "8.0"}},
+      {"filename": "linux-lite-7.8-64bit.iso", "identity": {"product_id": "linux-lite", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "7.8"}}
+    ], "non_matches": ["linux-lite-8.0-32bit.iso", "linux-lite-8.0-64bit.iso.sha256", "linux-lite-8.0-64bit-rc1.iso"]},
     "linux-mint": {"matches": [
       {"filename": "linuxmint-22.3-cinnamon-64bit.iso", "identity": {"product_id": "linux-mint", "edition": "cinnamon", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
       {"filename": "linuxmint-22.3-xfce-amd64.iso", "identity": {"product_id": "linux-mint", "edition": "xfce", "channel": "stable", "architecture": "x86_64", "version": "22.3"}},
@@ -264,6 +286,9 @@
     "qubes-os": {"matches": [
       {"filename": "Qubes-R4.3.1-x86_64.iso", "identity": {"product_id": "qubes-os", "edition": "installer", "channel": "stable", "architecture": "x86_64", "version": "4.3.1"}}
     ], "non_matches": ["Qubes-R4.3.1-aarch64.iso", "Qubes-R4.3.1-x86_64.iso.asc"]},
+    "reactos": {"matches": [
+      {"filename": "ReactOS-0.4.16-i386.iso", "identity": {"product_id": "reactos", "edition": "unified", "channel": "stable", "architecture": "i386", "version": "0.4.16"}}
+    ], "non_matches": ["ReactOS-0.4.16-amd64.iso", "ReactOS-0.4.16-i386.zip", "ReactOS-nightly-i386.iso"]},
     "redo-rescue": {"matches": [{"filename": "redorescue-4.0.0.iso", "identity": {"product_id": "redo-rescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "4.0.0"}}], "non_matches": ["redorescue-latest.iso", "redorescue-4.0.0.img", "redo-rescue-4.0.0.iso"]},
     "rescuezilla": {"matches": [
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
@@ -286,6 +311,11 @@
       {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
       {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}
     ], "non_matches": ["Solus-Budgie-Testing-2026-04-18.iso", "Solus-Budgie-Release.iso"]},
+    "sparkylinux": {"matches": [
+      {"filename": "sparkylinux-8.4-x86_64-lxqt.iso", "identity": {"product_id": "sparkylinux", "edition": "lxqt", "channel": "stable", "architecture": "x86_64", "version": "8.4"}},
+      {"filename": "sparkylinux-8.4-x86_64-kde.iso", "identity": {"product_id": "sparkylinux", "edition": "kde", "channel": "stable", "architecture": "x86_64", "version": "8.4"}},
+      {"filename": "sparkylinux-8.4-i686-pae-minimalcli.iso", "identity": {"product_id": "sparkylinux", "edition": "minimalcli", "channel": "stable", "architecture": "i686-pae", "version": "8.4"}}
+    ], "non_matches": ["sparkylinux-8.4-i686-pae-lxqt.iso", "sparkylinux-rolling-x86_64-lxqt.iso", "sparkylinux-8.4-x86_64-lxqt.img"]},
     "super-grub2-disk": {"matches": [
       {"filename": "supergrub2-classic-2.06s4-multiarch-CD.iso", "identity": {"product_id": "super-grub2-disk", "edition": "multiarch", "channel": "stable", "architecture": "multiarch", "version": "2.06s4"}},
       {"filename": "supergrub2-classic-2.06s4-x86_64_efi-CD.iso", "identity": {"product_id": "super-grub2-disk", "edition": "x86_64_efi", "channel": "stable", "architecture": "multiarch", "version": "2.06s4"}}
