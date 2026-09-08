@@ -27,6 +27,10 @@
       {"filename": "antiX-23.2-net_x64-net.iso", "identity": {"product_id": "antix", "edition": "net", "channel": "stable", "architecture": "x86_64", "version": "23.2"}}
     ], "non_matches": ["antiX-26_x64-full.iso.sha256", "antiX-26_x64-full.img", "antiX-sid_x64-full.iso"]},
     "arch": {"matches": [{"filename": "archlinux-2026.09.01-x86_64.iso", "identity": {"product_id": "archlinux", "channel": "stable", "architecture": "x86_64", "version": "2026.09.01"}}], "non_matches": ["archlinux-2026.09.01-aarch64.iso", "archlinux-bootstrap-2026.09.01-x86_64.tar.zst"]},
+    "archbang": {"matches": [
+      {"filename": "archbang-050926-x86_64.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.05"}},
+      {"filename": "archbang-220826.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.08.22"}}
+    ], "non_matches": ["archbang-latest-x86_64.iso", "fruitbang-050926-x86_64.iso", "archbang-050926-x86_64.img"]},
     "artix-linux": {"matches": [
       {"filename": "artix-base-openrc-20260813-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260813"}},
       {"filename": "artix-community-qt-openrc-20260821-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "community-qt", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260821"}},
@@ -330,6 +334,10 @@
       {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
       {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}
     ], "non_matches": ["TrueNAS-SCALE-25.10.7.img", "TrueNAS-Enterprise-25.10.7.iso"]},
+    "tsurugi-linux": {"matches": [
+      {"filename": "tsurugi_linux_26.03.iso", "identity": {"product_id": "tsurugi-linux", "edition": "lab", "channel": "stable", "architecture": "x86_64", "version": "26.03"}},
+      {"filename": "tsurugi_acquire_2021.1.iso", "identity": {"product_id": "tsurugi-linux", "edition": "acquire", "channel": "stable", "architecture": "i386", "version": "2021.1"}}
+    ], "non_matches": ["tsurugi_linux_latest.iso", "tsurugi_linux_26.03.ova", "tsurugi_acquire_2021.1.img"]},
     "tuxedo-os": {"matches": [
       {"filename": "TUXEDO-OS-202608031247.iso", "identity": {"product_id": "tuxedo-os", "edition": "desktop", "channel": "stable", "architecture": "x86_64", "version": "202608031247"}}
     ], "non_matches": ["TUXEDO-OS_current.iso", "TUXEDO-OS-202608031247.img", "TUXEDO-OS-20260803.iso"]},

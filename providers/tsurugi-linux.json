@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "provider_id": "tsurugi-linux",
+  "display_name": "Tsurugi Linux",
+  "homepage_url": "https://tsurugi-linux.org/downloads.php",
+  "driver": "static-html",
+  "allowed_hosts": ["tsurugi-linux.org", "ftp.nluug.nl"],
+  "capabilities": {"products": ["tsurugi-linux"], "editions": ["lab", "acquire"], "flavors": [], "architectures": ["x86_64", "i386"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {
+      "source_id": "lab", "metadata_url": "https://tsurugi-linux.org/downloads.php", "artifact_regex": "^tsurugi_linux_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tsurugi-linux", "edition": "lab", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://ftp.nluug.nl/os/Linux/distr/tsurugi/01.Tsurugi_Linux_%5bLAB%5d/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://tsurugi-linux.org/signed_hashes.sha512"}}
+    },
+    {
+      "source_id": "acquire", "metadata_url": "https://tsurugi-linux.org/downloads.php", "artifact_regex": "^tsurugi_acquire_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tsurugi-linux", "edition": "acquire", "channel": "stable", "architecture": "i386"},
+      "download": {"strategy": "url-template", "url_template": "https://ftp.nluug.nl/os/Linux/distr/tsurugi/02.Tsurugi_Acquire/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://tsurugi-linux.org/signed_hashes.sha512"}}
+    }
+  ],
+  "detection": [
+    {"regex": "^tsurugi_linux_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tsurugi-linux", "edition": "lab", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^tsurugi_acquire_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tsurugi-linux", "edition": "acquire", "channel": "stable", "architecture": "i386", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The project publishes a clearsigned SHA-512 list. Ventoy Depot requires the SHA-512 entry and downloads from NLUUG, one of the HTTPS mirrors explicitly listed by Tsurugi Linux."]
+}
