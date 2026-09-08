@@ -100,6 +100,10 @@
       {"filename": "devuan_excalibur_6.1.1_amd64_netinstall.iso", "identity": {"product_id": "devuan", "edition": "netinstall", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}},
       {"filename": "devuan_excalibur_6.1.1_amd64_desktop-live.iso", "identity": {"product_id": "devuan", "edition": "desktop-live", "channel": "stable", "architecture": "amd64", "version": "6.1.1"}}
     ], "non_matches": ["devuan_excalibur_6.1.1_arm64_netinstall.iso", "devuan_excalibur_6.1.1_amd64_netinstall.iso.asc"]},
+    "dragonflybsd": {"matches": [
+      {"filename": "dfly-x86_64-6.4.2_REL.iso", "identity": {"product_id": "dragonflybsd", "edition": "installer", "channel": "release", "architecture": "x86_64", "version": "6.4.2"}},
+      {"filename": "dfly-x86_64-6.0.0_RC1.iso", "identity": {"product_id": "dragonflybsd", "edition": "installer", "channel": "candidate", "architecture": "x86_64", "version": "6.0.0", "build": "RC1"}}
+    ], "non_matches": ["dfly-x86_64-6.4.2_REL.img", "dfly-i386-6.4.2_REL.iso", "dfly-x86_64-current.iso"]},
     "drift-linux": {"matches": [
       {"filename": "drift-linux-FAST-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast", "channel": "stable", "architecture": "x86_64"}},
       {"filename": "drift-linux-FAST-XS-hybrid.iso", "identity": {"product_id": "drift-linux", "edition": "fast-xs", "channel": "stable", "architecture": "x86_64"}}
@@ -214,6 +218,10 @@
       {"filename": "mt86plus_8.10_x86_64.grub.iso", "identity": {"product_id": "memtest86-plus", "edition": "grub", "channel": "stable", "architecture": "x86_64", "version": "8.10"}},
       {"filename": "mt86plus_8.10_i586.iso", "identity": {"product_id": "memtest86-plus", "edition": "bare", "channel": "stable", "architecture": "i586", "version": "8.10"}}
     ], "non_matches": ["memtest86-usb.img", "mt86plus_8.10_x86_64.iso.zip"]},
+    "midnightbsd": {"matches": [
+      {"filename": "MidnightBSD-4.0.7--amd64-disc1.iso", "identity": {"product_id": "midnightbsd", "edition": "disc1", "channel": "release", "architecture": "amd64", "version": "4.0.7"}},
+      {"filename": "MidnightBSD-4.0.7--i386-bootonly.iso", "identity": {"product_id": "midnightbsd", "edition": "bootonly", "channel": "release", "architecture": "i386", "version": "4.0.7"}}
+    ], "non_matches": ["MidnightBSD-4.0.7--amd64-memstick.img", "MidnightBSD-current--amd64-disc1.iso"]},
     "mx-linux": {"matches": [
       {"filename": "MX-25.2_Xfce_x64.iso", "identity": {"product_id": "mx-linux", "edition": "Xfce", "flavor": "standard", "channel": "stable", "architecture": "x86_64", "version": "25.2"}},
       {"filename": "MX-25.2_Xfce_ahs_x64.iso", "identity": {"product_id": "mx-linux", "edition": "Xfce", "flavor": "ahs", "channel": "stable", "architecture": "x86_64", "version": "25.2"}},
