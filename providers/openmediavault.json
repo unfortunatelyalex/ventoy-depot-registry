@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "provider_id": "openmediavault",
+  "display_name": "openmediavault",
+  "homepage_url": "https://www.openmediavault.org/download.html",
+  "driver": "static-html",
+  "allowed_hosts": ["www.openmediavault.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {"products": ["openmediavault"], "editions": ["installer"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable", "oldstable"]},
+  "release_sources": [
+    {"source_id": "stable", "metadata_url": "https://www.openmediavault.org/download.html", "artifact_regex": "^openmediavault_(?P<version>8(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/openmediavault/files/iso/{version}/{filename}/download?use_mirror=netix"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}},
+    {"source_id": "oldstable", "metadata_url": "https://www.openmediavault.org/download.html", "artifact_regex": "^openmediavault_(?P<version>7(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "oldstable", "architecture": "amd64"}, "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/openmediavault/files/iso/{version}/{filename}/download?use_mirror=netix"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}}
+  ],
+  "detection": [
+    {"regex": "^openmediavault_(?P<version>8(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^openmediavault_(?P<version>7(?:\\.\\d+)+)-amd64\\.iso$", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "oldstable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["Stable and oldstable remain separate channels. The official download page binds each versioned ISO to its SHA-256 value and publishes signing fingerprint D67506C878E08A94FD7E009424863F0C716B980B."]
+}

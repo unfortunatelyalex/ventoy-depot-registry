@@ -31,6 +31,9 @@
       {"filename": "archbang-050926-x86_64.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.09.05"}},
       {"filename": "archbang-220826.iso", "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "2026.08.22"}}
     ], "non_matches": ["archbang-latest-x86_64.iso", "fruitbang-050926-x86_64.iso", "archbang-050926-x86_64.img"]},
+    "archcraft": {"matches": [
+      {"filename": "archcraft-2026.08.01-x86_64.iso", "identity": {"product_id": "archcraft", "edition": "main", "channel": "rolling", "architecture": "x86_64", "version": "2026.08.01"}}
+    ], "non_matches": ["archcraft-2026.08.01-aarch64.iso", "archcraft-prime-2026.08.01-x86_64.iso", "archcraft-latest-x86_64.iso"]},
     "artix-linux": {"matches": [
       {"filename": "artix-base-openrc-20260813-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260813"}},
       {"filename": "artix-community-qt-openrc-20260821-x86_64.iso", "identity": {"product_id": "artix-linux", "edition": "community-qt", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "20260821"}},
@@ -267,6 +270,10 @@
       {"filename": "omarchy-4.0.2.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}},
       {"filename": "omarchy-4.0.2-x86_64.iso", "identity": {"product_id": "omarchy", "channel": "stable", "architecture": "x86_64", "version": "4.0.2"}}
     ], "non_matches": ["omarchy-latest.iso", "omarchy-4.0.2-aarch64.iso"]},
+    "openmediavault": {"matches": [
+      {"filename": "openmediavault_8.3.1-amd64.iso", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "stable", "architecture": "amd64", "version": "8.3.1"}},
+      {"filename": "openmediavault_7.4.17-amd64.iso", "identity": {"product_id": "openmediavault", "edition": "installer", "channel": "oldstable", "architecture": "amd64", "version": "7.4.17"}}
+    ], "non_matches": ["openmediavault_8.3.1-arm64.iso", "openmediavault_9.0.0-amd64.iso", "openmediavault_8.3.1-amd64.iso.sha256"]},
     "opensuse-leap": {"matches": [
       {"filename": "openSUSE-Leap-15.6-DVD-x86_64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "DVD", "channel": "15.6", "architecture": "x86_64", "version": "15.6"}},
       {"filename": "openSUSE-Leap-15.6-NET-aarch64-Media.iso", "identity": {"product_id": "opensuse-leap", "edition": "NET", "channel": "15.6", "architecture": "aarch64", "version": "15.6"}},
@@ -324,6 +331,9 @@
       {"filename": "ReactOS-0.4.16-i386.iso", "identity": {"product_id": "reactos", "edition": "unified", "channel": "stable", "architecture": "i386", "version": "0.4.16"}}
     ], "non_matches": ["ReactOS-0.4.16-amd64.iso", "ReactOS-0.4.16-i386.zip", "ReactOS-nightly-i386.iso"]},
     "redo-rescue": {"matches": [{"filename": "redorescue-4.0.0.iso", "identity": {"product_id": "redo-rescue", "edition": "live", "channel": "stable", "architecture": "amd64", "version": "4.0.0"}}], "non_matches": ["redorescue-latest.iso", "redorescue-4.0.0.img", "redo-rescue-4.0.0.iso"]},
+    "rescatux": {"matches": [
+      {"filename": "rescatux-0.74.iso", "identity": {"product_id": "rescatux", "edition": "repair", "channel": "stable", "architecture": "multiarch", "version": "0.74"}}
+    ], "non_matches": ["rescatux-latest.iso", "rescatux-0.74.img", "rescatux-0.74.iso.md5"]},
     "rescuezilla": {"matches": [
       {"filename": "rescuezilla-2.6.2-64bit.resolute.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "resolute", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}},
       {"filename": "rescuezilla-2.6.2-64bit.noble.iso", "identity": {"product_id": "rescuezilla", "edition": "live", "flavor": "noble", "channel": "stable", "architecture": "amd64", "version": "2.6.2"}}
