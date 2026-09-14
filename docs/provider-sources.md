@@ -59,6 +59,7 @@ in manifests; drivers resolve them at runtime and verify the selected artifact.
 | Talos Linux | official `siderolabs/talos` GitHub releases | GitHub-bound SHA-256 asset digest | stable metal ISO and architecture remain distinct; version comes from release metadata |
 | TrueNAS Community Edition | official Community Edition page and release hosts | official SHA-256 sidecar | stable and beta channels remain distinct; enterprise media is excluded |
 | Trisquel GNU/Linux | official `cdimage.trisquel.info` image tree | official SHA-512 sidecar | MATE, KDE, Mini, Sugar and NetInstall remain distinct; desktop ISO architecture is amd64 only |
+| Slackware Live Edition | SlackDocs-linked `download.liveslak.org` stable release directory | official SHA-256 sidecar | only versioned 64-bit stable full ISO; rolling `current` filenames do not identify an installed build |
 | Vanilla OS | official `Vanilla-OS/live-iso` GitHub releases | SHA-256 release asset | stable assets only |
 | Void Linux | official `repo-default.voidlinux.org/live/current` directory | official SHA-256 checksum list | base/Xfce, glibc/musl and architecture remain distinct; Minisign trust is not yet provisioned |
 | Windows 10/11 | official Microsoft software-download pages | SHA-256 from Microsoft's language table | detection and user-supplied official links only; product, language and architecture remain distinct |

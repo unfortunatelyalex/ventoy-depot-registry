@@ -403,6 +403,9 @@
       {"filename": "slax-64bit-15.0.1.iso", "identity": {"product_id": "slax", "edition": "debian", "channel": "stable", "architecture": "x86_64", "version": "15.0.1"}},
       {"filename": "slax-32bit-slackware-15.0.4.iso", "identity": {"product_id": "slax", "edition": "slackware", "channel": "stable", "architecture": "i386", "version": "15.0.4"}}
     ], "non_matches": ["slax-64bit-current.iso", "slax-64bit-15.0.1.zip"]},
+    "slackware-live": {"matches": [
+      {"filename": "slackware64-live-15.0.iso", "identity": {"product_id": "slackware-live", "edition": "full", "channel": "stable", "architecture": "x86_64", "version": "15.0"}}
+    ], "non_matches": ["slackware64-live-current.iso", "slackware-live-xfce-current.iso", "slackware64-live-15.0.iso.sha256", "slax-32bit-slackware-15.0.4.iso"]},
     "solus": {"matches": [
       {"filename": "Solus-Budgie-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Budgie", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}},
       {"filename": "Solus-Plasma-Release-2026-04-18.iso", "identity": {"product_id": "solus", "edition": "Plasma", "channel": "stable", "architecture": "x86_64", "version": "2026-04-18"}}
