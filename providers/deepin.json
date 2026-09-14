@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "provider_id": "deepin",
+  "display_name": "deepin",
+  "homepage_url": "https://www.deepin.org/en/download/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.deepin.org", "cdimage.deepin.com"],
+  "capabilities": {"products": ["deepin"], "editions": ["desktop-community"], "flavors": [], "architectures": ["amd64", "arm64", "loong64", "riscv64"], "languages": [], "channels": ["stable", "preview"]},
+  "release_sources": [
+    {
+      "source_id": "stable", "metadata_url": "https://cdimage.deepin.com/releases/", "artifact_regex": "^deepin-desktop-community-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64|loong64)\\.iso$",
+      "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}, "automatic_download": false
+    },
+    {
+      "source_id": "riscv64-preview", "metadata_url": "https://cdimage.deepin.com/releases/", "artifact_regex": "^deepin-desktop-community-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>riscv64)\\.iso$",
+      "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "preview", "architecture": "$group:architecture"},
+      "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}, "automatic_download": false
+    }
+  ],
+  "detection": [
+    {"regex": "^deepin-desktop-community-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>amd64|arm64|loong64)\\.iso$", "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^deepin-desktop-community-(?P<version>\\d+(?:\\.\\d+)+)-(?P<architecture>riscv64)\\.iso$", "identity": {"product_id": "deepin", "edition": "desktop-community", "channel": "preview", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The integrated resolver walks the official version and architecture directories and binds each ISO to its same-directory SHA256SUMS file. RISC-V media remain explicitly preview-channel."]
+}

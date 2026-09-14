@@ -1,0 +1,12 @@
+{
+  "schema_version": 1, "provider_id": "haiku", "display_name": "Haiku", "homepage_url": "https://www.haiku-os.org/get-haiku/", "driver": "static-html",
+  "allowed_hosts": ["www.haiku-os.org", "haiku-release.cdn.haiku-os.org"],
+  "capabilities": {"products": ["haiku"], "editions": ["anyboot"], "flavors": [], "architectures": ["x86_64", "x86_gcc2h"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "x86-64", "metadata_url": "https://www.haiku-os.org/get-haiku/", "artifact_regex": "^haiku-(?P<version>r\\d+beta\\d+)-x86_64-anyboot\\.iso$", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "url-template", "url_template": "https://haiku-release.cdn.haiku-os.org/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}},
+    {"source_id": "x86-gcc2h", "metadata_url": "https://www.haiku-os.org/get-haiku/", "artifact_regex": "^haiku-(?P<version>r\\d+beta\\d+)-x86_gcc2h-anyboot\\.iso$", "identity": {"product_id": "haiku", "edition": "anyboot", "channel": "stable", "architecture": "x86_gcc2h"}, "download": {"strategy": "url-template", "url_template": "https://haiku-release.cdn.haiku-os.org/{version}/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}}
+  ],
+  "detection": [
+    {"regex": "^haiku-(?P<version>r\\d+beta\\d+)-(?P<architecture>x86_64|x86_gcc2h)-(?P<edition>anyboot)\\.iso$", "identity": {"product_id": "haiku", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ]
+}

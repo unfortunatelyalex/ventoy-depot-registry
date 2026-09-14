@@ -1,0 +1,13 @@
+{
+  "schema_version": 1, "provider_id": "porteux", "display_name": "PorteuX", "homepage_url": "https://github.com/porteux/porteux", "driver": "github-releases",
+  "allowed_hosts": ["github.com", "api.github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {"products": ["porteux"], "editions": ["cinnamon", "cosmic", "gnome", "kde", "lxde", "lxqt", "mate", "xfce"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["current", "stable"]},
+  "release_sources": [
+    {"source_id": "current", "metadata_url": "https://api.github.com/repos/porteux/porteux/releases/latest", "artifact_regex": "^porteux-(?P<version>\\d+(?:\\.\\d+)+)-current-(?P<edition>cinnamon|cosmic|gnome|kde|lxde|lxqt|mate|xfce)-(?P<build>[A-Za-z0-9.]+)-x86_64\\.iso$", "identity": {"product_id": "porteux", "edition": "$group:edition", "channel": "current", "architecture": "x86_64"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}}
+  ],
+  "detection": [
+    {"regex": "^porteux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<channel>current)-(?P<edition>cinnamon|cosmic|gnome|kde|lxde|lxqt|mate|xfce)-(?P<build>[A-Za-z0-9.]+)-(?P<architecture>x86_64)\\.iso$", "identity": {"product_id": "porteux", "edition": "$group:edition", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": true},
+    {"regex": "^porteux-(?P<version>\\d+(?:\\.\\d+)+)-(?P<channel>stable)-(?P<edition>cinnamon|gnome|kde|lxde|lxqt|mate|xfce)-(?P<build>[A-Za-z0-9.]+)-(?P<architecture>x86_64)\\.iso$", "identity": {"product_id": "porteux", "edition": "$group:edition", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
+  ],
+  "notes": ["Current images are resolved automatically. Stable-channel images are retained as a distinct identity but are detection-only because current releases no longer publish that channel."]
+}

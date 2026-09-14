@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "provider_id": "alt-rescue",
+  "display_name": "ALT Rescue",
+  "homepage_url": "https://en.altlinux.org/Rescue",
+  "driver": "checksum-list",
+  "allowed_hosts": ["en.altlinux.org", "nightly.altlinux.org"],
+  "capabilities": {
+    "products": ["alt-rescue"],
+    "editions": ["rescue", "rescue-live"],
+    "flavors": [],
+    "architectures": ["i586", "x86_64"],
+    "languages": [],
+    "channels": ["p10", "p11"]
+  },
+  "release_sources": [
+    {
+      "source_id": "p10",
+      "metadata_url": "https://nightly.altlinux.org/p10/release/SHA512SUM",
+      "artifact_regex": "^alt-(?P<channel>p10)-(?P<edition>rescue)-(?P<version>\\d{8})-(?P<architecture>i586|x86_64)\\.iso$",
+      "identity": {"product_id": "alt-rescue", "edition": "$group:edition", "channel": "p10", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://nightly.altlinux.org/p10/release/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list"}}
+    },
+    {
+      "source_id": "p11",
+      "metadata_url": "https://nightly.altlinux.org/p11/release/SHA512SUM",
+      "artifact_regex": "^alt-(?P<channel>p11)-(?P<edition>rescue|rescue-live)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "alt-rescue", "edition": "$group:edition", "channel": "p11", "architecture": "x86_64"},
+      "download": {"strategy": "url-template", "url_template": "https://nightly.altlinux.org/p11/release/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^alt-(?P<channel>p10)-(?P<edition>rescue)-(?P<version>\\d{8})-(?P<architecture>i586|x86_64)\\.iso$",
+      "identity": {"product_id": "alt-rescue", "edition": "$group:edition", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^alt-(?P<channel>p11)-(?P<edition>rescue|rescue-live)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "alt-rescue", "edition": "$group:edition", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["p10 and p11 are preserved as separate platform channels; no automatic major-platform migration occurs.", "The p11 rescue-live variant is distinct from the standard rescue image."]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "provider_id": "finnix",
+  "display_name": "Finnix",
+  "homepage_url": "https://www.finnix.org/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.finnix.org", "forge.colobox.com"],
+  "capabilities": {
+    "products": ["finnix"],
+    "editions": ["live"],
+    "flavors": [],
+    "architectures": ["amd64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "stable-amd64",
+      "metadata_url": "https://www.finnix.org/",
+      "artifact_regex": "^finnix-(?P<version>\\d+(?:\\.\\d+)?)\\.iso$",
+      "identity": {
+        "product_id": "finnix",
+        "edition": "live",
+        "channel": "stable",
+        "architecture": "amd64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "embedded-json"
+        }
+      },
+      "automatic_download": false
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^finnix-(?P<version>\\d+(?:\\.\\d+)?)\\.iso$",
+      "identity": {
+        "product_id": "finnix",
+        "edition": "live",
+        "channel": "stable",
+        "architecture": "amd64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    }
+  ],
+  "notes": [
+    "The integrated provider discovers the current ISO on the official homepage and binds it to the canonical per-release JSON, including size and SHA-512. The declarative source is disabled because that safe two-stage lookup cannot yet be expressed by schema v1."
+  ]
+}

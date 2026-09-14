@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "fatdog64",
+  "display_name": "Fatdog64",
+  "homepage_url": "https://distro.ibiblio.org/fatdog/web/",
+  "driver": "directory-index",
+  "allowed_hosts": ["distro.ibiblio.org"],
+  "capabilities": {"products": ["fatdog64"], "editions": ["live"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [{"regex": "^Fatdog64-(?P<version>\\d+)\\.iso$", "identity": {"product_id": "fatdog64", "edition": "live", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": false}],
+  "notes": ["Fatdog64 publishes only MD5 sidecars for its ISO releases. Detection is supported, but unattended updates require a strong publisher checksum."]
+}

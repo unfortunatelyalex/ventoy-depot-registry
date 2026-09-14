@@ -1,0 +1,13 @@
+{
+  "schema_version": 1, "provider_id": "void-linux", "display_name": "Void Linux", "homepage_url": "https://voidlinux.org/download/", "driver": "checksum-list",
+  "allowed_hosts": ["voidlinux.org", "repo-default.voidlinux.org"],
+  "capabilities": {"products": ["void-linux"], "editions": ["base", "xfce"], "flavors": ["glibc", "musl"], "architectures": ["x86_64", "i686", "aarch64", "asahi"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "glibc", "metadata_url": "https://repo-default.voidlinux.org/live/current/sha256sum.txt", "artifact_regex": "^void-live-(?P<architecture>x86_64|i686|aarch64|asahi)-(?P<version>\\d{8})-(?P<edition>base|xfce)\\.iso$", "identity": {"product_id": "void-linux", "edition": "$group:edition", "flavor": "glibc", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://repo-default.voidlinux.org/live/current/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}},
+    {"source_id": "musl", "metadata_url": "https://repo-default.voidlinux.org/live/current/sha256sum.txt", "artifact_regex": "^void-live-(?P<architecture>x86_64|aarch64|asahi)-musl-(?P<version>\\d{8})-(?P<edition>base|xfce)\\.iso$", "identity": {"product_id": "void-linux", "edition": "$group:edition", "flavor": "musl", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://repo-default.voidlinux.org/live/current/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}}}
+  ],
+  "detection": [
+    {"regex": "^void-live-(?P<architecture>x86_64|i686|aarch64|asahi)-(?P<version>\\d{8})-(?P<edition>base|xfce)\\.iso$", "identity": {"product_id": "void-linux", "edition": "$group:edition", "flavor": "glibc", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^void-live-(?P<architecture>x86_64|aarch64|asahi)-musl-(?P<version>\\d{8})-(?P<edition>base|xfce)\\.iso$", "identity": {"product_id": "void-linux", "edition": "$group:edition", "flavor": "musl", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ]
+}

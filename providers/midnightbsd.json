@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "provider_id": "midnightbsd",
+  "display_name": "MidnightBSD",
+  "homepage_url": "https://www.midnightbsd.org/download/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.midnightbsd.org", "discovery.midnightbsd.org"],
+  "capabilities": {"products": ["midnightbsd"], "editions": ["disc1", "bootonly"], "flavors": [], "architectures": ["amd64", "i386"], "languages": [], "channels": ["release"]},
+  "release_sources": [{
+    "source_id": "current-disc1",
+    "metadata_url": "https://www.midnightbsd.org/download/",
+    "artifact_regex": "^MidnightBSD-(?P<version>\\d+(?:\\.\\d+)+)--(?P<architecture>amd64|i386)-(?P<edition>disc1)\\.iso$",
+    "identity": {"product_id": "midnightbsd", "edition": "$group:edition", "channel": "release", "architecture": "$group:architecture"},
+    "download": {"strategy": "url-template", "url_template": "https://discovery.midnightbsd.org/ftp/releases/{architecture}/ISO-IMAGES/{version}/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "checksum-list", "url_template": "https://discovery.midnightbsd.org/ftp/releases/{architecture}/ISO-IMAGES/{version}/CHECKSUM.SHA512"}}
+  }],
+  "detection": [
+    {"regex": "^MidnightBSD-(?P<version>\\d+(?:\\.\\d+)+)--(?P<architecture>amd64|i386)-disc1\\.iso$", "identity": {"product_id": "midnightbsd", "edition": "disc1", "channel": "release", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^MidnightBSD-(?P<version>\\d+(?:\\.\\d+)+)--(?P<architecture>amd64|i386)-bootonly\\.iso$", "identity": {"product_id": "midnightbsd", "edition": "bootonly", "channel": "release", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The integrated resolver derives the current release directory from the official download page and verifies both disc1 and bootonly media against the publisher's SHA-512 list. Disk images are intentionally excluded."]
+}

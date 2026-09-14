@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider_id": "ipfire",
+  "display_name": "IPFire",
+  "homepage_url": "https://www.ipfire.org/downloads",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.ipfire.org", "boot.ipfire.org"],
+  "capabilities": {"products": ["ipfire"], "editions": ["installer"], "flavors": [], "architectures": ["x86_64", "aarch64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^ipfire-(?P<version>\\d+(?:\\.\\d+)+)-core(?P<build>\\d+)-(?P<architecture>x86_64|aarch64)\\.iso$", "identity": {"product_id": "ipfire", "edition": "installer", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
+  ],
+  "notes": ["IPFire publishes BLAKE2 sidecars. Automatic acquisition remains disabled until Ventoy Depot can represent and enforce that checksum algorithm without weakening its SHA-256/SHA-512 contract."]
+}

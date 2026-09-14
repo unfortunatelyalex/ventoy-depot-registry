@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "provider_id": "calculate-linux",
+  "display_name": "Calculate Linux",
+  "homepage_url": "https://www.calculate-linux.org/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.calculate-linux.org", "mirror.calculate-linux.org"],
+  "capabilities": {
+    "products": ["calculate-linux"],
+    "editions": ["ccm", "cds", "cld", "cldc", "cldl", "cldm", "cldx", "cldxs", "cls", "css"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["rolling"]
+  },
+  "release_sources": [{
+    "source_id": "rolling",
+    "metadata_url": "https://mirror.calculate-linux.org/release/",
+    "artifact_regex": "^(?P<edition>ccm|cds|cld|cldc|cldl|cldm|cldx|cldxs|cls|css)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+    "identity": {
+      "product_id": "calculate-linux",
+      "edition": "$group:edition",
+      "channel": "rolling",
+      "architecture": "$group:architecture"
+    },
+    "download": {
+      "strategy": "url-template",
+      "url_template": "https://mirror.calculate-linux.org/release/{version}/{filename}"
+    },
+    "verification": {
+      "level": "CHECKSUM",
+      "checksum": {
+        "algorithm": "sha512",
+        "strategy": "checksum-list",
+        "url_template": "https://mirror.calculate-linux.org/release/{version}/SHA512SUMS"
+      }
+    }
+  }],
+  "detection": [{
+    "regex": "^(?P<edition>ccm|cds|cld|cldc|cldl|cldm|cldx|cldxs|cls|css)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+    "identity": {
+      "product_id": "calculate-linux",
+      "edition": "$group:edition",
+      "channel": "rolling",
+      "architecture": "$group:architecture",
+      "version": "$group:version"
+    },
+    "downloadable": true
+  }],
+  "notes": [
+    "The official rolling release directory publishes ten named profiles and SHA-512 lists.",
+    "Profile codes are preserved as the edition identity and never converted automatically."
+  ]
+}

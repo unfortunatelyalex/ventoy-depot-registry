@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "provider_id": "openeuler",
+  "display_name": "openEuler",
+  "homepage_url": "https://repo.openeuler.org/",
+  "driver": "directory-index",
+  "allowed_hosts": ["repo.openeuler.org"],
+  "capabilities": {"products": ["openeuler"], "editions": ["dvd", "netinst", "everything"], "flavors": [], "architectures": ["x86_64", "aarch64", "riscv64", "loongarch64"], "languages": [], "channels": ["lts", "interim"]},
+  "release_sources": [
+    {
+      "source_id": "lts",
+      "metadata_url": "https://repo.openeuler.org/",
+      "artifact_regex": "^(?P<release>openEuler-(?P<version>\\d{2}\\.03-LTS(?:-SP\\d+)?))-(?:(?P<edition>netinst|everything)-)?(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "channel": "lts", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://repo.openeuler.org/{release}/ISO/{architecture}/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://repo.openeuler.org/{release}/ISO/{architecture}/{filename}.sha256sum"}}
+    },
+    {
+      "source_id": "interim",
+      "metadata_url": "https://repo.openeuler.org/",
+      "artifact_regex": "^(?P<release>openEuler-(?P<version>\\d{2}\\.(?:03|09)))-(?:(?P<edition>netinst|everything)-)?(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "channel": "interim", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://repo.openeuler.org/{release}/ISO/{architecture}/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://repo.openeuler.org/{release}/ISO/{architecture}/{filename}.sha256sum"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^openEuler-(?P<version>\\d{2}\\.03-LTS(?:-SP\\d+)?)-(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "edition": "dvd", "channel": "lts", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^openEuler-(?P<version>\\d{2}\\.03-LTS(?:-SP\\d+)?)-(?P<edition>netinst|everything)-(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "edition": "$group:edition", "channel": "lts", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^openEuler-(?P<version>\\d{2}\\.(?:03|09))-(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "edition": "dvd", "channel": "interim", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^openEuler-(?P<version>\\d{2}\\.(?:03|09))-(?P<edition>netinst|everything)-(?P<architecture>x86_64|aarch64|riscv64|loongarch64)-dvd\\.iso$",
+      "identity": {"product_id": "openeuler", "edition": "$group:edition", "channel": "interim", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["A missing edition capture means the standard DVD edition. Debug, source and non-ISO images are excluded. The integrated provider checks that the exact requested medium exists before accepting its SHA-256 sidecar."]
+}

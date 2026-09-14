@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "provider_id": "antix",
+  "display_name": "antiX Linux",
+  "homepage_url": "https://antixlinux.com/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["antixlinux.com", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {
+    "products": ["antix"],
+    "editions": ["full", "base", "core", "net"],
+    "flavors": [],
+    "architectures": ["x86_64", "386"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "sourceforge-final-x64",
+      "metadata_url": "https://sourceforge.net/projects/antix-linux/files/Final/",
+      "artifact_regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)(?:-net)?_x64-(?P<edition>full|base|core|net)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64"},
+      "download": {"strategy": "user-supplied"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}},
+      "automatic_download": false
+    },
+    {
+      "source_id": "sourceforge-final-386",
+      "metadata_url": "https://sourceforge.net/projects/antix-linux/files/Final/",
+      "artifact_regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)(?:-net)?_386-(?P<edition>full|base|core|net)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "386"},
+      "download": {"strategy": "user-supplied"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}},
+      "automatic_download": false
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)_x64-(?P<edition>full|base|core)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)_386-(?P<edition>full|base|core)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "386", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)-net_x64-(?P<edition>net)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+      "downloadable": true
+    },
+    {
+      "regex": "^antiX-(?P<version>\\d+(?:\\.\\d+)*)-net_386-(?P<edition>net)\\.iso$",
+      "identity": {"product_id": "antix", "edition": "$group:edition", "channel": "stable", "architecture": "386", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The integrated resolver selects the latest Final directory and pins SourceForge's documented netix mirror; every redirect remains host-allow-listed."]
+}

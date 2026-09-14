@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "provider_id": "openindiana",
+  "display_name": "OpenIndiana Hipster",
+  "homepage_url": "https://www.openindiana.org/downloads/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.openindiana.org", "dlc.openindiana.org"],
+  "capabilities": {
+    "products": ["openindiana"],
+    "editions": ["gui", "text", "minimal"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["rolling"]
+  },
+  "release_sources": [
+    {
+      "source_id": "hipster-isos",
+      "metadata_url": "https://www.openindiana.org/downloads/",
+      "artifact_regex": "^OI-hipster-(?P<edition>gui|text|minimal)-(?P<version>\\d{8})\\.iso$",
+      "identity": {
+        "product_id": "openindiana",
+        "edition": "$group:edition",
+        "channel": "rolling",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "page-link",
+        "link_regex": "^https://dlc\\.openindiana\\.org/isos/hipster/\\d{8}/OI-hipster-(?:gui|text|minimal)-\\d{8}\\.iso$"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha256",
+          "strategy": "sidecar",
+          "suffix": ".sha256sum"
+        }
+      }
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^OI-hipster-(?P<edition>gui|text|minimal)-(?P<version>\\d{8})\\.iso$",
+      "identity": {
+        "product_id": "openindiana",
+        "edition": "$group:edition",
+        "channel": "rolling",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    }
+  ],
+  "notes": [
+    "Only official ISO installers are included; USB and cloud disk images are outside Ventoy Depot's ISO scope."
+  ]
+}

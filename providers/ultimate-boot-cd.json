@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider_id": "ultimate-boot-cd",
+  "display_name": "Ultimate Boot CD",
+  "homepage_url": "https://www.ultimatebootcd.com/download.html",
+  "driver": "static-html",
+  "allowed_hosts": ["www.ultimatebootcd.com"],
+  "capabilities": {"products": ["ultimate-boot-cd"], "editions": ["diagnostics"], "flavors": [], "architectures": ["x86"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^ubcd(?P<version>\\d{3,})\\.iso$", "identity": {"product_id": "ultimate-boot-cd", "edition": "diagnostics", "channel": "stable", "architecture": "x86", "version": "$group:version"}, "downloadable": false}
+  ],
+  "notes": ["The official page publishes SHA-256, but binaries are distributed through a changing third-party mirror list. Detection is enabled without granting unattended download authority to those mirrors."]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "blackarch",
+  "display_name": "BlackArch Linux",
+  "homepage_url": "https://blackarch.org/downloads.html",
+  "driver": "static-html",
+  "allowed_hosts": ["blackarch.org", "ftp.halifax.rwth-aachen.de"],
+  "capabilities": {"products": ["blackarch"], "editions": ["full", "slim", "netinst"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [],
+  "detection": [{"regex": "^blackarch-linux-(?P<edition>full|slim|netinst)-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-x86_64\\.iso$", "identity": {"product_id": "blackarch", "edition": "$group:edition", "channel": "rolling", "architecture": "x86_64", "version": "$group:version"}, "downloadable": false}],
+  "notes": ["BlackArch currently publishes SHA-1 on its official download page. Ventoy Depot recognizes each ISO edition but will not automate it until SHA-256/SHA-512 metadata is available."]
+}

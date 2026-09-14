@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "provider_id": "artix-linux",
+  "display_name": "Artix Linux",
+  "homepage_url": "https://artixlinux.org/download.php",
+  "driver": "static-html",
+  "allowed_hosts": ["artixlinux.org", "iso.artixlinux.org", "download.artixlinux.org", "mirror3.artixlinux.org"],
+  "capabilities": {
+    "products": ["artix-linux"],
+    "editions": ["base", "cinnamon", "community-gtk", "community-qt", "lxqt", "mate", "plasma", "xfce"],
+    "flavors": ["dinit", "openrc", "runit", "s6"],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "stable-page",
+      "metadata_url": "https://iso.artixlinux.org/iso/",
+      "artifact_regex": "^artix-(?P<edition>base|cinnamon|community-gtk|community-qt|lxqt|mate|plasma|xfce)-(?P<flavor>dinit|openrc|runit|s6)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "artix-linux", "edition": "$group:edition", "flavor": "$group:flavor", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "^https://(?:download|mirror3)\\.artixlinux\\.org/iso/[A-Za-z0-9._+-]+\\.iso$"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^artix-(?P<channel>stable)-(?P<edition>base|cinnamon|community-gtk|community-qt|lxqt|mate|plasma|xfce)-(?P<flavor>dinit|openrc|runit|s6)-(?P<version>\\d{8})-(?P<architecture>x86_64)\\.iso$",
+      "identity": {"product_id": "artix-linux", "edition": "$group:edition", "flavor": "$group:flavor", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    },
+    {"regex": "^artix-base-dinit-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-base-openrc-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-base-runit-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "runit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-base-s6-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "base", "flavor": "s6", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-cinnamon-dinit-(?P<version>20260814)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "cinnamon", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-cinnamon-openrc-(?P<version>20260814)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "cinnamon", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-community-gtk-openrc-(?P<version>20260821)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "community-gtk", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-community-qt-openrc-(?P<version>20260821)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "community-qt", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-lxqt-runit-(?P<version>20260816)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "lxqt", "flavor": "runit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-mate-dinit-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "mate", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-mate-openrc-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "mate", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-plasma-dinit-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "plasma", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-plasma-openrc-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "plasma", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-xfce-dinit-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "xfce", "flavor": "dinit", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^artix-xfce-openrc-(?P<version>20260813)-x86_64\\.iso$", "identity": {"product_id": "artix-linux", "edition": "xfce", "flavor": "openrc", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": [
+    "Stable and weekly Artix images share the same upstream filename shape; only curated stable upstream filenames and channel-labelled Ventoy Depot filenames are recognized automatically.",
+    "The official page embeds SHA-256 values and detached signatures. Automated verification currently enforces the SHA-256 value."
+  ]
+}

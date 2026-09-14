@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "provider_id": "trisquel",
+  "display_name": "Trisquel GNU/Linux",
+  "homepage_url": "https://trisquel.info/en/Download",
+  "driver": "directory-index",
+  "allowed_hosts": ["trisquel.info", "cdimage.trisquel.info"],
+  "capabilities": {
+    "products": ["trisquel"],
+    "editions": ["main", "kde", "mini", "sugar", "netinst"],
+    "flavors": [],
+    "architectures": ["amd64", "arm64", "ppc64el"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "stable",
+    "metadata_url": "https://cdimage.trisquel.info/trisquel-images/",
+    "artifact_regex": "^(?P<name>trisquel|triskel|trisquel-mini|trisquel-sugar|trisquel-netinst)_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>amd64|arm64|ppc64el)\\.iso$",
+    "identity": {"product_id": "trisquel", "channel": "stable", "architecture": "$group:architecture"},
+    "download": {"strategy": "url-template", "url_template": "https://cdimage.trisquel.info/trisquel-images/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha512", "strategy": "sidecar", "url_template": "https://cdimage.trisquel.info/trisquel-images/{filename}.sha512"}}
+  }],
+  "detection": [
+    {"regex": "^trisquel_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "trisquel", "edition": "main", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^triskel_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "trisquel", "edition": "kde", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^trisquel-(?P<edition>mini|sugar)_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>amd64)\\.iso$", "identity": {"product_id": "trisquel", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true},
+    {"regex": "^trisquel-(?P<edition>netinst)_(?P<version>\\d+(?:\\.\\d+)+)_(?P<architecture>amd64|arm64|ppc64el)\\.iso$", "identity": {"product_id": "trisquel", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}
+  ],
+  "notes": ["The integrated resolver preserves the five official edition families and architecture. Publisher SHA-512 sidecars are required; detached signatures are not trusted without a pinned publisher fingerprint."]
+}

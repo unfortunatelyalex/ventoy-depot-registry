@@ -1,8 +1,8 @@
 {
   "schema_version": 1, "provider_id": "tails", "display_name": "Tails", "homepage_url": "https://tails.net/install/download/", "driver": "static-json",
-  "allowed_hosts": ["tails.net", "download.tails.net"],
+  "allowed_hosts": ["tails.net", "download.tails.net", "mirror.bouwhuis.network", "ftp.fau.de", "tails.hivane.net", "tails.ybti.net", "mirror.netcologne.de"],
   "capabilities": {"products": ["tails"], "editions": ["iso"], "flavors": [], "architectures": ["amd64"], "languages": [], "channels": ["stable"]},
-  "release_sources": [{"source_id": "stable", "metadata_url": "https://tails.net/install/v2/Tails/amd64/stable/latest.json", "artifact_regex": "^tails-amd64-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "user-supplied"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "embedded-json"}}, "automatic_download": false}],
-  "detection": [{"regex": "^tails-amd64-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": false}],
-  "notes": ["Automatic acquisition remains disabled until redirect mirrors can be represented with a fixed, curated host allow-list."]
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://tails.net/install/v2/Tails/amd64/stable/latest.json", "artifact_regex": "^tails-amd64-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64"}, "download": {"strategy": "page-link", "link_regex": "^https://download\\.tails\\.net/tails/stable/.+/tails-amd64-.+\\.iso$"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "embedded-json"}}}],
+  "detection": [{"regex": "^tails-amd64-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "tails", "edition": "iso", "channel": "stable", "architecture": "amd64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["The initial Tails URL and checksum are publisher-bound in the official stable JSON. Redirects are accepted only to the explicitly curated hosts currently advertised by Tails."]
 }

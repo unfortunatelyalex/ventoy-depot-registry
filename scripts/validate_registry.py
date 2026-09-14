@@ -5,12 +5,14 @@ import json
 import re
 import sys
 from pathlib import Path
+from string import Formatter
 from typing import Any, Iterator
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 PROVIDER_ID = re.compile(r"^[a-z0-9][a-z0-9-]{1,62}$")
-FINGERPRINT = re.compile(r"^[A-Fa-f0-9]{40,64}$")
+SOURCE_ID = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}$")
+FINGERPRINT = re.compile(r"^(?:[A-Fa-f0-9]{40}|[A-Fa-f0-9]{64})$")
 DRIVERS = {"github-releases", "gitlab-releases", "static-json", "directory-index", "checksum-list", "sidecar", "static-html", "latest-redirect"}
 IDENTITY_FIELDS = {"product_id", "edition", "flavor", "channel", "architecture", "language", "version", "build"}
 
@@ -58,9 +60,11 @@ def validate_regex(expression: str, path: Path) -> re.Pattern[str]:
     return re.compile(expression, re.IGNORECASE)
 
 
-def resolve_identity(template: dict[str, Any], match: re.Match[str]) -> dict[str, Any]:
+def resolve_identity(template: dict[str, Any], *matches: re.Match[str]) -> dict[str, Any]:
     result: dict[str, Any] = {}
-    groups = match.groupdict()
+    groups: dict[str, str | None] = {}
+    for match in matches:
+        groups.update({key: value for key, value in match.groupdict().items() if value is not None})
     for key, value in template.items():
         if isinstance(value, str) and value.startswith("$group:"):
             result[key] = groups.get(value.removeprefix("$group:"))
@@ -90,9 +94,9 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
     host_set = {host.lower() for host in hosts}
     for item_path, item in walk(value):
         key = item_path[-1] if item_path else ""
-        if (key.endswith("_url") or key.endswith("_template")) and isinstance(item, str):
+        if (key.endswith("_url") or key.endswith("_url_template")) and isinstance(item, str):
             validate_url(item, host_set, path)
-        if key in {"regex", "artifact_regex", "link_regex", "entry_regex"} and isinstance(item, str):
+        if (key == "regex" or key.endswith("_regex")) and isinstance(item, str):
             validate_regex(item, path)
         if key == "signer_fingerprints" and (not item or any(not FINGERPRINT.fullmatch(fingerprint) for fingerprint in item)):
             raise ValueError(f"{path}: incomplete signer fingerprint")
@@ -101,8 +105,25 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
         raise ValueError(f"{path}: detection rules required")
     for rule in rules:
         validate_identity(rule.get("identity"), path)
-        validate_regex(rule.get("regex", ""), path)
+        expression = validate_regex(rule.get("regex", ""), path)
+        if "volume_regex" in rule:
+            validate_regex(rule["volume_regex"], path)
+        if "version_template" in rule:
+            template = rule["version_template"]
+            if not isinstance(template, str) or not 1 <= len(template) <= 80:
+                raise ValueError(f"{path}: invalid detection version template")
+            fields = {
+                field
+                for _literal, field, spec, conversion in Formatter().parse(template)
+                if field is not None and not spec and conversion is None
+            }
+            if not fields or not fields <= set(expression.groupindex):
+                raise ValueError(f"{path}: unknown detection version template group")
+    if not value["release_sources"] and any(rule.get("downloadable") for rule in rules):
+        raise ValueError(f"{path}: downloadable detection rule requires a release source")
     for source in value["release_sources"]:
+        if not SOURCE_ID.fullmatch(source.get("source_id", "")):
+            raise ValueError(f"{path}: invalid release source id")
         validate_identity(source.get("identity"), path)
         verification = source.get("verification", {})
         checksum = verification.get("checksum", {})
@@ -125,20 +146,57 @@ def validate_provider(path: Path) -> tuple[str, dict[str, Any]]:
 def validate_fixtures(provider_id: str, provider: dict[str, Any], fixture: Any) -> set[str]:
     if not isinstance(fixture, dict) or not fixture.get("matches") or not fixture.get("non_matches"):
         raise ValueError(f"{provider_id}: fixtures require matches and non_matches")
-    rules = [(validate_regex(rule["regex"], Path(provider_id)), rule) for rule in provider["detection"]]
+    rules = [
+        (
+            validate_regex(rule["regex"], Path(provider_id)),
+            validate_regex(rule["volume_regex"], Path(provider_id))
+            if rule.get("volume_regex")
+            else None,
+            rule,
+        )
+        for rule in provider["detection"]
+    ]
+
+    def matching(case: Any) -> list[tuple[re.Match[str], re.Match[str] | None, dict[str, Any]]]:
+        filename = case["filename"] if isinstance(case, dict) else case
+        volume_id = case.get("volume_id") if isinstance(case, dict) else None
+        found: list[tuple[re.Match[str], re.Match[str] | None, dict[str, Any]]] = []
+        for expression, volume_expression, rule in rules:
+            name_match = expression.fullmatch(filename)
+            if name_match is None:
+                continue
+            volume_match = volume_expression.fullmatch(volume_id or "") if volume_expression else None
+            if volume_expression is not None and volume_match is None:
+                continue
+            found.append((name_match, volume_match, rule))
+        return found
+
     filenames: set[str] = set()
     for case in fixture["matches"]:
         filename = case["filename"]
         filenames.add(filename)
-        matches = [(regex.fullmatch(filename), rule) for regex, rule in rules]
-        matches = [(match, rule) for match, rule in matches if match is not None]
+        matches = matching(case)
         if len(matches) != 1:
             raise ValueError(f"{provider_id}: {filename!r} matched {len(matches)} rules")
-        actual = resolve_identity(matches[0][1]["identity"], matches[0][0])
+        name_match, volume_match, rule = matches[0]
+        actual = resolve_identity(
+            rule["identity"],
+            *([name_match, volume_match] if volume_match is not None else [name_match]),
+        )
+        if "version_template" in rule:
+            groups = {
+                key: value
+                for match in (name_match, volume_match)
+                if match is not None
+                for key, value in match.groupdict().items()
+                if value is not None
+            }
+            actual["version"] = rule["version_template"].format_map(groups)
         if actual != case["identity"]:
             raise ValueError(f"{provider_id}: identity mismatch for {filename!r}: {actual!r}")
-    for filename in fixture["non_matches"]:
-        if any(regex.fullmatch(filename) for regex, _ in rules):
+    for case in fixture["non_matches"]:
+        filename = case["filename"] if isinstance(case, dict) else case
+        if matching(case):
             raise ValueError(f"{provider_id}: negative fixture matched {filename!r}")
     return filenames
 

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "provider_id": "q4os",
+  "display_name": "Q4OS",
+  "homepage_url": "https://q4os.org/downloads1.html",
+  "driver": "static-html",
+  "allowed_hosts": ["q4os.org", "www.q4os.org", "sourceforge.net"],
+  "capabilities": {"products": ["q4os"], "editions": ["plasma-live", "trinity-live", "trinity-install"], "flavors": [], "architectures": ["x86_64", "i386"], "languages": [], "channels": ["stable", "old-stable"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^q4os-(?P<version>\\d+(?:\\.\\d+)+)-x64\\.r(?P<build>\\d+)\\.iso$", "identity": {"product_id": "q4os", "edition": "plasma-live", "channel": "stable", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false},
+    {"regex": "^q4os-(?P<version>\\d+(?:\\.\\d+)+)-x64-tde\\.r(?P<build>\\d+)\\.iso$", "identity": {"product_id": "q4os", "edition": "trinity-live", "channel": "stable", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false},
+    {"regex": "^q4os-(?P<version>\\d+(?:\\.\\d+)+)-x64-instcd\\.r(?P<build>\\d+)\\.iso$", "identity": {"product_id": "q4os", "edition": "trinity-install", "channel": "stable", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false},
+    {"regex": "^q4os-(?P<version>\\d+(?:\\.\\d+)+)-i386-instcd\\.r(?P<build>\\d+)\\.iso$", "identity": {"product_id": "q4os", "edition": "trinity-install", "channel": "old-stable", "architecture": "i386", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
+  ],
+  "notes": ["Q4OS publishes MD5 values on its official download page. Editions, architecture and old-stable 32-bit media are recognized separately, but automatic download is disabled."]
+}

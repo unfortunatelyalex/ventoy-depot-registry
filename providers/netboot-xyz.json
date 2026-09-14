@@ -1,0 +1,16 @@
+{
+  "schema_version": 1, "provider_id": "netboot-xyz", "display_name": "netboot.xyz", "homepage_url": "https://netboot.xyz/docs/booting/iso/", "driver": "github-releases",
+  "allowed_hosts": ["netboot.xyz", "api.github.com", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {"products": ["netboot-xyz"], "editions": ["standard", "legacy"], "flavors": [], "architectures": ["x86_64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [
+    {"source_id": "standard-x86-64", "metadata_url": "https://api.github.com/repos/netbootxyz/netboot.xyz/releases/latest", "artifact_regex": "^netboot\\.xyz\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}},
+    {"source_id": "legacy-x86-64", "metadata_url": "https://api.github.com/repos/netbootxyz/netboot.xyz/releases/latest", "artifact_regex": "^netboot\\.xyz-legacy\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "legacy", "channel": "stable", "architecture": "x86_64"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}},
+    {"source_id": "standard-arm64", "metadata_url": "https://api.github.com/repos/netbootxyz/netboot.xyz/releases/latest", "artifact_regex": "^netboot\\.xyz-arm64\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "arm64"}, "download": {"strategy": "release-asset"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}}
+  ],
+  "detection": [
+    {"regex": "^netboot\\.xyz\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "x86_64", "version": null}, "downloadable": true},
+    {"regex": "^netboot\\.xyz-legacy\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "legacy", "channel": "stable", "architecture": "x86_64", "version": null}, "downloadable": true},
+    {"regex": "^netboot\\.xyz-arm64\\.iso$", "identity": {"product_id": "netboot-xyz", "edition": "standard", "channel": "stable", "architecture": "arm64", "version": null}, "downloadable": true}
+  ],
+  "notes": ["The release version comes from GitHub release metadata because the canonical ISO filenames are stable."]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "drweb-livedisk",
+  "display_name": "Dr.Web LiveDisk",
+  "homepage_url": "https://free.drweb.com/aid_admin/",
+  "driver": "sidecar",
+  "allowed_hosts": ["free.drweb.com", "cdn-download.drweb.com"],
+  "capabilities": {"products": ["drweb-livedisk"], "editions": ["rescue"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [{"regex": "^drweb-livedisk-(?P<version>\\d+)-cd\\.iso$", "identity": {"product_id": "drweb-livedisk", "edition": "rescue", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": false}],
+  "notes": ["The official LiveDisk ISO is recognized, but its publisher currently exposes only an MD5 sidecar. Ventoy Depot blocks automatic updates until SHA-256/SHA-512 or a pinned publisher signature is available."]
+}

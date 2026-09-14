@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "provider_id": "garuda-linux",
+  "display_name": "Garuda Linux",
+  "homepage_url": "https://garudalinux.org/downloads",
+  "driver": "directory-index",
+  "allowed_hosts": ["garudalinux.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net", "master.dl.sourceforge.net"],
+  "capabilities": {"products": ["garuda-linux"], "editions": ["cinnamon", "dr460nized", "dr460nized-gaming", "gnome", "hyprland", "i3", "kde-lite", "mokka", "sway", "xfce"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [{
+    "source_id": "rolling-editions",
+    "metadata_url": "https://sourceforge.net/projects/garuda-linux/files/garuda/",
+    "artifact_regex": "^garuda-(?P<edition>dr460nized-gaming|dr460nized|kde-lite|cinnamon|gnome|hyprland|i3|mokka|sway|xfce)-linux-[a-z0-9-]+-(?P<version>\\d{6})\\.iso$",
+    "identity": {"product_id": "garuda-linux", "edition": "$group:edition", "channel": "rolling", "architecture": "x86_64"},
+    "download": {"strategy": "user-supplied"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}},
+    "automatic_download": false
+  }],
+  "detection": [{"regex": "^garuda-(?P<edition>dr460nized-gaming|dr460nized|kde-lite|cinnamon|gnome|hyprland|i3|mokka|sway|xfce)-linux-(?:garuda|lts|zen)-(?P<version>\\d{6})\\.iso$", "identity": {"product_id": "garuda-linux", "edition": "$group:edition", "channel": "rolling", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["The integrated resolver preserves the selected desktop edition, walks the official SourceForge build folder and requires that the release contains exactly one matching ISO with an official SHA-256 sidecar."]
+}

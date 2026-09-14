@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "provider_id": "slackware-live",
+  "display_name": "Slackware Live Edition",
+  "homepage_url": "https://docs.slackware.com/slackware:liveslak",
+  "driver": "directory-index",
+  "allowed_hosts": ["docs.slackware.com", "download.liveslak.org"],
+  "capabilities": {
+    "products": ["slackware-live"],
+    "editions": ["full"],
+    "flavors": [],
+    "architectures": ["x86_64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [{
+    "source_id": "stable",
+    "metadata_url": "https://download.liveslak.org/slackware64-15.0-live/",
+    "artifact_regex": "^(?P<filename>slackware64-live-(?P<version>15\\.0)\\.iso)$",
+    "identity": {"product_id": "slackware-live", "edition": "full", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://download.liveslak.org/slackware64-15.0-live/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://download.liveslak.org/slackware64-15.0-live/{filename}.sha256"}}
+  }],
+  "detection": [{
+    "regex": "^slackware64-live-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$",
+    "identity": {"product_id": "slackware-live", "edition": "full", "channel": "stable", "architecture": "x86_64", "version": "$group:version"},
+    "downloadable": true
+  }],
+  "notes": ["The integrated resolver selects the newest versioned stable release. The rolling current ISO is excluded because its unchanged filename does not identify the installed build. The publisher's SHA-256 sidecar is required."]
+}

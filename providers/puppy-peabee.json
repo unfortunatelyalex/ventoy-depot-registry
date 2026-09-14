@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "provider_id": "puppy-peabee",
+  "display_name": "Puppy Linux (PeaBee builds)",
+  "homepage_url": "https://github.com/peabee/releases",
+  "driver": "github-releases",
+  "allowed_hosts": ["api.github.com", "github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"],
+  "capabilities": {
+    "products": ["puppy-linux"],
+    "editions": ["voidpup64", "voidpup32", "trixiepup64-wayland", "trixiepup64-retro", "trixiepup32-retro", "s15pup64", "s15pup32", "resolutepup64", "noblepup32", "bookwormpup32"],
+    "flavors": [],
+    "architectures": ["x86_64", "i686"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "voidpup64",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/VoidPup64%2Frelease-260902",
+      "artifact_regex": "^VoidPup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "voidpup64",
+        "channel": "stable",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/VoidPup64/release-260902/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "voidpup32",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/VoidPup32%2Frelease-260902",
+      "artifact_regex": "^VoidPup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "voidpup32",
+        "channel": "stable",
+        "architecture": "i686"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/VoidPup32/release-260902/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "trixiepup64-wayland",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/TrixiePup64-Wayland%2Frelease-260901",
+      "artifact_regex": "^TrixiePup64-Wayland-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup64-wayland",
+        "channel": "stable",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/TrixiePup64-Wayland/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "trixiepup64-retro",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/TrixiePup64-Retro%2Frelease-260901",
+      "artifact_regex": "^TrixiePup64-Retro-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup64-retro",
+        "channel": "stable",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/TrixiePup64-Retro/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "trixiepup32-retro",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/TrixiePup32-Retro%2Frelease-260901",
+      "artifact_regex": "^TrixiePup32-Retro-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup32-retro",
+        "channel": "stable",
+        "architecture": "i686"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/TrixiePup32-Retro/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "s15pup64",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/S15Pup64%2Frelease-260901",
+      "artifact_regex": "^S15Pup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "s15pup64",
+        "channel": "stable",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/S15Pup64/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "s15pup32",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/S15Pup32%2Frelease-260901",
+      "artifact_regex": "^S15Pup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "s15pup32",
+        "channel": "stable",
+        "architecture": "i686"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/S15Pup32/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "resolutepup64",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/ResolutePup64%2Frelease-260901",
+      "artifact_regex": "^ResolutePup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "resolutepup64",
+        "channel": "stable",
+        "architecture": "x86_64"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/ResolutePup64/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "noblepup32",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/NoblePup32%2Frelease-260901",
+      "artifact_regex": "^NoblePup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "noblepup32",
+        "channel": "stable",
+        "architecture": "i686"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/NoblePup32/release-260901/SHA512checksums.txt"
+        }
+      }
+    },
+    {
+      "source_id": "bookwormpup32",
+      "metadata_url": "https://api.github.com/repos/peabee/releases/releases/tags/BookwormPup32%2Frelease-260901",
+      "artifact_regex": "^BookwormPup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "bookwormpup32",
+        "channel": "stable",
+        "architecture": "i686"
+      },
+      "download": {
+        "strategy": "release-asset"
+      },
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {
+          "algorithm": "sha512",
+          "strategy": "sidecar",
+          "url_template": "https://github.com/peabee/releases/releases/download/BookwormPup32/release-260901/SHA512checksums.txt"
+        }
+      }
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^VoidPup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "voidpup64",
+        "channel": "stable",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^VoidPup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "voidpup32",
+        "channel": "stable",
+        "architecture": "i686",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^TrixiePup64-Wayland-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup64-wayland",
+        "channel": "stable",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^TrixiePup64-Retro-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup64-retro",
+        "channel": "stable",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^TrixiePup32-Retro-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "trixiepup32-retro",
+        "channel": "stable",
+        "architecture": "i686",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^S15Pup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "s15pup64",
+        "channel": "stable",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^S15Pup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "s15pup32",
+        "channel": "stable",
+        "architecture": "i686",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^ResolutePup64-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "resolutepup64",
+        "channel": "stable",
+        "architecture": "x86_64",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^NoblePup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "noblepup32",
+        "channel": "stable",
+        "architecture": "i686",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    },
+    {
+      "regex": "^BookwormPup32-(?P<version>\\d+(?:\\.\\d+)*-\\d{6})\\.iso$",
+      "identity": {
+        "product_id": "puppy-linux",
+        "edition": "bookwormpup32",
+        "channel": "stable",
+        "architecture": "i686",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    }
+  ],
+  "notes": ["Integrated resolver selects exact stable PeaBee edition from the official GitHub Releases API and requires SHA512checksums.txt from the same release. Build date is part of the version so refreshed ISO builds are not mistaken for an already-current image. These community builds never replace the separately curated BookwormPup64 edition implicitly."]
+}

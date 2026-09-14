@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "provider_id": "dragonflybsd",
+  "display_name": "DragonFly BSD",
+  "homepage_url": "https://www.dragonflybsd.org/download/",
+  "driver": "directory-index",
+  "allowed_hosts": ["www.dragonflybsd.org", "mirror-master.dragonflybsd.org"],
+  "capabilities": {"products": ["dragonflybsd"], "editions": ["installer"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["release", "candidate"]},
+  "release_sources": [],
+  "detection": [
+    {"regex": "^dfly-(?P<architecture>x86_64)-(?P<version>\\d+(?:\\.\\d+)+)_REL\\.iso$", "identity": {"product_id": "dragonflybsd", "edition": "installer", "channel": "release", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": false},
+    {"regex": "^dfly-(?P<architecture>x86_64)-(?P<version>\\d+(?:\\.\\d+)+)_(?P<build>RC\\d+)\\.iso$", "identity": {"product_id": "dragonflybsd", "edition": "installer", "channel": "candidate", "architecture": "$group:architecture", "version": "$group:version", "build": "$group:build"}, "downloadable": false}
+  ],
+  "notes": ["DragonFly BSD release and candidate ISOs are recognized, but the official mirror currently publishes only MD5. Automatic updates remain blocked until a strong publisher checksum or signature is available."]
+}

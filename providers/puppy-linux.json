@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "provider_id": "puppy-linux",
+  "display_name": "Puppy Linux",
+  "homepage_url": "https://puppylinux-woof-ce.github.io/",
+  "driver": "directory-index",
+  "allowed_hosts": ["distro.ibiblio.org", "puppylinux-woof-ce.github.io"],
+  "capabilities": {"products": ["puppy-linux"], "editions": ["bookwormpup64"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{
+    "source_id": "bookwormpup64",
+    "metadata_url": "https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/",
+    "artifact_regex": "^BookwormPup64_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$",
+    "identity": {"product_id": "puppy-linux", "edition": "bookwormpup64", "channel": "stable", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/{version}/{filename}"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://distro.ibiblio.org/puppylinux/puppy-bookwormpup/BookwormPup64/{version}/{filename}-checksum.txt"}}
+  }],
+  "detection": [{"regex": "^BookwormPup64_(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "puppy-linux", "edition": "bookwormpup64", "channel": "stable", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["Only the stable BookwormPup64 line is automated. Its official Ibiblio release directory publishes an exact SHA-256 checksum alongside every ISO; unrelated Puppy derivatives are never substituted."]
+}

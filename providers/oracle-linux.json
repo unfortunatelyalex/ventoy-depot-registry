@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "provider_id": "oracle-linux",
+  "display_name": "Oracle Linux",
+  "homepage_url": "https://yum.oracle.com/oracle-linux-isos.html",
+  "driver": "static-html",
+  "allowed_hosts": ["yum.oracle.com", "linux.oracle.com"],
+  "capabilities": {
+    "products": ["oracle-linux"],
+    "editions": ["dvd", "boot", "boot-uek"],
+    "flavors": [],
+    "architectures": ["x86_64", "aarch64"],
+    "languages": [],
+    "channels": ["8", "9", "10"]
+  },
+  "release_sources": [
+    {
+      "source_id": "official-isos",
+      "metadata_url": "https://yum.oracle.com/oracle-linux-isos.html",
+      "artifact_regex": "^OracleLinux-R(?P<version>(?P<channel>8|9|10)-U\\d+)-(?:Server-)?(?P<architecture>x86_64|aarch64)-(?P<edition>dvd|boot|boot-uek)\\.iso$",
+      "identity": {
+        "product_id": "oracle-linux",
+        "edition": "$group:edition",
+        "channel": "$group:channel",
+        "architecture": "$group:architecture"
+      },
+      "download": {"strategy": "user-supplied"},
+      "verification": {
+        "level": "CHECKSUM",
+        "checksum": {"algorithm": "sha256", "strategy": "checksum-list"}
+      },
+      "automatic_download": false
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^OracleLinux-R(?P<version>(?P<channel>8|9|10)-U\\d+)-(?:Server-)?(?P<architecture>x86_64|aarch64)-(?P<edition>dvd|boot|boot-uek)\\.iso$",
+      "identity": {
+        "product_id": "oracle-linux",
+        "edition": "$group:edition",
+        "channel": "$group:channel",
+        "architecture": "$group:architecture",
+        "version": "$group:version"
+      },
+      "downloadable": true
+    }
+  ],
+  "notes": [
+    "The audited integrated resolver selects the latest update within the installed major release and verifies Oracle's signed SHA-256 checksum list.",
+    "Source ISOs and architecture/media combinations that Oracle does not publish are excluded."
+  ]
+}

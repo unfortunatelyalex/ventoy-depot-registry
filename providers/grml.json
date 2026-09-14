@@ -1,0 +1,8 @@
+{
+  "schema_version": 1, "provider_id": "grml", "display_name": "Grml", "homepage_url": "https://grml.org/download/", "driver": "static-html",
+  "allowed_hosts": ["grml.org", "download.grml.org", "ftp-master.grml.org"],
+  "capabilities": {"products": ["grml"], "editions": ["full", "small"], "flavors": [], "architectures": ["amd64", "arm64"], "languages": [], "channels": ["stable"]},
+  "release_sources": [{"source_id": "stable", "metadata_url": "https://grml.org/download/", "artifact_regex": "^grml-(?P<edition>full|small)-(?P<version>\\d{4}\\.\\d{2})-(?P<architecture>amd64|arm64)\\.iso$", "identity": {"product_id": "grml", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture"}, "download": {"strategy": "url-template", "url_template": "https://ftp-master.grml.org/{filename}"}, "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}}],
+  "detection": [{"regex": "^grml-(?P<edition>full|small)-(?P<version>\\d{4}\\.\\d{2})-(?P<architecture>amd64|arm64)\\.iso$", "identity": {"product_id": "grml", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["Version discovery uses the official project page. Downloads and SHA-256 sidecars use the official master host directly, avoiding rotating mirror redirects."]
+}

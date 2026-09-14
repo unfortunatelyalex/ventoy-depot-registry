@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "provider_id": "archbang",
+  "display_name": "ArchBang",
+  "homepage_url": "https://archbang.org/download/",
+  "driver": "static-json",
+  "allowed_hosts": ["archbang.org", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {"products": ["archbang"], "editions": ["desktop"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [{
+    "source_id": "rolling-x86-64",
+    "metadata_url": "https://sourceforge.net/projects/archbang/best_release.json",
+    "artifact_regex": "^archbang-(?P<day>\\d{2})(?P<month>\\d{2})(?P<year>\\d{2})(?:[-_]x86_64)?\\.iso$",
+    "version_template": "20{year}.{month}.{day}",
+    "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/archbang/files/ArchBANG/{filename}/download?use_mirror=netix"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "release-digest"}}
+  }],
+  "detection": [{
+    "regex": "^archbang-(?P<day>\\d{2})(?P<month>\\d{2})(?P<year>\\d{2})(?:[-_]x86_64)?\\.iso$",
+    "version_template": "20{year}.{month}.{day}",
+    "identity": {"product_id": "archbang", "edition": "desktop", "channel": "rolling", "architecture": "x86_64"},
+    "downloadable": true
+  }],
+  "notes": ["The compact DDMMYY filename date is normalized to YYYY.MM.DD so releases compare chronologically. SourceForge's release-bound SHA-256 and byte size are required."]
+}

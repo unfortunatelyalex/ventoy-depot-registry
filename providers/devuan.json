@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "provider_id": "devuan",
+  "display_name": "Devuan GNU+Linux",
+  "homepage_url": "https://www.devuan.org/get-devuan",
+  "driver": "directory-index",
+  "allowed_hosts": ["files.devuan.org", "www.devuan.org"],
+  "capabilities": {
+    "products": ["devuan"],
+    "editions": ["netinstall", "server", "desktop", "desktop-live", "cd2", "cd3", "cd4", "cd5", "pool1"],
+    "flavors": [],
+    "architectures": ["amd64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "installer",
+      "metadata_url": "https://files.devuan.org/",
+      "artifact_regex": "^devuan_[a-z]+_(?P<version>\\d+(?:\\.\\d+)+)_amd64_(?P<edition>netinstall|server|desktop|cd2|cd3|cd4|cd5|pool1)\\.iso$",
+      "identity": {"product_id": "devuan", "edition": "$group:edition", "channel": "stable", "architecture": "amd64"},
+      "download": {"strategy": "page-link", "link_regex": "^https://files\\.devuan\\.org/devuan_[a-z]+/installer-iso/.+\\.iso$"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "checksum-list", "url_template": "https://files.devuan.org/devuan_{codename}/installer-iso/SHA256SUMS.txt"}}
+    },
+    {
+      "source_id": "desktop-live",
+      "metadata_url": "https://files.devuan.org/",
+      "artifact_regex": "^devuan_[a-z]+_(?P<version>\\d+(?:\\.\\d+)+)_amd64_(?P<edition>desktop-live)\\.iso$",
+      "identity": {"product_id": "devuan", "edition": "desktop-live", "channel": "stable", "architecture": "amd64"},
+      "download": {"strategy": "page-link", "link_regex": "^https://files\\.devuan\\.org/devuan_[a-z]+/desktop-live/.+\\.iso$"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "suffix": ".sha256"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^devuan_[a-z]+_(?P<version>\\d+(?:\\.\\d+)+)_amd64_(?P<edition>netinstall|server|desktop|desktop-live|cd2|cd3|cd4|cd5|pool1)\\.iso$",
+      "identity": {"product_id": "devuan", "edition": "$group:edition", "channel": "stable", "architecture": "amd64", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The integrated resolver discovers the current codename from Devuan's release archive before selecting the exact medium."]
+}

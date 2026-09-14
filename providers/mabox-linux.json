@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "mabox-linux",
+  "display_name": "Mabox Linux",
+  "homepage_url": "https://maboxlinux.org/users-guide/download-and-installation/",
+  "driver": "directory-index",
+  "allowed_hosts": ["maboxlinux.org", "repo.maboxlinux.org", "sourceforge.net"],
+  "capabilities": {"products": ["mabox-linux"], "editions": ["desktop"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [],
+  "detection": [{"regex": "^mabox-linux-(?P<version>\\d+(?:\\.\\d+)+)-[A-Za-z0-9._+-]+-(?P<build>\\d{6})-linux\\d+\\.iso$", "identity": {"product_id": "mabox-linux", "edition": "desktop", "channel": "rolling", "architecture": "x86_64", "version": "$group:version", "build": "$group:build"}, "downloadable": false}],
+  "notes": ["The official repository currently exposes MD5 beside its rolling ISO. Ventoy Depot recognizes the release but blocks automatic downloads until the publisher adds SHA-256/SHA-512."]
+}

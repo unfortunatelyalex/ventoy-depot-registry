@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "provider_id": "archcraft",
+  "display_name": "Archcraft",
+  "homepage_url": "https://archcraft.io/download",
+  "driver": "static-json",
+  "allowed_hosts": ["archcraft.io", "sourceforge.net", "downloads.sourceforge.net", "netix.dl.sourceforge.net"],
+  "capabilities": {"products": ["archcraft"], "editions": ["main"], "flavors": [], "architectures": ["x86_64"], "languages": [], "channels": ["rolling"]},
+  "release_sources": [{
+    "source_id": "main",
+    "metadata_url": "https://sourceforge.net/projects/archcraft/best_release.json",
+    "artifact_regex": "^archcraft-20(?P<year>\\d{2})\\.(?P<month>\\d{2})\\.(?P<day>\\d{2})-x86_64\\.iso$",
+    "version_template": "20{year}.{month}.{day}",
+    "identity": {"product_id": "archcraft", "edition": "main", "channel": "rolling", "architecture": "x86_64"},
+    "download": {"strategy": "url-template", "url_template": "https://sourceforge.net/projects/archcraft/files/v{year}.{month}/{filename}/download?use_mirror=netix"},
+    "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "sidecar", "url_template": "https://sourceforge.net/projects/archcraft/files/v{year}.{month}/{filename}.sha256sum/download?use_mirror=netix"}}
+  }],
+  "detection": [{"regex": "^archcraft-(?P<version>\\d{4}\\.\\d{2}\\.\\d{2})-x86_64\\.iso$", "identity": {"product_id": "archcraft", "edition": "main", "channel": "rolling", "architecture": "x86_64", "version": "$group:version"}, "downloadable": true}],
+  "notes": ["Only the free main Archcraft ISO is included. Paid Prime and WSE media are excluded. The SourceForge release path is matched to its publisher-provided SHA-256 sidecar."]
+}

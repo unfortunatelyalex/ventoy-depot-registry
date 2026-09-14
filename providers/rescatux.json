@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "provider_id": "rescatux",
+  "display_name": "Rescatux",
+  "homepage_url": "https://rescatux.com/",
+  "driver": "static-json",
+  "allowed_hosts": ["rescatux.com", "sourceforge.net"],
+  "capabilities": {"products": ["rescatux"], "editions": ["repair"], "flavors": [], "architectures": ["multiarch"], "languages": [], "channels": ["stable"]},
+  "release_sources": [],
+  "detection": [{"regex": "^rescatux-(?P<version>\\d+(?:\\.\\d+)+)\\.iso$", "identity": {"product_id": "rescatux", "edition": "repair", "channel": "stable", "architecture": "multiarch", "version": "$group:version"}, "downloadable": false}],
+  "notes": ["Rescatux is recognized as a multi-architecture boot-repair medium. Its current machine-readable SourceForge release exposes MD5 only; the historical SHA-256 announcement is not a stable update feed."]
+}

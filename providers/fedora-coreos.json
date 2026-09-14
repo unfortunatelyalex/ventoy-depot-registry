@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "provider_id": "fedora-coreos",
+  "display_name": "Fedora CoreOS",
+  "homepage_url": "https://fedoraproject.org/coreos/download/",
+  "driver": "static-json",
+  "allowed_hosts": ["fedoraproject.org", "builds.coreos.fedoraproject.org"],
+  "capabilities": {
+    "products": ["fedora-coreos"],
+    "editions": ["live-iso"],
+    "flavors": [],
+    "architectures": ["aarch64", "x86_64"],
+    "languages": [],
+    "channels": ["stable", "testing", "next"]
+  },
+  "release_sources": [
+    {
+      "source_id": "stable",
+      "metadata_url": "https://builds.coreos.fedoraproject.org/streams/stable.json",
+      "artifact_regex": "^fedora-coreos-(?P<version>\\d+(?:\\.\\d+){3})-live-iso\\.(?P<architecture>aarch64|x86_64)\\.iso$",
+      "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://builds\\.coreos\\.fedoraproject\\.org/prod/streams/stable/builds/.+/fedora-coreos-.+-live-iso\\.(?:aarch64|x86_64)\\.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "embedded-json"}}
+    },
+    {
+      "source_id": "testing",
+      "metadata_url": "https://builds.coreos.fedoraproject.org/streams/testing.json",
+      "artifact_regex": "^fedora-coreos-(?P<version>\\d+(?:\\.\\d+){3})-live-iso\\.(?P<architecture>aarch64|x86_64)\\.iso$",
+      "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "testing", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://builds\\.coreos\\.fedoraproject\\.org/prod/streams/testing/builds/.+/fedora-coreos-.+-live-iso\\.(?:aarch64|x86_64)\\.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "embedded-json"}}
+    },
+    {
+      "source_id": "next",
+      "metadata_url": "https://builds.coreos.fedoraproject.org/streams/next.json",
+      "artifact_regex": "^fedora-coreos-(?P<version>\\d+(?:\\.\\d+){3})-live-iso\\.(?P<architecture>aarch64|x86_64)\\.iso$",
+      "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "next", "architecture": "$group:architecture"},
+      "download": {"strategy": "page-link", "link_regex": "https://builds\\.coreos\\.fedoraproject\\.org/prod/streams/next/builds/.+/fedora-coreos-.+-live-iso\\.(?:aarch64|x86_64)\\.iso"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "embedded-json"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^fedora-coreos-(?P<channel>stable|testing|next)-(?P<version>\\d+(?:\\.\\d+){3})-live-iso\\.(?P<architecture>aarch64|x86_64)\\.iso$",
+      "identity": {"product_id": "fedora-coreos", "edition": "live-iso", "channel": "$group:channel", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["Upstream ISO filenames do not encode the release stream. Ventoy Depot adds stable, testing or next to the stored filename so later updates cannot silently cross streams."]
+}

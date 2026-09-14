@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "provider_id": "backbox",
+  "display_name": "BackBox Linux",
+  "homepage_url": "https://www.backbox.org/download/",
+  "driver": "static-html",
+  "allowed_hosts": ["www.backbox.org", "linux.backbox.org", "backbox.mirror.garr.it"],
+  "capabilities": {
+    "products": ["backbox"],
+    "editions": ["desktop"],
+    "flavors": [],
+    "architectures": ["amd64"],
+    "languages": [],
+    "channels": ["stable"]
+  },
+  "release_sources": [
+    {
+      "source_id": "official-download-page",
+      "metadata_url": "https://www.backbox.org/download/",
+      "artifact_regex": "^backbox-(?P<version>\\d+(?:\\.\\d+)*)-(?P<edition>desktop)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "backbox", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture"},
+      "download": {"strategy": "url-template", "url_template": "https://backbox.mirror.garr.it/{filename}"},
+      "verification": {"level": "CHECKSUM", "checksum": {"algorithm": "sha256", "strategy": "html-table"}}
+    }
+  ],
+  "detection": [
+    {
+      "regex": "^backbox-(?P<version>\\d+(?:\\.\\d+)*)-(?P<edition>desktop)-(?P<architecture>amd64)\\.iso$",
+      "identity": {"product_id": "backbox", "edition": "$group:edition", "channel": "stable", "architecture": "$group:architecture", "version": "$group:version"},
+      "downloadable": true
+    }
+  ],
+  "notes": ["The official BackBox page publishes the filename and SHA-256 value. Its download form currently selects the fixed HTTPS GARR mirror used here as the byte source."]
+}
