@@ -422,6 +422,14 @@
       {"filename": "metal-amd64.iso", "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "amd64", "version": null}},
       {"filename": "metal-arm64.iso", "identity": {"product_id": "talos-linux", "edition": "metal", "channel": "stable", "architecture": "arm64", "version": null}}
     ], "non_matches": ["metal-x86.iso", "metal-amd64.img", "talos-metal-amd64.iso"]},
+    "trisquel": {"matches": [
+      {"filename": "trisquel_12.0_amd64.iso", "identity": {"product_id": "trisquel", "edition": "main", "channel": "stable", "architecture": "amd64", "version": "12.0"}},
+      {"filename": "triskel_12.0_amd64.iso", "identity": {"product_id": "trisquel", "edition": "kde", "channel": "stable", "architecture": "amd64", "version": "12.0"}},
+      {"filename": "trisquel-mini_12.0_amd64.iso", "identity": {"product_id": "trisquel", "edition": "mini", "channel": "stable", "architecture": "amd64", "version": "12.0"}},
+      {"filename": "trisquel-sugar_12.0_amd64.iso", "identity": {"product_id": "trisquel", "edition": "sugar", "channel": "stable", "architecture": "amd64", "version": "12.0"}},
+      {"filename": "trisquel-netinst_12.0_arm64.iso", "identity": {"product_id": "trisquel", "edition": "netinst", "channel": "stable", "architecture": "arm64", "version": "12.0"}},
+      {"filename": "trisquel-netinst_12.0_ppc64el.iso", "identity": {"product_id": "trisquel", "edition": "netinst", "channel": "stable", "architecture": "ppc64el", "version": "12.0"}}
+    ], "non_matches": ["trisquel_12.0_arm64.iso", "triskel_12.0_ppc64el.iso", "trisquel-netinst_12.0_armhf.iso", "trisquel_12.0_amd64.img"]},
     "truenas": {"matches": [
       {"filename": "TrueNAS-SCALE-25.10.7.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "stable", "architecture": "x86_64", "version": "25.10.7"}},
       {"filename": "TrueNAS-26.0.0-BETA.3.iso", "identity": {"product_id": "truenas", "edition": "community", "channel": "beta", "architecture": "x86_64", "version": "26.0.0-BETA.3"}}
