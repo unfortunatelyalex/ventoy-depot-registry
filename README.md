@@ -38,11 +38,11 @@ identical or nested key directories so the role separation cannot be accidentall
 
 ## Curated providers
 
-The registry currently contains 113 curated providers covering mainstream Linux and BSD
+The registry currently contains 114 curated providers covering mainstream Linux and BSD
 installers, desktop spins, rolling distributions, hypervisors, storage appliances,
 forensics environments and repair media. Examples include Ubuntu and its official flavors,
 Debian, Fedora, Calculate Linux, openEuler, Trisquel, Slackware Live Edition, Arch Linux, Linux Mint, FreeBSD, NetBSD, GParted Live,
-Clonezilla, SystemRescue, ShredOS, Proxmox, TrueNAS and public Windows media.
+Clonezilla, SystemRescue, ShredOS, PeaBee Puppy Linux builds, Proxmox, TrueNAS and public Windows media.
 Every provider declares its products, variants, architectures and channels. Detection
 rules map captured filename fields into a stable identity and are exercised by shared
 positive and negative fixtures.
